@@ -18,17 +18,25 @@
     <![endif]-->
   </head>
   <body>
-	 <div class="container">
-		 <div class="starter-template">
-			 <h1>InvOpps starter template</h1>
-		 </div>
-    </div>
+	  <a role="button" class="btn btn-default" href="../index.html">Заглавная</a>
+	  <div class="container starter-template">
+		  <h1>Марковские нормальные алгоритмы</h1>
+	  </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	 <div class="text-center">
-		 <a role="button" class="btn btn-default" href="mna.html">MNA</a>
-	 </div>
+	
+	 <table align="center" id="MNA_scheme">
+		 <tr>
+			<th><input id="clickMe" type="button" value="Добавить правило" onclick="add_new_rule();"/></th>
+			<th><input id="clickMe" type="button" value="Запустить" onclick="mna();"/></th>
+			<th>No</th>
+		 </tr>
+	 </table>
+	 <input id="coded_text" type="text" onchange='validate(this)' value="Текст, над которым работает алгоритм" />
+	 <input id="decoded_text" type="text" value="Место для переработанного текста" />
+
+    <script src="js/mna.js"></script>
   </body>
 </html>
