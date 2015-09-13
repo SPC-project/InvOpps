@@ -26,16 +26,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	
-	 <table align="center" id="MNA_scheme">
-		 <tr>
-			<th><input id="clickMe" type="button" value="Добавить правило" onclick="add_new_rule();"/></th>
-			<th><input id="clickMe" type="button" value="Запустить" onclick="mna();"/></th>
-			<th>No</th>
-		 </tr>
+
+	 <table class="table row table-hover table-condensed text-center" id="MNA_scheme">
 	 </table>
-	 <input id="coded_text" type="text" onchange='validate(this)' value="Текст, над которым работает алгоритм" />
-	 <input id="decoded_text" type="text" value="Место для переработанного текста" />
+	 <table class="table text-center" id="MNA_control_elements">
+		<tr>
+			<td><input id="clickMe" class="btn btn-primary" type="button" value="Добавить правило" onclick="add_new_rule();"/></th>
+			<td><input id="clickMe" class="btn btn-primary" type="button" value="Запустить" onclick="mna();"/></th>
+		</tr>
+		<tr>
+			<td><input id="coded_text" type="text" class="form-control" onclick="this.select()" value="Текст, над которым алгоритм будет работать" /></th>
+			<td><input id="decoded_text" data-toggle="tooltip" title="Количество символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></th>
+		</tr>
+	 </table>
 
     <script src="js/mna.js"></script>
   </body>
