@@ -1,23 +1,32 @@
-var key_field    = "<input type='text' onchange='validate(this)'></input>"
 var delim_symbol = "→"
-var empty_field  = "<input type='text' onchange='validate(this)' value='Ø'></input>"
+var empty_symbol = "Ø"
+var input_field_start = "<input type='text' class='text-center' value='"
+var input_field_end = "' onkeypress='mna_press(event)'>"
 
-function add_new_rule(){
+function mna_press(e){
+	e = e || window.event;
+	if( e.keyCode == 10 ){ // ctrl+enter
+		add_new_rule();
+		var rows = document.getElementById("MNA_scheme").rows;
+		var last = rows.length - 1;
+		rows[last].cells[0].children[0].focus();
+	}
+}
+
+function add_rule(key_field, subst_field){
 	var MNA_sheme = document.getElementById("MNA_scheme")
-	var last_from_bottom = MNA_sheme.rows.length - 1;
-	var row_for_rule = MNA_sheme.insertRow(last_from_bottom);
+	var row_for_rule = MNA_sheme.insertRow();
 	var key        = row_for_rule.insertCell(0);
 	var delimeter  = row_for_rule.insertCell(1);
 	var substitute = row_for_rule.insertCell(2);
 
-	key.innerHTML			= key_field;
+	key.innerHTML        = input_field_start + key_field + input_field_end; 
 	delimeter.innerHTML  = delim_symbol;
-	substitute.innerHTML = empty_field;
+	substitute.innerHTML = input_field_start + subst_field + input_field_end;
 }
  
-function validate(form){
-	var text = form.value;
-	form.value = text.split("|").join("¦");
+function add_new_rule(){
+	add_rule( "", empty_symbol )
 }
 
 function mna(){
@@ -30,11 +39,11 @@ function mna(){
 
 	while( keep_subst ){
 		keep_subst = false;
-		for( i = 0; i < keys.length-1; i++ ){ //Последняя строка - кнопки, а правила замены
-			var rule = keys.item(i).cells;
-			var key = rule.item(0).children.item(0).value;
-			var subst = rule.item(2).children.item(0).value;
-			if( task.search(key) != -1 ){
+		for( i = 0; i < keys.length; i++ ){
+			rule = keys.item(i).cells;
+			key = rule.item(0).children.item(0).value;
+			subst = rule.item(2).children.item(0).value;
+			if( task.indexOf(key) != -1 ){
 				if( subst == "Ø" ) subst = "";
 				task = task.replace( key, subst );
 
@@ -44,5 +53,7 @@ function mna(){
 		}
 	}
 
-	document.getElementById("decoded_text").value = task;
+	var to = document.getElementById("decoded_text");
+	to.value = task;
+	to.title = "Символов: " + task.length;
 }

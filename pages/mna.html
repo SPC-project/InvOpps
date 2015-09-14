@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	  <a role="button" class="btn btn-default" href="../index.html">Заглавная</a>
+	  <div class="container starter-template">
+		  <h1>Марковские нормальные алгоритмы</h1>
+	  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+
+	 <table class="table row table-hover table-condensed text-center" id="MNA_scheme">
+	 </table>
+	 <table class="table text-center" id="MNA_control_elements">
+		<tr>
+			<td><input id="clickMe" class="btn btn-primary" type="button" value="Добавить правило" onclick="add_new_rule();"/></th>
+			<td><input id="clickMe" class="btn btn-primary" type="button" value="Запустить" onclick="mna();"/></th>
+		</tr>
+		<tr>
+			<td><input id="coded_text" type="text" class="form-control" onclick="this.select()" value="Текст, над которым алгоритм будет работать" /></th>
+			<td><input id="decoded_text" data-toggle="tooltip" title="Количество символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></th>
+		</tr>
+	 </table>
+
+    <script src="../js/mna.js"></script>
+  </body>
+</html>
