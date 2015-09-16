@@ -31,12 +31,16 @@
 	 </table>
 	 <table class="table text-center" id="MNA_control_elements">
 		<tr>
-			<td><input id="clickMe" class="btn btn-primary" type="button" value="Добавить правило" onclick="add_new_rule();"/></th>
-			<td><input id="clickMe" class="btn btn-primary" type="button" value="Запустить" onclick="mna();"/></th>
+			<td><input id="clickMe" class="btn btn-default" type="button" value="Добавить правило" onclick="add_new_rule();"/></td>
+			<td><input id="clickMe" class="btn btn-primary" type="button" value="Выполнить" onclick="mna();"/></td>
+			<td><input id="clickMe" class="btn btn-success" type="button" value="Запустить пошагово" onclick="mna();"/></td>
+			<td><input id="removeBut" class="btn btn-default" type="button" value="Очистить" onclick="clean_rules();"/></td>
 		</tr>
-		<tr>
-			<td><input id="coded_text" type="text" class="form-control" onclick="this.select()" value="Текст, над которым алгоритм будет работать" /></th>
-			<td><input id="decoded_text" data-toggle="tooltip" title="Количество символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></th>
+	 </table>
+	 <table class="table text-center">
+		 <tr>
+			<td><input id="coded_text" type="text" class="form-control" onclick="this.select()" value="Текст, над которым алгоритм будет работать" /></td>
+			<td><input id="decoded_text" data-toggle="tooltip" title="Подсказка по количество символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></td>
 		</tr>
 	 </table>
 
