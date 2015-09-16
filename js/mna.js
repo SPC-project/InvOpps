@@ -42,6 +42,7 @@ function mna(){
 		for( i = 0; i < keys.length; i++ ){
 			rule = keys.item(i).cells;
 			key = rule.item(0).children.item(0).value;
+			if( !key ) continue;
 			subst = rule.item(2).children.item(0).value;
 			if( task.indexOf(key) != -1 ){
 				if( subst == "Ø" ) subst = "";
