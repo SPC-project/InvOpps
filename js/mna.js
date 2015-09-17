@@ -1,17 +1,25 @@
 var delim_symbol = "→"
 var empty_symbol = "Ø"
 var input_field_start = "<input type='text' class='text-center' value='"
-var input_field_end = "' onkeypress='mna_typing(event)'>"
+var input_field_end = "' onkeydown='mna_typing(event)'>"
 var selected_row = null
 
 function mna_typing(e){
-	e = e || window.event;
-	if( e.keyCode == 10 ){ // ctrl+enter
-		add_new_rule();
-		var rows = document.getElementById("MNA_scheme").rows;
-		var last = rows.length - 1;
-		rows[last].cells[0].children[0].focus();
-		row_selection(rows[last])
+	var keyCode = (e || window.event).keyCode;
+	var rows = document.getElementById("MNA_scheme").rows
+	switch( keyCode ){ 
+		case 13: // enter
+			add_new_rule();
+			var last = rows.length - 1;
+			rows[last].cells[0].children[0].focus();
+			row_selection(rows[last])
+			break
+		case 9: // tab
+			if( document.activeElement.value == empty_symbol ){ // if we tab from last cell in a row
+				var currIndex = selected_row.rowIndex;
+				if( currIndex != rows.length-1 )
+					row_selection( rows[currIndex+1] )
+			}
 	}
 }
 
