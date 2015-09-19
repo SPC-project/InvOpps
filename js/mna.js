@@ -7,17 +7,17 @@ var selected_row = null
 function mna_typing(e){
 	var keyCode = (e || window.event).keyCode;
 	var rows = document.getElementById("MNA_scheme").rows
+	var last = rows.length - 1;
 	switch( keyCode ){ 
 		case 13: // enter
 			add_new_rule();
-			var last = rows.length - 1;
 			rows[last].cells[0].children[0].focus();
 			row_selection(rows[last])
 			break
 		case 9: // tab
 			if( document.activeElement.value == empty_symbol ){ // if we tab from last cell in a row
 				var currIndex = selected_row.rowIndex;
-				if( currIndex != rows.length-1 )
+				if( currIndex != last )
 					row_selection( rows[currIndex+1] )
 			}
 	}
