@@ -32,8 +32,8 @@
 	 <table class="table text-center" id="MNA_control_elements">
 		<tr>
 			<td><input id="clickMe" class="btn btn-default" type="button" value="Добавить правило" onclick="add_new_rule();"/></td>
-			<td><input id="clickMe" class="btn btn-primary" type="button" value="Выполнить" onclick="mna();"/></td>
-			<td><input id="clickMe" class="btn btn-success" type="button" value="Запустить пошагово" onclick="mna();"/></td>
+			<td><input id="clickMe" class="btn btn-primary" type="button" value="Выполнить" onclick="mna(false);"/></td>
+			<td><input id="clickMe" class="btn btn-success" type="button" value="Выполнить с расшифровкой" onclick="mna(true);"/></td>
 			<td><input id="removeBut" class="btn btn-default" type="button" value="Очистить" onclick="clean_rules();"/></td>
 		</tr>
 	 </table>
@@ -43,6 +43,7 @@
 			<td><input id="decoded_text" data-toggle="tooltip" title="Подсказка по количество символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></td>
 		</tr>
 	 </table>
+	 <div class="container"><table class="table text-center table-bordered" id="log"></table></div>
 
     <script src="../js/mna.js"></script>
   </body>

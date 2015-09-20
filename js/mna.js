@@ -17,8 +17,7 @@ function mna_typing(e){
 		case 9: // tab
 			if( document.activeElement.value == empty_symbol ){ // if we tab from last cell in a row
 				var currIndex = selected_row.rowIndex;
-				var last = rows.length - 1;
-				if( currIndex != last )
+				if( currIndex != rows.length - 1 )
 					row_selection( rows[currIndex+1] )
 			}
 	}
@@ -86,32 +85,57 @@ function delete_row(){
 	}
 }
 
-function mna(){
+function mna(describe){
 	var task = document.getElementById("coded_text").value;
 	var keys = document.getElementById("MNA_scheme").rows
+	var to = document.getElementById("decoded_text");
+	var log = document.getElementById("log");
 	var keep_subst = true;
 	var rule = null;
 	var key = "";
 	var subst = "";
+	var desc = "";
+	var keyPos = -1;
+	var log_row = null
 
 	while( keep_subst ){
 		keep_subst = false;
+		if( describe ){
+			log_row = log.insertRow();
+			desc = ""
+		}
 		for( i = 0; i < keys.length; i++ ){
 			rule = keys.item(i).cells;
 			key = rule.item(0).children.item(0).value;
 			if( !key ) continue;
 			subst = rule.item(2).children.item(0).value;
-			if( task.indexOf(key) != -1 ){
+			keyPos = task.indexOf(key); 
+			if( keyPos != -1 ){
 				if( subst == "Ø" ) subst = "";
+				if( describe ) {
+					var searhed_keys = log_row.insertCell(0);
+					searhed_keys.innerHTML = desc + "<u>" + key + "</u>";
+
+					var substitution = log_row.insertCell(1);
+					var leftPart = task.substring(0, keyPos);
+					var rightPart = task.substring(keyPos+key.length);
+					substitution.innerHTML = leftPart + "<mark>" +  key  + "</mark>" + rightPart + " " + delim_symbol + " " + leftPart + "<mark>" + subst + "</mark>" + rightPart + "</p>";
+				}
 				task = task.replace( key, subst );
 
 				keep_subst = true;
 				break;
-			}
+			} else if( describe )
+				desc = desc + key + ", ";
 		}
 	}
 
-	var to = document.getElementById("decoded_text");
 	to.value = task;
 	to.title = "Символов: " + task.length;
+	if( describe ){
+		var searhed_keys = log_row.insertCell(0);
+		var substitution = log_row.insertCell(1);
+		searhed_keys.innerHTML = desc.substr(0, desc.length-2); 
+		substitution.innerHTML = "Завершение программы (" + log.rows.length + " шагов)";
+	}
 }
