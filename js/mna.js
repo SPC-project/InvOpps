@@ -28,7 +28,7 @@ function switch_button(to_def_state){
 	if( to_def_state ){
 		button.className = "btn btn-default";
 		button.value = "Очистить";
-		button.onclick = clean_rules;
+		button.onclick = function(){ clean_rules("MNA_scheme"); clean_rules("log") };
 	} else {
 		button.className = "btn btn-warning";
 		button.value = "Удалить";
@@ -68,8 +68,8 @@ function add_new_rule(){
 	add_rule( "", empty_symbol )
 }
 
-function clean_rules(){
-	var schemas = document.getElementById("MNA_scheme");
+function clean_rules(table){
+	var schemas = document.getElementById(table);
 	for (var row = schemas.rows.length-1; row >= 0; row--) {
 		schemas.deleteRow(row);
 	}
@@ -96,7 +96,9 @@ function mna(describe){
 	var subst = "";
 	var desc = "";
 	var keyPos = -1;
-	var log_row = null
+	var log_row = null;
+
+	clean_rules("log")
 
 	while( keep_subst ){
 		keep_subst = false;
@@ -136,6 +138,6 @@ function mna(describe){
 		var searhed_keys = log_row.insertCell(0);
 		var substitution = log_row.insertCell(1);
 		searhed_keys.innerHTML = desc.substr(0, desc.length-2); 
-		substitution.innerHTML = "Завершение программы (" + log.rows.length + " шагов)";
+		substitution.innerHTML = "Завершение программы (шагов: " + log.rows.length + ")";
 	}
 }
