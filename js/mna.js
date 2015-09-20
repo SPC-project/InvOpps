@@ -1,8 +1,9 @@
-var delim_symbol = "→"
-var empty_symbol = "Ø"
-var input_field_start = "<input type='text' class='text-center' value='"
-var input_field_end = "' onkeydown='mna_typing(event)'>"
-var selected_row = null
+var delim_symbol = "→";
+var empty_symbol = "Ø";
+var input_field_start = "<input type='text' class='text-center' value='";
+var input_field_end = "' onkeydown='mna_typing(event)'>";
+var selected_row = null;
+var max_allowed_steps_count = 1000;
 
 function mna_typing(e){
 	var keyCode = (e || window.event).keyCode;
@@ -15,7 +16,7 @@ function mna_typing(e){
 			row_selection(rows[last])
 			break
 		case 9: // tab
-			if( document.activeElement.value == empty_symbol ){ // if we tab from last cell in a row
+			if( document.activeElement.value == empty_symbol ){ // if we tab from last cell in a row - go next row
 				var currIndex = selected_row.rowIndex;
 				if( currIndex != rows.length - 1 )
 					row_selection( rows[currIndex+1] )
@@ -85,56 +86,73 @@ function delete_row(){
 	}
 }
 
-function mna(describe){
+function mna(need_log){
 	var task = document.getElementById("coded_text").value;
 	var keys = document.getElementById("MNA_scheme").rows
-	var to = document.getElementById("decoded_text");
 	var log = document.getElementById("log");
+	var to = document.getElementById("decoded_text");
+
 	var keep_subst = true;
 	var rule = null;
 	var key = "";
 	var subst = "";
 	var desc = "";
+	var iteration = 0;
+
 	var keyPos = -1;
 	var log_row = null;
+	var searhed_key = null;
+	var substitution = null;
 
-	clean_rules("log")
+	clean_rules("log");
 
 	while( keep_subst ){
 		keep_subst = false;
-		if( describe ){
+		iteration = iteration + 1;
+
+		if( need_log ){
 			log_row = log.insertRow();
 			desc = ""
 		}
+
 		for( i = 0; i < keys.length; i++ ){
+			// Get a key and it's complementary string
 			rule = keys.item(i).cells;
 			key = rule.item(0).children.item(0).value;
 			if( !key ) continue;
 			subst = rule.item(2).children.item(0).value;
+
+			// Do substitution "key to complementary string" if key match
 			keyPos = task.indexOf(key); 
 			if( keyPos != -1 ){
 				if( subst == "Ø" ) subst = "";
-				if( describe ) {
-					var searhed_keys = log_row.insertCell(0);
+
+				if( need_log ) {
+					searhed_keys = log_row.insertCell(0);
 					searhed_keys.innerHTML = desc + "<u>" + key + "</u>";
 
-					var substitution = log_row.insertCell(1);
+					substitution = log_row.insertCell(1);
 					var leftPart = task.substring(0, keyPos);
 					var rightPart = task.substring(keyPos+key.length);
 					substitution.innerHTML = leftPart + "<mark>" +  key  + "</mark>" + rightPart + " " + delim_symbol + " " + leftPart + "<mark>" + subst + "</mark>" + rightPart + "</p>";
 				}
-				task = task.replace( key, subst );
 
+				task = task.replace( key, subst );
 				keep_subst = true;
 				break;
-			} else if( describe )
+			} else if( need_log )
 				desc = desc + key + ", ";
+		}
+
+		if( iteration > max_allowed_steps_count ) {
+			alert("Алгоритм не завершил работу за установленное количество итераций (" + max_allowed_steps_count + "). Проверьте его правильность и, если потребуеться, отодвиньте границу." );
+			break;
 		}
 	}
 
 	to.value = task;
 	to.title = "Символов: " + task.length;
-	if( describe ){
+	if( need_log ){
 		var searhed_keys = log_row.insertCell(0);
 		var substitution = log_row.insertCell(1);
 		searhed_keys.innerHTML = desc.substr(0, desc.length-2); 
