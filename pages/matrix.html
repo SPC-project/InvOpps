@@ -1,143 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sonic Responsive Template</title>
+    <title>Matrix solutions</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1">
     
-	<link href='../css/google-fonts.css' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/font-awesome.min.css">
-	<link rel="stylesheet" href="../css/templatemo_misc.css">
-	<link rel="stylesheet" href="../css/templatemo_style.css">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
 </head>
 <body>
-	
-	<!-- This one in here is responsive menu for tablet and mobiles -->
-    <div class="responsive-navigation visible-sm visible-xs">
-        <a href="#" class="menu-toggle-btn">
-            <i class="fa fa-bars fa-2x"></i>
-        </a>
-        <div class="navigation responsive-menu">
-            <ul>
-                <li class="home"><a href="#templatemo">Инструкция по использованию</a></li>
-	            <li class="about"><a href="#about">1</a></li>
-	            <li class="services"><a href="#services">2</a></li>
-	            <li class="portfolio"><a href="#portfolio">3</a></li>
-	            <li class="contact"><a href="#contact">4</a></li>
-            </ul> <!-- /.main_menu -->
-        </div> <!-- /.responsive_menu -->
-    </div> <!-- /responsive_navigation -->
-	
-	
-	
-	
-	
-
-	<div id="main-sidebar" class="hidden-xs hidden-sm">
-		<div class="logo">
-			<a href="#"><h1>Операции с матрицами</h1></a>
-		</div> <!-- /.logo -->
-
-		<div class="navigation">
-	        <ul class="main-menu">
-	            <li class="home"><a href="#templatemo">Инструкция по использованию</a></li>
-	            <li class="about"><a href="#about">Метод Гаусса</a></li>
-	            <li class="services"><a href="#services">Метод Крамера</a></li>
-	            <li class="portfolio"><a href="#portfolio">Обратная матрица</a></li>
-	            <li class="contact"><a href="#contact">Определитель матрицы</a></li>
-	        </ul>
-		</div> <!-- /.navigation -->
-
-	</div> <!-- /#main-sidebar -->
-
-	<div id="main-content">
-
-		<div id="templatemo">
-			
-			<div class="container-fluid">
-				<div class="row">
-					
-						<div class="welcome-text">
-							<h2>Инструкция по использованию</h2>			
+	<header id="header" role="banner">
+        <div class="container">
+            <div id="navbar" class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+                        <li><a href="#calculations">Calculations</a></li>
+                        <li><a href="#">About methods</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+	<section id="main-slider-calc">
+    </section>
+	<section id="calculations">
+        <div class="container">
+            <div class="box">
+				<div class="center">
+                    <h2>Операции над матрицами</h2>
+                    <p class="lead"></p>
+                </div>
+				<div>
+				<div class="panel-group" id="accordion">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#gauss">Метод Гаусса</a>
+						</h4>
 					</div>
-				</div>
-			</div>
-		</div> <!-- /#sTop -->
-		
-		
-
-		<div class="container-fluid">
-
-			<div id="about" class="section-content">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-title">
-							<h2>Метод Гаусса</h2>
+					<div id="gauss" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p> Метод Гаусса — классический метод решения системы линейных алгебраических уравнений (СЛАУ). Это метод последовательного исключения переменных, когда с помощью элементарных преобразований система уравнений приводится к равносильной системе треугольного вида, из которой последовательно, начиная с последних (по номеру), находятся все переменные системы.
+							<br>Место для вычислений.</p>
 						</div>
 					</div>
 				</div>
-				
-				<div class="row our-skills">
-						<div class="col-md-12">
-						</div>	
-				</div> <!-- /.row -->
-			</div> <!-- /#about -->
-				
-			
-			
-			<div id="services" class="section-content">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-title">
-							<h2>Метод Крамера</h2>
-						</div> <!-- /.section-title -->
-					</div> <!-- /.col-md-12 -->
-				</div> <!-- /.row -->	
-				<div class="row our-skills">
-						<div class="col-md-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#kramer">Метод Крамера</a>
+						</h4>
+					</div>
+					<div id="kramer" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p>Место для вычислений.</p>
 						</div>
-			
-				</div> <!-- /.row -->
-			</div> <!-- /#about -->
-				
-
-			<div id="portfolio" class="section-content">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-title">
-							<h2>Обратная матрица</h2>
-						</div> <!-- /.section-title -->
-					</div> <!-- /.col-md-12 -->
-				</div> <!-- /.row -->				
-				<div class="row our-skills">
-						<div class="col-md-12">
+					</div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#reversem">Обратная матрица</a>
+						</h4>
+					</div>
+					<div id="reversem" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p>Место для вычислений.</p>
 						</div>
-			
-				</div> <!-- /.row -->
-			</div> <!-- /#portfolio -->
-				
-
-			<div id="contact" class="section-content">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-title">
-							<h2>Определитель матрицы</h2>
-						</div> <!-- /.section-title -->
-					</div> <!-- /.col-md-12 -->
-				</div> <!-- /.row -->
-			<div class="row our-skills">
-						<div class="col-md-12">
-						</div>		
-			</div> <!-- /#portfolio -->
-			</div>
-		</div> <!-- /.container-fluid -->
-	</div> <!-- /#main-content -->
-	
-
-	
+					</div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#detm">Определитель матрицы</a>
+						</h4>
+					</div>
+					<div id="detm" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p>Место для вычислений.</p>
+						</div>
+					</div>
+				</div>
+		</div>
+		</div></div>
+		</div>
+		</div>
+		
+		</section>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>	
 </body>
 </html>
