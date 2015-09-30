@@ -9,8 +9,9 @@
 
     <!-- Bootstrap -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/main.css" rel="stylesheet">
+   <link href="../css/font-awesome.min.css" rel="stylesheet">
+   <link href="../css/main.css" rel="stylesheet">
+   <link href="../css/folding.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,7 +21,7 @@
     <![endif]-->
   </head>
   <body>
-      <header id="header" role="banner">
+    <header id="header" role="banner">
         <div class="container">
             <div id="navbar" class="navbar navbar-default">
                 <div class="navbar-header">
@@ -43,21 +44,59 @@
         </div>
     </header>
 	<section id="main-slider-calc">
-    </section>
-	<section id="calculations">
-        <div class="container">
-            <div class="box first">
-                <div class="row">
-				<div class="center">
-                    <h2>Марковские нормальные алгоритмы</h2>
-                    <p class="lead"></p>
-                </div>
+	</section>
+	
+<section id="calculations">
+<div class="container">
+<div class="box first">
+<div class="row">
+	
+	<div class="center">
+		<h2>Марковские нормальные алгоритмы</h2>
+		<p class="lead"></p>
+	</div>
 	  <!--a role="button" class="btn btn-default" href="../index.html">Заглавная</a-->
 	  <!--div class="container starter-template">
 		  <h1>Марковские нормальные алгоритмы</h1>
 	  </div-->
 
-	 <table class="table row table-hover table-condensed text-center" id="MNA_scheme">
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-default" id="panel1">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">Collapsible Group Item #1</a>
+				</h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body text-info">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+			</div>
+		</div>
+		<div class="panel panel-default text-info" id="panel2">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" class="collapsed">Collapsible Group Item #2</a>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse">
+				<div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+			</div>
+		</div>
+		<div class="panel panel-default" id="panel3">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" class="collapsed">Collapsible Group Item #3</a>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<br>
+	<br>
+	 <table class="table table-hover table-condensed text-center" id="MNA_scheme">
 	 </table>
 	 <table class="table text-center" id="MNA_control_elements">
 		<tr>
@@ -70,7 +109,7 @@
 	 <table class="table text-center">
 		 <tr>
 			<td><input id="coded_text" type="text" class="form-control" onclick="this.select()" value="Текст, над которым алгоритм будет работать" /></td>
-			<td><input id="decoded_text" data-toggle="tooltip" title="Подсказка по количество символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></td>
+			<td><input id="decoded_text" data-toggle="tooltip" title="Подсказка по количеству символов" type="text" class="form-control" disabled value="Место для обработанного текста"/></td>
 		</tr>
 	 </table>
 	 <div class="container"><table class="table text-center table-bordered" id="log"></table></div>
@@ -79,6 +118,7 @@
 </div>
 </div>
 </section>
+
     <script src="../js/mna.js"></script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

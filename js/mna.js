@@ -105,6 +105,11 @@ function mna(need_log){
 	var substitution = null;
 
 	clean_rules("log");
+	if( need_log ){
+		log_row = log.insertRow();
+		searhed_keys = log_row.insertCell(0); searhed_keys.innerHTML = "Подстановки";
+		substitution = log_row.insertCell(1); substitution.innerHTML = "Выполненные замены"
+	}
 
 	while( keep_subst ){
 		keep_subst = false;
