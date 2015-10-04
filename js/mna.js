@@ -5,6 +5,26 @@ var input_field_end = "' onkeydown='mna_typing(event)'>";
 var selected_row = null;
 var max_allowed_steps_count = 1000;
 
+function load_example(index){
+	switch( index ){
+		case 0:
+			clean_rules("MNA_scheme");
+			clean_rules("log");
+			break;
+		case 1:
+			add_rule("1", "0|");
+			add_rule("|0", "0||");
+			add_rule("0", empty_symbol);
+			var example = Math.floor((Math.random() * 16) + 1);
+			document.getElementById("coded_text").value = example.toString(2);
+			break;
+	}
+}
+
+function set_limit(number){
+	max_allowed_steps_count = number*1000; // in kilo-steps
+}
+
 function mna_typing(e){
 	var keyCode = (e || window.event).keyCode;
 	var rows = document.getElementById("MNA_scheme").rows
@@ -29,10 +49,12 @@ function switch_button(to_def_state){
 	if( to_def_state ){
 		button.className = "btn btn-default";
 		button.value = "Очистить";
+		button.title = "Очистить таблицу правил"
 		button.onclick = function(){ clean_rules("MNA_scheme"); clean_rules("log") };
 	} else {
 		button.className = "btn btn-warning";
 		button.value = "Удалить";
+		button.title = "Удалить выбранное правило"
 		button.onclick = delete_row;
 	}
 }
@@ -90,7 +112,6 @@ function mna(need_log){
 	var task = document.getElementById("coded_text").value;
 	var keys = document.getElementById("MNA_scheme").rows
 	var log = document.getElementById("log");
-	var to = document.getElementById("decoded_text");
 
 	var keep_subst = true;
 	var rule = null;
@@ -155,8 +176,8 @@ function mna(need_log){
 		}
 	}
 
-	to.value = task;
-	to.title = "Символов: " + task.length;
+	document.getElementById("decoded_text").innerHTML = task;
+	document.getElementById("size_tip").innerHTML = task.length;
 	if( need_log ){
 		var searhed_keys = log_row.insertCell(0);
 		var substitution = log_row.insertCell(1);
