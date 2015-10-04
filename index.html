@@ -9,6 +9,43 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$(".slider").each(function ()
+			{
+				var obj = $(this);
+				$(obj).append("<div class='nav'></div>");
+
+				$(obj).find("li").each(function ()
+				{
+					$(obj).find(".nav").append("<span rel='"+$(this).index()+"'></span>");
+					$(this).addClass("slider"+$(this).index());
+				});
+
+				$(obj).find("span").first().addClass("on");
+			});
+		});
+
+	function sliderJS (obj, sl) // slider function
+	{
+		var ul = $(sl).find("ul");
+		var bl = $(sl).find("li.slider"+obj);
+		var step = $(bl).width();
+		$(ul).animate({marginLeft: "-"+step*obj}, 500);
+	}
+
+	$(document).on("click", ".slider .nav span", function() // slider click navigate
+	{
+		var sl = $(this).closest(".slider");
+		$(sl).find("span").removeClass("on");
+		$(this).addClass("on");
+		var obj = $(this).attr("rel");
+		sliderJS(obj, sl);
+		return false;
+	});
+</script>
 </head><!--/head-->
 
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
@@ -61,11 +98,10 @@
 
     <section id="technologies">
         <div class="container">
-            <div class="box first">
+            <div class="box">
                 <div class="row">
 				<div class="center gap">
                     <h2>Technologies</h2>
-                    <p class="lead">Technologies that we will use in our project.</p>
                 </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
@@ -106,7 +142,6 @@
             </div>
         </div>
     </section>
-
     <section id="calculations">
         <div class="container">
             <div class="box">
@@ -150,6 +185,28 @@
                     <h2>Meet the Team</h2>
                     <p class="lead">We are students of the National Technical University, Engineering Physics Department, Speciality - Informatics.<br>
 					Our project would make your student life easier.</p>
+<div class="container">
+<div class="row">
+					<div class="wrapper">
+		<div class="slider">
+			<ul>
+				<li><img src="images/1.jpg" alt=""><h3>Корытко Юлия Николаевна</h3><h4>Руководитель проекта</h4></li>
+				<li><img src="images/2.jpg" alt="" /><h3>Головач Ирина</h3><h4>Дизайнер</h4></li>
+				<li><img src="images/3.jpg" alt="" /><h3>Игнатьев Ярослав</h3><h4>Тестировщик</h4></li>
+				<li><img src="images/4.jpg" alt="" /><h3>Николай Коновалов</h3><h4>_</h4></li>
+				<li><img src="images/5.jpg" alt="" /><h3>Кириченко Ирина</h3><h4>_</h4></li>
+				<li><img src="images/6.jpg" alt="" /><h3>Сало Дмитрий</h3><h4>_</h4></li>
+				<li><img src="images/7.jpg" alt="" /><h3>Дрозд Анна</h3><h4>_</h4></li>
+				<li><img src="images/8.jpg" alt="" /><h3>Романов Геннадий</h3><h4>_</h4></li>
+				<li><img src="images/9.jpg" alt="" /><h3>Решетняк Оксана</h3><h4>_</h4></li>
+				<li><img src="images/10.jpg" alt="" /></li>
+				<li><img src="images/11.jpg" alt="" /></li>
+				<li><img src="images/12.jpg" alt="" /></li>
+				<li><img src="images/13.jpg" alt="" /></li>
+				<li><img src="images/14.jpg" alt="" /></li>
+			</ul>
+		</div>
+	</div></div></div>
                 </div>
                 <div class="gap"></div>
             </div>
@@ -170,5 +227,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 	<script src="js/mna.js"></script>
+
 </body>
 </html>

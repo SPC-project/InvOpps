@@ -482,3 +482,69 @@ textarea#message {
     -o-transform: scale(1);
   }
 }
+
+.slider {
+	z-index: 9;
+	width: 95%;
+	height: 550px;
+	overflow: hidden;
+	margin: 0 0 7px;
+	position: relative;
+}
+.slider ul,
+.slider li {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.slider ul {
+	width: 9999px; 
+}
+.slider ul li {
+	list-style-type: none;
+	float: left;
+	width: 330px;
+	height: 290px;
+}
+.slider .nav {
+	position: absolute;
+	left: 25%;
+	bottom: 1%; 
+}
+.slider .nav span {
+	opacity: 0.9;
+	background: #fff;
+	margin: 0 28px 0 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	cursor: pointer;
+	overflow: hidden;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 2px #000;
+}
+.slider .nav span.on {
+	background: #ccc;
+}
+
+li > img {
+	border: 3px solid rgba(66, 161, 211, 0.7);
+	height: 300px;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+li > img:hover{
+	border: 15px solid rgba(66, 161, 211, 0.7);
+	border-radius: 20%;
+}
+.anchor {
+margin-top: -200px;
+display: inline-block;
+position: relative;
+height: 1px;
+width: 1px;
+}
