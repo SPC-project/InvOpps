@@ -17,18 +17,23 @@ var Arr= new Array();
         return false;
     }
 
-    Number.onkeydown = function(e)
-    {
-    	e = e || event;
-    	if(e.keyCode==69)
-    	return false;
-    }
-
+	
+		function rfarr()
+		{
+			var Ar=$("#numbs").val();	
+			var Xar=Ar.split(" ");
+			var xi=i;
+			for(;xi<Xar.length-1;xi++,i++)
+			{
+				Arr[xi]=parseFloat(Xar[xi]);
+			}
+		}
+	
      	function add_new_number()
      	{
 			Arr[i]=parseFloat(Number.value);
 			Number.value="";
-            textarea1.value+=Arr[i]+ ";";
+            textarea1.value+=Arr[i]+ " ";
 		    i++;
 		}
 
@@ -38,9 +43,27 @@ var Arr= new Array();
             textarea1.value="";
 			for(j=0;j<i;j++)
 			{
-				if(Arr[j]=='') Arr[j]=0;
-				textarea1.value+=Arr[j]+ ";";
-		    }
+				if(Arr[j] == '' || isNaN(Arr[j])) Arr[j]=0;
+				textarea1.value += Arr[j] + " ";
+			}
+			
+		}
+		var output;
+		function readLines(file)
+		{
+			
+			
+			 output = false;
+			$.ajax(
+			{
+				url: file,
+				success: function(data)
+				{
+						output = data.split(" ");
+						console.log(output);        // для проверки выведем в консоль, что получилось
+				}
+			});
+			return output;
 		}
 
 var Arr2=new Array();
@@ -74,6 +97,6 @@ var Arr2=new Array();
             textarea2.value="";
 			for(j=0;j<i;j++)
 			{
-				textarea2.value+=Arr2[j]+ ";";
+				textarea2.value+=Arr2[j]+ " ";
 		    }
 		}
