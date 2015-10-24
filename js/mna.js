@@ -50,7 +50,14 @@ function switch_button(to_def_state){
 		button.className = "btn btn-default";
 		button.value = "Очистить";
 		button.title = "Очистить таблицу правил"
-		button.onclick = function(){ clean_rules("MNA_scheme"); clean_rules("log") };
+		button.onclick = function(){ 
+			clean_rules("MNA_scheme");
+			clean_rules("log");
+			document.getElementById("examples").selectedIndex = 0; 
+			document.getElementById("coded_text").value = "";
+			document.getElementById("decoded_text").innerHTML = "";
+			document.getElementById("size_tip").innerHTML = 0;
+		}
 	} else {
 		button.className = "btn btn-warning";
 		button.value = "Удалить";

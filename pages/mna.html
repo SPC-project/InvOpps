@@ -69,9 +69,9 @@
 					<div class="row text-center">
 						<div class="col-xs-6 col-md-6">
 							<div class="input-group" data-toggle="tooltip" data-placement="top"
-								title="Демонстрационные наборы правил для ознакомления с сабжем">
+								title="Демонстрационные наборы правил для ознакомления с Марковскими алгоритмами">
 								<span class="input-group-addon">Примеры:</span>
-								<select class="form-control" onchange="load_example(parseInt(this.value))">
+								<select id="examples" class="form-control" onchange="load_example(parseInt(this.value))">
 									<option value="0">Ничего</option>
 									<option value="1">Из бинарной в унарную</option>
 									<option value="2"></option>
@@ -132,7 +132,7 @@
 					title="Алгоритм обработает текст и распишет каждый свой шаг" />
 			</td>
 			<td>
-				<input id="removeBut" class="btn btn-default" type="button" value="Очистить" onclick="clean_rules('MNA_scheme');"
+				<input id="removeBut" class="btn btn-default" type="button" value="Очистить"
 					data-toggle="tooltip" data-placement="top" data-delay="500" 
 					title="Очистить таблицу правил" />
 			</td>
@@ -170,6 +170,8 @@
 			$("#MNA_scheme").on("click", function(){
 				$('#removeBut').tooltip('fixTitle');
 			});
+			<!-- Prepere 'removeBut'>
+			switch_button(true);
 		</script>
   </body>
 </html>
