@@ -60,13 +60,13 @@
 					<td><input id="NN" class="btn btn-default" type="button" value="Add number" onclick="add_new_number();"/></td>
 				</tr>
 				<tr>
-					<td><textarea name="arr" rows=5 cols=100 wrap="on"></textarea></td>
-					<td><input id="Barr" class="btn btn-default" type="button" value="Show array" onclick="showarray();"/></td>
+					<td><textarea id="numbs" name="arr" rows=5 cols=100 wrap="on"></textarea></td>
+					<td><input id="Barr" class="btn btn-default" type="button" value="Show array" onclick="showarray();"/><br/>
+					<input id="Bars" class="btn btn-default" type="button" value="Refresh" onclick="rfarr();"/></td>
 				</tr>
 				<tr>
 					<td><textarea name="ars" rows=5 cols=100 wrap="on"></textarea></td>
-					<td><input id="Bars" class="btn btn-default" type="button" value="Sort" onclick="buble()"/><br/>
-					<input id="Bars" class="btn btn-default" type="button" value="Show sorted array" onclick="showsortarray();"/></td>
+					<td><input id="Bars" class="btn btn-default" type="button" value="Sort" onclick="buble();showsortarray();"/></td>
 				</tr>
 			</table>
 			</section>
