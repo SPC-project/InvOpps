@@ -1,0 +1,45 @@
+<!DOCTIPE HTML PUBLIC"-//WRC//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="../js/rb-tree.js"></script>
+	</head>
+
+	<body>
+		<p>If something go wrong - you will notice that</p>
+
+		<script type="text/javascript" charset="utf-8">
+			var test_counter = 1;
+			var assert = function(condition){ 
+				if(!condition) {
+					alert("Test " + test_counter + " was failed!");
+					is_failure = true;
+					throw("check_it!");
+				}
+				test_counter += 1;
+			}
+
+			assert(makeNode(5).data == 5);
+			
+			insert(5);
+			assert(tree != null)
+			insert(4);
+			assert(tree.left != null);
+			assert(tree.left.data == 4);
+			insert(11);
+			assert(tree.right != null);
+			assert(tree.right.data == 11);
+			insert(21);
+			assert(tree.right.right.data != null);
+			assert(tree.right.right.data == 21);
+			insert(31);
+			assert(tree.right.right.right.data != null);
+			assert(tree.right.right.right.data == 31);
+			insert(1);
+			assert(tree.left.left != null);
+			assert(tree.left.left.data == 1);
+		</script>
+	</body>
+</html>
