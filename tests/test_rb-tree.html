@@ -23,23 +23,33 @@
 
 			assert(makeNode(5).data == 5);
 			
+			// basic insertion, without rotation
 			insert(5);
-			assert(tree != null)
+			assert(tree != null);
+				assert(tree.data = 5);
+					assert(!tree.isRed);		// root always black
 			insert(4);
 			assert(tree.left != null);
-			assert(tree.left.data == 4);
+					assert(tree.left.data == 4);
+						assert(tree.left.isRed); // new nodes, by default, is red
 			insert(11);
 			assert(tree.right != null);
-			assert(tree.right.data == 11);
+					assert(tree.right.data == 11);
+						assert(tree.right.isRed);
 			insert(21);
-			assert(tree.right.right.data != null);
-			assert(tree.right.right.data == 21);
-			insert(31);
-			assert(tree.right.right.right.data != null);
-			assert(tree.right.right.right.data == 31);
-			insert(1);
-			assert(tree.left.left != null);
-			assert(tree.left.left.data == 1);
+			assert(tree.right.right != null);
+					assert(tree.right.right.data == 21);
+						assert(tree.right.right.isRed)
+			assert(!tree.left.isRed && !tree.right.isRed); // should swap color
+
+			// check single rotation
+			insert(22);
+			assert(tree.right.data == 21);
+			assert(tree.right.left.data == 11);
+			assert(tree.right.right.data == 22);
+				assert(!tree.right.isRed);
+				assert(tree.right.left.isRed);
+				assert(tree.right.right.isRed);
 		</script>
 	</body>
 </html>
