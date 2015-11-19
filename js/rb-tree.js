@@ -10,21 +10,21 @@ function makeNode(value){
 }
 
 // Swap node with one of his childs
-function single_rotation(node, child, anotherChild){
-	var hold = node[anotherChild];
+function single_rotation(dad, child, anotherChild){
+	var son = dad[child];
 
-	node[anotherChild] = node[child];
-	hold[child] = node;
+	dad[child] = son[anotherChild];
+	son[anotherChild] = dad;
 
-	node.isRed = true;
-	hold.isRed = false;
+	dad.isRed = true;
+	son.isRed = false;
 
-	return hold;
+	return son;
 }
 
-function double_rotation(node, child, anotherChild){
-	node[anotherChild] = single_rotation( node[anotherChild], anotherChild );
-	return single_rotation( node, child );
+function double_rotation(dad, child, anotherChild){
+	dad[child] = single_rotation( dad[child], anotherChild, child );
+	return single_rotation( dad, child, anotherChild );
 }
 
 function insert(data){
@@ -34,44 +34,51 @@ function insert(data){
 	} else {
 		var fake_root = makeNode(null);
 		var granddad, dad, curr;
-		var child, another_child, prev_child;
-		dad = fake_root
+		var child, another_child, prev_child, prev_child;
+		granddad = fake_root
 		curr = fake_root.right = tree;
+		child = tree.data > data ? "left" : "right"
 
-		// g - granddad
-		// t - dad
+		// Sync with http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx 
+		// t - granddad
+		// g - dad
 		// p - curr
 		// q - curr[child]
+		// dir  - child
+		// last - prevChild
 
 		while( true ){
-			if( curr.data == data ) // avoid duplicates
-				break;
-
-			if( data > curr.data ){
-				child = "right";
-				anotherChild = "left";
-			} else {
-				child = "left";
-				anotherChild = "right";
-			}
-
 			if( curr[child] == null ){
-				curr[child] = newNode;
-				break;
-			} else if( curr[child].isRed && curr[anotherChild] != null && curr[anotherChild].isRed ){
+				curr[child] = newNode
+			} else if( curr.left != null && curr.left.isRed && curr.right != null && curr.right.isRed ) {
 				curr.isRed = true;
-				curr.left.isRed = false;
-				curr.right.isRed = false;
+				curr.left.isRed = false; 
+				curr.right.isRed = false; 
 			}
 
-			// fix red violation
-			//if( curr[child].isRed && curr.isRed ){
-				
-		//	}
+			// Fix red violation
+			if( curr[child].isRed && curr.isRed ){
+				var to_rotation = granddad.right == dad ? "right" : "left";
+				var prev_anotherChild = prev_child == "left" ? "right" : "left";
 
-			prev_child = child;
-			curr = curr[child];
+				if( child == prev_child ) // granddad, dad & curr is all lift- or right-handed nodes
+					granddad[to_rotation] = single_rotation(dad, prev_child, prev_anotherChild)
+				 else
+					granddad[to_rotation] = double_rotation(dad, prev_child, prev_anotherChild)
+			}
+
+			if( curr[child].data == data ) 
+				break // avoid duplicates
+
+			prev_child = child
+			child = curr[child].data > data ? "left" : "right"
+
+			if( dad != null )
+				granddad = dad
+			dad = curr
+			curr = curr[prev_child]
 		}
+		tree = fake_root.right
 	}
 
 	tree.isRed = false; // immediately obey to Constrain 1
