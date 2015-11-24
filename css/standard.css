@@ -1,0 +1,486 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.btn-calc {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #fa7014;
+  background-image: -moz-linear-gradient(top, #ff6600, #f37f32);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff6600), to(#f37f32));
+  background-image: -webkit-linear-gradient(top, #ff6600, #f37f32);
+  background-image: -o-linear-gradient(top, #ff6600, #f37f32);
+  background-image: linear-gradient(to bottom, #ff6600, #f37f32);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff6600', endColorstr='#fff37f32', GradientType=0);
+  border-color: #f37f32 #f37f32 #cd590c;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #f37f32;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  color: #ffffff !important;
+}
+.btn-calc:hover,
+.btn-calc:focus,
+.btn-calc:active,
+.btn-calc.active,
+.btn-calc.disabled,
+.btn-calc[disabled] {
+  color: #ffffff;
+  background-color: #f37f32;
+  *background-color: #f2701a;
+}
+.btn-calc:active,
+.btn-calc.active {
+  background-color: #e5630d \9;
+}
+.btn-order {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #253f9f;
+  background-image: -moz-linear-gradient(top, #2b4ab9, #1c2f77);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2b4ab9), to(#1c2f77));
+  background-image: -webkit-linear-gradient(top, #2b4ab9, #1c2f77);
+  background-image: -o-linear-gradient(top, #2b4ab9, #1c2f77);
+  background-image: linear-gradient(to bottom, #2b4ab9, #1c2f77);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2b4ab9', endColorstr='#ff1c2f77', GradientType=0);
+  border-color: #1c2f77 #1c2f77 #0d1739;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #1c2f77;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  color: #ffffff !important;
+}
+.btn-order:hover,
+.btn-order:focus,
+.btn-order:active,
+.btn-order.active,
+.btn-order.disabled,
+.btn-order[disabled] {
+  color: #ffffff;
+  background-color: #1c2f77;
+  *background-color: #172762;
+}
+.btn-order:active,
+.btn-order.active {
+  background-color: #121f4e \9;
+}
+.btn-other {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f2f2f2;
+  background-image: -moz-linear-gradient(top, #f7f7f7, #eaeaea);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#eaeaea));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #eaeaea);
+  background-image: -o-linear-gradient(top, #f7f7f7, #eaeaea);
+  background-image: linear-gradient(to bottom, #f7f7f7, #eaeaea);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff7f7f7', endColorstr='#ffeaeaea', GradientType=0);
+  border-color: #eaeaea #eaeaea #c4c4c4;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #eaeaea;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  color: #000000 !important;
+}
+.btn-other:hover,
+.btn-other:focus,
+.btn-other:active,
+.btn-other.active,
+.btn-other.disabled,
+.btn-other[disabled] {
+  color: #ffffff;
+  background-color: #eaeaea;
+  *background-color: #dddddd;
+}
+.btn-other:active,
+.btn-other.active {
+  background-color: #d1d1d1 \9;
+}
+.form-actions a.brand {
+  color: #dddddd;
+  text-shadow: 0px 1px 1px #ffffff;
+  line-height: 28px;
+  font-size: 28px;
+  vertical-align: middle;
+}
+.form-actions a.brand:hover {
+  color: #ffffff;
+  text-shadow: 0px 1px 1px #b3b3b3;
+}
+.form-actions a.brand img {
+  margin-top: -1px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+div.form_calc .textoutput_label {
+  line-height: 30px;
+}
+div.form_calc input {
+  margin: 0 auto 0 auto;
+}
+div.form_calc .formulaoutput {
+  font-weight: bold;
+  max-width: 1024px;
+  float: right;
+  overflow: auto;
+  min-height: 60px;
+  min-width: 200px;
+  text-align: right;
+  padding-right: 10px;
+}
+div.matrix table tbody tr td {
+  min-width: 30px;
+}
+div.matrix table {
+  width: auto;
+}
+span.precisiometer {
+  line-height: 20px;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+span.precisiometer a {
+  color: #cccccc;
+  text-decoration: none;
+}
+span.precisiometer a.selected {
+  color: #555555;
+}
+span.precisiometer a:hover {
+  color: #000000;
+  text-shadow: 1px 1px 1px #4d4d4d;
+}
+span.precisiometer label {
+  color: #555555;
+}
+span.precisiometer a.round,
+span.precisiometer a.precise {
+  padding: 0 4px;
+}
+div.form_calc .control-label {
+  text-align: left;
+}
+div.input_error,
+div.input_error_active {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  position: absolute;
+  color: red;
+  background: #ffffa0;
+  padding: 1em;
+  display: none;
+  border: 1px solid red;
+}
+div.input_error_active {
+  display: block;
+  left: 10em;
+  top: 10em;
+}
+.form_calc {
+  line-height: 20px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #333333;
+  padding: 0 20px 20px 20px;
+  min-width: 400px;
+  max-width: 1100px;
+}
+.form_calc legend {
+  color: #333333;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 21px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+.form_calc .form-actions {
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  padding: 20px;
+  margin: 0 -20px 0 -20px;
+}
+.form_calc select,
+.form_calc textarea,
+.form_calc input[type=text] {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  color: #333333;
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  -o-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 4px 6px;
+}
+.form_calc select:focus,
+.form_calc textarea:focus,
+.form_calc input[type=text]:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 (@control_scale*8px) rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 (@control_scale*8px) rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 (@control_scale*8px) rgba(82, 168, 236, 0.6);
+}
+.form_calc select {
+  height: 30px;
+}
+.form_calc input[type=text] {
+  height: 20px;
+}
+.form_calc label {
+  margin-bottom: 5px;
+  line-height: 20px;
+  font-size: 14px;
+}
+.form_calc select {
+  width: 330px;
+}
+.form_calc textarea,
+.form_calc input[type=text] {
+  width: 316px;
+}
+.form_calc input.number {
+  width: 120px;
+}
+.form_calc textarea {
+  height: 100px;
+}
+.form_calc .radio,
+.form_calc .checkbox {
+  min-height: 20px;
+}
+.form_calc legend + .control-group {
+  margin-top: 20px;
+}
+.form_calc .btn {
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.form_calc .btn-mini {
+  font-size: 10.5px;
+  padding: 2px 7px;
+}
+.form_calc div.coordinate input[type=text],
+.form_calc div.degrees input[type=text] {
+  width: 40px;
+}
+.form_calc span.degree-label {
+  margin-left: -15px;
+  padding-right: 20px;
+  color: #333333;
+}
+.form_calc select.year {
+  width: 68px;
+}
+.form_calc select.century,
+.form_calc select.day {
+  width: 84px;
+}
+.form_calc select.hour,
+.form_calc select.minute {
+  width: 52px;
+}
+.form_calc select.month {
+  width: 96px;
+}
+.form_calc .table-striped {
+  background-color: #ffffff;
+}
+.form_calc .table-striped thead tr {
+  background-color: #ffffff;
+  color: #333333;
+}
+.form_calc .table-striped th,
+.form_calc .table-striped td {
+  border-color: #dddddd;
+}
+.form_calc .table-striped tbody > tr:nth-child(odd) > td,
+.form_calc .table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+.form_calc .textoutputlong {
+  padding-left: 1em;
+  font-weight: bold;
+  color: #222222;
+}
+.form_calc .textoutput,
+.form_calc .formualoutput {
+  font-weight: bold;
+  float: right;
+  color: #222222;
+}
+.input_table .table {
+  margin-bottom: 10px;
+  clear: left;
+}
+.form_calc .control-group {
+  margin-bottom: 15px;
+  *zoom: 1;
+}
+.form_calc .control-group:before,
+.form_calc .control-group:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+.form_calc .control-group:after {
+  clear: both;
+}
+.form_calc .control-label {
+  float: left;
+  width: 260px;
+  padding-top: 5px;
+  text-align: right;
+}
+.form_calc .controls {
+  *display: inline-block;
+  *padding-left: 20px;
+  margin-left: 280px;
+  *margin-left: 0;
+}
+.form_calc .controls:first-child {
+  *padding-left: 280px;
+}
+.dd-select {
+  width: 330px;
+  position: relative;
+  cursor: pointer;
+}
+.dd-desc {
+  color: #666666;
+  display: block;
+  overflow: hidden;
+  font-weight: normal;
+  line-height: 1.4em;
+}
+a.dd-selected {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+}
+.dd-pointer {
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+}
+.dd-pointer-down {
+  border: solid 5px transparent;
+  border-top: solid 5px #333333;
+}
+.dd-pointer-up {
+  border: solid 5px transparent !important;
+  border-bottom: solid 5px #333333 !important;
+  margin-top: -8px;
+}
+.dd-options {
+  width: 330px;
+  border: 1px solid #cccccc;
+  border-top: none;
+  list-style: none;
+  box-shadow: 0px 1px 5px #cccccc;
+  display: none;
+  position: absolute;
+  z-index: 2000;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow: auto;
+}
+.dd-option {
+  padding: 10px;
+  display: block;
+  border-bottom: solid 1px #cccccc;
+  overflow: hidden;
+  color: #333333;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+}
+a.dd-option {
+  text-decoration: none;
+}
+.dd-options > li:last-child > .dd-option {
+  border-bottom: none;
+}
+.dd-option:hover {
+  background-color: #ffffff;
+  color: #333333;
+}
+.dd-selected-description-truncated {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dd-option-selected {
+  background-color: #ffffff;
+}
+.dd-option-image,
+.dd-selected-image {
+  vertical-align: middle;
+  float: left;
+  margin-right: 5px;
+  max-width: 64px;
+}
+.dd-image-right {
+  float: right;
+  margin-right: 15px;
+  margin-left: 5px;
+}
+.dd-container {
+  width: 330px;
+  position: relative;
+}
+label.dd-selected-text {
+  color: #333333;
+  font-weight: bold;
+}
