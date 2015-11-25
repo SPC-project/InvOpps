@@ -152,7 +152,7 @@
 					<div><script type="text/javascript">
 					function Dialogv54b60eb9da33d() {this.GetElement = function () { return document.getElementById( "dialogv54b60eb9da33d" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60eb9da33d"; };this.matrixfield= new DialogInput("matrixfield", this, null,new ElementAccessorDefault());this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.det= new DialogInput("det", this, null,new ElementAccessorOutput());this.Show = function () { ShowDialog("dialogv54b60eb9da33d"); };this.Hide = function () { HideDialog("dialogv54b60eb9da33d"); };this.Busy = function () { SetDialogBusy("dialogv54b60eb9da33d"); };this.Free = function () { SetDialogFree("dialogv54b60eb9da33d"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.matrixfield.ResetValue();this.messages.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.validation.ResetValue();this.det.ResetValue();};this.SetDefaultValues = function () {this.matrixfield.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.messages.SetValue("OK");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a id=\"dialogv54b60eb9da33d_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60eb9da33d.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60eb9da33d_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60eb9da33d_button_text\">Рассчитать</span></a></div>");this.validation.SetValue("");this.det.SetValue("");};this.GetValues = function () {var retval = {};retval["matrixfield"]=this.matrixfield.GetValue();retval["messages"]=this.messages.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["validation"]=this.validation.GetValue();retval["det"]=this.det.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60eb9da33d");};this.Validate = function ( ) {if (!this.matrixfield.ValidateCurrent() ) { return false; }if (!this.messages.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }if (!this.det.ValidateCurrent() ) { return false; }return true;};};
 					</script></div>
-
+<!-------Determinant of the matrix--------------------->
 <div class="form_calc" id="dialogv54b60eb9da33d">
 	<div class="fieldset ">
 		<div class="control-group">
@@ -348,7 +348,7 @@ else if (parser.validation_result == parser.c_valid)
 dialoghandlerv54b60eb9da33d.initdialog(dialogv54b60eb9da33d);
 </script>
 </div>
-
+<!------------------------------Inverse matrix--------------------->
 <div class="article">
 	<div class="article_body">
 		<div>
@@ -383,7 +383,7 @@ dialoghandlerv54b60eb9da33d.initdialog(dialogv54b60eb9da33d);
 	</div>
 		</div>
 	</div>
-</div><!--div-->
+</div><div>
 <script type="text/javascript">
 var dialogv54b60ebb109c4 = new Dialogv54b60ebb109c4();
 var dialoghandlerv54b60ebb109c4 = new function ( ) {this.Dialog = null;this.CalculatorID = 1218;var savedData = {};var outerParent = this;
@@ -648,11 +648,10 @@ dialoghandlerv54b60ebb109c4.initdialog(dialogv54b60ebb109c4);
 </script>
 </div>
 
-
+<!---------------------------Transpose matrix------------------------------>
 <div><script type="text/javascript">
 function Dialogv54b60ebadf4ef() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebadf4ef" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebadf4ef"; };this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.matrixfield= new DialogInput("matrixfield", this, null,new ElementAccessorDefault());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.matrixT= new DialogInput("matrixT", this, null,new ElementAccessorDefault());this.Show = function () { ShowDialog("dialogv54b60ebadf4ef"); };this.Hide = function () { HideDialog("dialogv54b60ebadf4ef"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebadf4ef"); };this.Free = function () { SetDialogFree("dialogv54b60ebadf4ef"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.messages.ResetValue();this.matrixfield.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.validation.ResetValue();this.matrixT.ResetValue();};this.SetDefaultValues = function () {this.messages.SetValue("OK");this.matrixfield.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebadf4ef_logo\" href=\"http://planetcalc.ru/1204/?license=1\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebadf4ef_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebadf4ef.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebadf4ef_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebadf4ef_button_text\">Рассчитать</span></a></div>");this.validation.SetValue("");this.matrixT.SetValue("");};this.GetValues = function () {var retval = {};retval["messages"]=this.messages.GetValue();retval["matrixfield"]=this.matrixfield.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["validation"]=this.validation.GetValue();retval["matrixT"]=this.matrixT.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebadf4ef");};this.Validate = function ( ) {if (!this.messages.ValidateCurrent() ) { return false; }if (!this.matrixfield.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }if (!this.matrixT.ValidateCurrent() ) { return false; }return true;};};
 </script></div>
-
 
 <div class="form_calc" id="dialogv54b60ebadf4ef">
 <div class="fieldset "><legend id="dialogv54b60ebadf4ef_legend">Transpose matrix</legend><div id="dialogv54b60ebadf4ef_messages">
@@ -842,13 +841,13 @@ else if (parser.validation_result == parser.c_valid)
 dialoghandlerv54b60ebadf4ef.initdialog(dialogv54b60ebadf4ef);
 </script>
 </div>
-
-</div>
+<!-----------------------------Matrix multiplication--------------------------------->
 	<div class="input_error" id="error_box_v54b60ebaec3bd" onclick="this.style.display='none';"></div>
 	<div><script type="text/javascript">
 		function Dialogv54b60ebaec3bd() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebaec3bd" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebaec3bd"; };this.matrixA= new DialogInput("matrixA", this, null,new ElementAccessorDefault());this.matrixB= new DialogInput("matrixB", this, null,new ElementAccessorDefault());this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.matrixR= new DialogInput("matrixR", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.Show = function () { ShowDialog("dialogv54b60ebaec3bd"); };this.Hide = function () { HideDialog("dialogv54b60ebaec3bd"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebaec3bd"); };this.Free = function () { SetDialogFree("dialogv54b60ebaec3bd"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.matrixA.ResetValue();this.matrixB.ResetValue();this.messages.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.matrixR.ResetValue();this.validation.ResetValue();};this.SetDefaultValues = function () {this.matrixA.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.matrixB.SetValue("-2 2\n5 7\n-1 4");this.messages.SetValue("OK");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebaec3bd_logo\" href=\"http://planetcalc.ru/1207/?license=1\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebaec3bd_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebaec3bd_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebaec3bd_button_text\">Calculate</span></a></div>");this.matrixR.SetValue("");this.validation.SetValue("");};this.GetValues = function () {var retval = {};retval["matrixA"]=this.matrixA.GetValue();retval["matrixB"]=this.matrixB.GetValue();retval["messages"]=this.messages.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["matrixR"]=this.matrixR.GetValue();retval["validation"]=this.validation.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebaec3bd");};this.Validate = function ( ) {if (!this.matrixA.ValidateCurrent() ) { return false; }if (!this.matrixB.ValidateCurrent() ) { return false; }if (!this.messages.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.matrixR.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }return true;};};
 		</script>
 	</div>
+	
 <div class="form_calc" id="dialogv54b60ebaec3bd">
 	<div class="fieldset "><legend id="dialogv54b60ebaec3bd_legend">Matrix multiplication</legend>
 	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixA">Matrix А:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixA', event ) : true);" rows="5" cols="60">
@@ -1083,12 +1082,12 @@ if (parserA.validation_result == parserA.c_valid && parserB.validation_result ==
 dialoghandlerv54b60ebaec3bd.initdialog(dialogv54b60ebaec3bd);
 </script>
 </div>
+
 </div>
 </div>
 </div>
 <div class="horizontal_divider"></div>
 </div>
 	</div></div>
-<!--/div-->
 </body>
 </html>
