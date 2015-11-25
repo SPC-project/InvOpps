@@ -9,7 +9,7 @@ function makeNode(value){
 	}
 }
 
-// Swap node with one of his childs
+// Swap node with one of his children
 function single_rotation(dad, child, anotherChild){
 	var son = dad[child];
 
@@ -82,6 +82,59 @@ function insert(data){
 	}
 
 	tree.isRed = false; // immediately obey to Constrain 1
+}
+
+function remove(data){
+	if( tree != null ) {
+		var fake_root = new_node();
+		var dad = null, curr;
+		var removed_node = null;
+		var child = "right", another_child = "left", prev_child;
+
+		fake_root.right = tree;
+		curr = fake_root;
+
+		// g - dad
+		// p - curr
+		// q - curr[child]
+		// dir  - child
+		while( curr[child] != null ){
+			prev_child = child;
+			dad = curr;
+			curr = curr.child;
+			if( data < curr.data ){
+				child = "left";
+				another_child = "right";
+			} else {
+				child = "right";
+				another_child = "left";
+			}
+
+			if( data == curr[child].data )
+				removed_node = curr
+
+			// Push down red node
+			if( !curr.isRed && !curr[child].isRed ) {
+				if( curr[anotherChild].isRed ) {
+					curr[prev_child] = single_rotation( curr[child], child, anotherChild );
+					curr = curr[prev_child]
+				} else {
+					var another_prevChild = prev_child == "left" ? "right" : "left";
+					if( curr[another_prevChild] != null ) {
+						var brother = curr[another_prevChild];
+						if( !brother[another_prevChild].isRed && !brother[prev_child]) {
+							curr.isRed = false;
+							brother.isRed = true;
+							curr[child] = true;
+						} else {
+							
+						}
+					}
+				}
+			}
+		}
+
+	}
 }
 
 function zap(){
