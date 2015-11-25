@@ -47,7 +47,7 @@
 <div class="container">
 <div class="box first">
 	<div class="center">
-		<h2>Марковские нормальные алгоритмы</h2>
+		<h2>Markov's normal algorithms</h2>
 		<p class="lead"></p>
 	</div>
 
@@ -55,25 +55,27 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">Что происходит на данной страничке?</a>
+					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">What happens on the page?</a>
 				</h4>
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body text-info">
-					Эта странница предлагает в ваше распоряжение инструмент для построения <a href="#about">нормальных алгоритмов Маркова</a> - одного из существующих способов формально определить алгоритм. Иллюстрации ниже призвана прояснить для вас его интерфейс. 
+					This page provides you with tools for building <a href="#about">Markov normal algorithms</a> - one of the existing ways to formally define the algorithm. Below, you can see how to use functionality. 
 					<br><br>
 					<div class = "text-center"><img src="../images/mna_guide.png" alt="Очень жаль, что не сработало"></div>
-					<br><p>Рабочее пространство разделено на три зоны: таблицу <i>правил</i>, блок кнопок и поля ввода/вывода.</p>
-					<p>Каждое правило состоит из <i>ключа</i> (левая колонка) и <i>подстановки</i>. Во время выполнения, в определенной последовательности, каждый ключ заменяется на соответствующую ему подстановку. Чтобы окончательно прояснить всю эту схему, можете запустить один из тестовых примеров - если нажать на зеленую кнопку, то получите пошаговое описание.</p>
+					<br><p>The workspace is divided into three zones: table <i>rules</i>, buttons и input/output area.</p>
+					<p>Every rule consists of<i>key</i> (left button) and <i>substitution</i>. At run time, in sequence, 
+					each key corresponding to it is replaced by substitution. You can run one test case, to finally clarify 
+					the whole circuit  - if you press the green button, you will get step by step description.</p>
 					<br>
 					<div class="row text-center">
 						<div class="col-xs-6 col-md-6">
 							<div class="input-group" data-toggle="tooltip" data-placement="top"
 								title="Демонстрационные наборы правил для ознакомления с Марковскими алгоритмами">
-								<span class="input-group-addon">Примеры:</span>
+								<span class="input-group-addon">Examples:</span>
 								<select id="examples" class="form-control" onchange="load_example(parseInt(this.value))">
-									<option value="0">Ничего</option>
-									<option value="1">Из бинарной в унарную</option>
+									<option value="0">Nothing</option>
+									<option value="1">From binary to unary</option>
 									<option value="2"></option>
 									<option value="3"></option>
 									<option value="4"></option>
@@ -83,12 +85,12 @@
 						<div class="col-xs-6 col-md-6">
 							<div class="input-group" data-toggle="tooltip" data-placement="top" id="limit"
 								title="Верхнее ограничение на количество итераций алгоритма. Помогает избежать зависания">
-								<span class="input-group-addon">Ограничение:</span>
+								<span class="input-group-addon">Limitation:</span>
 								<select class="form-control" onchange="set_limit(parseFloat(this.value))">
-									<option value="0.5" >500 шагов</option>
-									<option value="1" selected>1000 шагов</option>
-									<option value="2"> 2000 шагов</option>
-									<option value="5"> 5000 шагов</option>
+									<option value="0.5" >500 steps</option>
+									<option value="1" selected>1000 steps</option>
+									<option value="2"> 2000 steps</option>
+									<option value="5"> 5000 steps</option>
 								</select>
 							</div>	
 						</div>
@@ -117,24 +119,24 @@
 	 <table class="table text-center" id="MNA_control_elements">
 		<tr>
 			<td>
-				<input class="btn btn-default" type="button" value="Добавить правило" onclick="add_new_rule();"
+				<input class="btn btn-default" type="button" value="Add rule" onclick="add_new_rule();"
 					data-toggle="tooltip" data-placement="top" data-delay="500" 
 					title="С тем же эффектом можно нажать 'Enter' при фокусе на поле ввода таблицы" />
 			</td>
 			<td>
-				<input class="btn btn-primary" type="button" value="Выполнить" onclick="mna(false);"
+				<input class="btn btn-primary" type="button" value="Execute" onclick="mna(false);"
 					data-toggle="tooltip" data-placement="top" data-delay="500" 
 					title="Алгоритм обработает введенный тест и покажет ответ" />
 			</td>
 			<td>
-				<input class="btn btn-success" type="button" value="Выполнить с расшифровкой" onclick="mna(true);"
+				<input class="btn btn-success" type="button" value="Execute with details" onclick="mna(true);"
 					data-toggle="tooltip" data-placement="top" data-delay="500"
 					title="Алгоритм обработает текст и распишет каждый свой шаг" />
 			</td>
 			<td>
-				<input id="removeBut" class="btn btn-default" type="button" value="Очистить"
+				<input id="removeBut" class="btn btn-default" type="button" value="Clear out"
 					data-toggle="tooltip" data-placement="top" data-delay="500" 
-					title="Очистить таблицу правил" />
+					title="Clear out " />
 			</td>
 		</tr>
 	 </table>
@@ -142,13 +144,13 @@
 	 <div class="row text-center">
 		 <div class="col-xs-6 col-md-6">
 			 <input id="coded_text" type="text" class="form-control" onclick="this.select()" 
-					data-toggle="tooltip" data-placement="bottom" value="Текст, над которым алгоритм будет работать"
+					data-toggle="tooltip" data-placement="bottom" value="Text for processing algorithm"
 					title="Текст, над которым алгоритм будет работать"/>
 		 </div>
 		 <div class="col-xs-6 col-md-6">
-			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
+			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Result of the algorithm">
 					<li class="list-group-item" style="height: 35px; padding: 7px 15px;">
-						<span id="decoded_text">Место для обработанного текста</span> 
+						<span id="decoded_text">Place for processed text</span> 
 						<span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='badge'>29</span>
 					</li>
 			 </ul>
