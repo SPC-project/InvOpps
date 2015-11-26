@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>InvOpps: Sorts</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
-
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1">
 
@@ -14,9 +13,9 @@
 	<link rel="stylesheet" href="../css/templatemo_misc.css">
 	<link rel="stylesheet" href="../css/templatemo_style.css">
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
-   <link href="../css/font-awesome.min.css" rel="stylesheet">
-   <link href="../css/main.css" rel="stylesheet">
-   <link href="../css/folding.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/folding.css" rel="stylesheet">
 </head>
 <body>
     <header id="header" role="banner">
@@ -43,37 +42,44 @@
     </header>
 	<section id="main-slider-calc"></section>
 	<a id="about-method" class="anchor"></a>
-	<section>
-<div class="container">
-	<div class="box">
-		<div class="row">			
-				<div class="center">
-				<h2>Сортировки</h2>
-				<p class="lead"></p>
+	<section id="calculations">
+		<div class="container">
+			<div class="box">
+				<div class="row">
+					<div class="col-sm-2 col-xs-2 col-md-2 col-lg-2"></div>
+					<div class="col-sm-8 col-xs-8 col-md-8 col-lg-8">
+						<!--table class="table"-->			
+						<div class="center">
+							<h2>Sorts</h2>
+							<p class="lead"></p>
+						</div>
+						<hr>
+						<a id="calculations" class="anchor"></a>
+						<section>
+							<form role = "form" class="text-center"> 
+								<div class="form-group text-center">
+									<input id="TN" type="number" value="10"/>
+									<input id="NN" class="btn btn-default" type="button" value="Add number" onclick="add_new_number();"/><br>
+									<label for = "arr">Enter your array(use space to devide elements)</label>
+										<textarea id="numbs" name="arr" class = "form-control col-md-6 col-lg-12" rows = "6"></textarea><br>
+									<label for = "">(press "Refresh" after entering array)</label><br>
+									<input id="Barr" class="btn btn-info" type="button" value="Show array" onclick="showarray();"/>
+									<input id="Bars" class="btn btn-info" type="button" value="Refresh" onclick="rfarr();"/>
+								</div>
+								<div class = "form-group text-center">
+									<label for = "ars">Sorted array</label>
+										<textarea id="ars" name="ars" class = "form-control col-md-6 col-lg-10" rows = "6"></textarea><br>
+									<input id="Bars" class="btn btn-info" type="button" value="Sort" onclick="buble();showsortarray();"/>
+								</div>
+							</form>
+						</section>
+			<!--/table-->
+					</div>
+					<div class="col-sm-2 col-xs-2 col-md-2 col-lg-2"></div>
 				</div>
-			<hr>
-			<a id="calculations" class="anchor"></a>
-			<section>
-			<table class="table table-hover table-condensed text-center" border="1px">
-				<tr>
-					<td><input id="TN" type="number" value="10"/></td>
-					<td><input id="NN" class="btn btn-default" type="button" value="Add number" onclick="add_new_number();"/></td>
-				</tr>
-				<tr>
-					<td><textarea id="numbs" name="arr" rows=5 cols=100 wrap="on"></textarea></td>
-					<td><input id="Barr" class="btn btn-default" type="button" value="Show array" onclick="showarray();"/><br/>
-					<input id="Bars" class="btn btn-default" type="button" value="Refresh" onclick="rfarr();"/></td>
-				</tr>
-				<tr>
-					<td><textarea name="ars" rows=5 cols=100 wrap="on"></textarea></td>
-					<td><input id="Bars" class="btn btn-default" type="button" value="Sort" onclick="buble();showsortarray();"/></td>
-				</tr>
-			</table>
-			</section>
+			</div>
 		</div>
-	</div>
-</div>
-</section>
+	</section>
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/sorts.js"></script>
