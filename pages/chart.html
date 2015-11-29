@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	  <meta charset="utf-8">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	  <title>InvOpps: Chart</title>
-	 
-	  <!-- Bootstrap -->
-	 <link href="../css/bootstrap.min.css" rel="stylesheet">
-	 <link href="../css/font-awesome.min.css" rel="stylesheet">
-	 <link href="../css/main.css" rel="stylesheet">
-	 <link href="../css/folding.css" rel="stylesheet">
-	 
-	 <script src="../js/chart.js"></script>
-	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	 <!-- Include all compiled plugins (below), or include individual files as needed -->
-	 <script src="../js/bootstrap.min.js"></script>
-  </head>
-  <body onload="chartInit()" >
+<head>
+	<title>InvOpps: Chart</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/folding.css" rel="stylesheet">
+</head>
+<body onload="chartInit()" >
 	  <header id="header" role="banner">
 		  <div class="container">
 			  <div id="navbar" class="navbar navbar-default">
@@ -42,12 +33,11 @@
             </div>
         </div>
 	  </header>
-	  <section id="main-slider-calc"></section>
-	
+	  <section id="main-slider-calc"></section>	
 <div class="container">
 <div class="box first">
 	<div class="center">
-		<h2>Построение графиков</h2>
+		<h2>Plotting functions</h2>
 		<p class="lead"></p>
 	</div>
 
@@ -55,12 +45,12 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">Что происходит на данной страничке?</a>
+					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">What happens on the page?</a>
 				</h4>
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body text-info">
-					Эта странница предлагает в ваше распоряжение инструмент для построения графиков. 
+					This page allows you to execute plotting functions. 
 			
 					<br>
 					
@@ -89,18 +79,18 @@
  <form onsubmit="return draw(this)">
 			f(x) = <input type="text" name="func" size="24">
 			<select name="color" style="font-weight: bold" onchange="this.style.color = this.value">
-				<option value="maroon" style="color: maroon">Красный</option>
-				<option value="green" style="color: green">Зеленый</option>
-				<option value="olive" style="color: olive">Желтый</option>
-				<option value="navy" style="color: navy">Синий</option>
-				<option value="purple" style="color: purple">Фиолетовый</option>
+				<option value="maroon" style="color: maroon">Red</option>
+				<option value="green" style="color: green">Green</option>
+				<option value="olive" style="color: olive">Yellow</option>
+				<option value="navy" style="color: navy">Navy</option>
+				<option value="purple" style="color: purple">Purple</option>
 				<option value="teal" style="color: teal">Голубой</option>
 			</select>
 			<input type="submit" value="Построить">
 			<input type="button" value="Очистить" onclick="if ( confirm('Очистить?') ) chartInit()">
 		</form>
 		<br>
-		<canvas id="chart" width="800" height="520">HTML5 не поддерживается</canvas>
+		<canvas id="chart" width="800" height="520">HTML5 is not supported</canvas>
 	 <hr>
 
 	 <div class="container"><table class="table text-center table-bordered" id="log"></table></div>
@@ -146,5 +136,8 @@
 				return false;
 			}
 		</script>
+	<script src="../js/chart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
