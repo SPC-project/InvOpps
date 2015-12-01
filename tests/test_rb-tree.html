@@ -50,6 +50,23 @@
 				assert(!tree.right.isRed);
 				assert(tree.right.left.isRed);
 				assert(tree.right.right.isRed);
+
+
+			// remove non-existing node
+			remove(41); // nothing should change
+			remove(21);
+			remove(4);
+
+			// clean tree
+			zap();
+			insert(51);
+			insert(52);
+			insert(53);
+			assert(tree.data = 52);
+				assert(tree.left != null);
+					assert(tree.left.data = 52);
+				assert(tree.right != null);
+					assert(tree.right.data = 53);
 		</script>
 	</body>
 </html>
