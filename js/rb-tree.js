@@ -32,7 +32,7 @@ function double_rotation(dad, child, anotherChild){
 }
 
 function insert(data){
-	if( data == null ) return;
+	if( data == "" ) return;
 
 	var newNode = makeNode(data);
 	if( tree == null ){
@@ -44,6 +44,8 @@ function insert(data){
 		var child, another_child, prev_child, prev_child;
 		child = tree.data > data ? "left" : "right";
 
+		if( tree.data == data )
+			return;
 		if( tree[child] == null ){
 			tree[child] = newNode;
 			tree.isRed = false;
@@ -84,9 +86,12 @@ function insert(data){
 
 				if( child == prev_child ) // granddad, dad & curr is all lift- or right-handed nodes
 					granddad[to_rotation] = single_rotation(dad, prev_child, prev_anotherChild)
-				 else
+				else
 					granddad[to_rotation] = double_rotation(dad, prev_child, prev_anotherChild)
-			}
+
+				if( curr[child] == null )
+					break;
+			} 
 
 			if( curr[child].data == data ) 
 				break // avoid duplicates
@@ -202,7 +207,7 @@ function zap(){
 /////////////////////////////////////////////////
 
 function text_tree(){
-	document.getElementById("tree_view").innerHTML = "<div class='btn-group'>" + text_node(tree) + "</div>"
+	document.getElementById("tree_view").innerHTML = "<div class='btn-group'>" + text_node(tree) + "</div>";
 }
 
 function text_node(node) {
@@ -232,6 +237,7 @@ function add_this_node(value){
 	var value = document.getElementById("value").value
 	insert(value)
 	text_tree()
+	draw_tree()
 }
 
 function del_this_node(){
@@ -257,4 +263,8 @@ function value_keydown(e){
 			document.getElementById("value").value = "";
 			break;
 	}
+}
+
+function draw_tree(){
+
 }
