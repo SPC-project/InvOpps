@@ -32,16 +32,33 @@ function double_rotation(dad, child, anotherChild){
 }
 
 function insert(data){
+	if( data == null ) return;
+
 	var newNode = makeNode(data);
 	if( tree == null ){
 		tree = newNode; 
+		tree.isRed = false;
 	} else {
 		var fake_root = makeNode(null);
 		var granddad, dad, curr;
 		var child, another_child, prev_child, prev_child;
+		child = tree.data > data ? "left" : "right";
+
+		if( tree[child] == null ){
+			tree[child] = newNode;
+			tree.isRed = false;
+			return;
+		}
+
+		if( isRed(tree) && isRed(tree[child]) ){
+			tree = single_rotation(tree, child, child == "left" ? 'right' : 'left' );
+		} 
+
 		granddad = fake_root
-		curr = fake_root.right = tree;
-		child = tree.data > data ? "left" : "right"
+		fake_root.right = tree;
+		fake_root.isRed = false;
+		curr = fake_root;
+		child = 'right';
 
 		// Sync with http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx 
 		// t - granddad
@@ -85,10 +102,12 @@ function insert(data){
 		tree = fake_root.right
 	}
 
-	tree.isRed = false; // immediately obey to Constrain 1
+	//tree.isRed = false; // immediately obey to Constrain 1
 }
 
 function remove(data){
+	if( data == null ) return;
+
 	if( tree != null ) {
 		var fake_root = makeNode();
 		var dad = null, curr;
@@ -111,7 +130,7 @@ function remove(data){
 
 			// Push down red node
 			if( isRed(curr) && isRed(curr[child]) ) {
-				if( curr[another_child].isRed ) {
+				if( isRed(curr[another_child]) ) {
 					curr[prev_child] = single_rotation( curr[child], child, another_child );
 					curr = curr[prev_child]
 				} else {
@@ -181,6 +200,7 @@ function zap(){
 /////////////////////////////////////////////////
 ///////////////// Interface /////////////////////
 /////////////////////////////////////////////////
+
 function text_tree(){
 	document.getElementById("tree_view").innerHTML = "<div class='btn-group'>" + text_node(tree) + "</div>"
 }
@@ -189,7 +209,12 @@ function text_node(node) {
 	if( node == null )
 		return "";
 
-	var left_tag = "<button type='button' class='btn btn-default'>";
+	var left_tag = "<button type='button' class='btn ";
+	if( node.isRed )
+		left_tag += "btn-danger";
+	else
+		left_tag += "btn-default";
+	left_tag += "'>";
 	var value = node.data;
 	if( node == tree )
 		value = "<b>" + value + "</b>";

@@ -27,7 +27,6 @@
 			insert(5);
 			assert(tree != null);
 				assert(tree.data = 5);
-					assert(!tree.isRed);		// root always black
 			insert(4);
 			assert(tree.left != null);
 					assert(tree.left.data == 4);
@@ -67,6 +66,22 @@
 					assert(tree.left.data = 52);
 				assert(tree.right != null);
 					assert(tree.right.data = 53);
+
+			// similar data
+			zap();
+			insert(77);
+			insert(77);
+			assert( tree.data.right == null );
+
+			// red violation
+			zap();
+			insert(45);
+			insert(77);
+			insert(84);
+			insert(88);
+			insert(89);
+			insert(90);
+			insert(91);
 		</script>
 	</body>
 </html>

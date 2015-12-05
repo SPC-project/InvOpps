@@ -30,6 +30,9 @@
 		.btn-default{
 			border: 1px solid #cccccc;
 		}
+		.btn-group>.btn-danger{
+			border: 1px solid #cccccc;
+		}
   </style>
 </head>
 
@@ -115,13 +118,13 @@
 					<div class="input-group" data-toggle="tooltip" data-placement="bottom"
 							title="прощенья просим, рано">
 						<span class="input-group-btn">
-							<button class="btn btn-default border-btn-left" type="button"
+							<button class="btn btn-default" type="button"
 								onmousedown="add_this_node()">
 								Добавить
 							</button>
 						</span>
 						<input type="text" class="form-control central-element text-center" id="value"
-								onkeydown="value_keydown(event)">
+								onkeydown="value_keydown(event)" onclick="this.select()">
 						<span class="input-group-btn">
 							<button class="btn btn-default" type="button"
 								onclick="del_this_node()">
