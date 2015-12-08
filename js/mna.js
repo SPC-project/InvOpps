@@ -6,19 +6,86 @@ var selected_row = null;
 var max_allowed_steps_count = 1000;
 
 function load_example(index){
+	clean_rules("MNA_scheme");
+	clean_rules("log");
 	switch( index ){
-		case 0:
-			clean_rules("MNA_scheme");
-			clean_rules("log");
-			break;
 		case 1:
 			add_rule("1", "0|");
 			add_rule("|0", "0||");
 			add_rule("0", empty_symbol);
-			var example = Math.floor((Math.random() * 16) + 1);
+			var	example = Math.floor((Math.random() * 16) + 1);
 			document.getElementById("coded_text").value = example.toString(2);
 			break;
+		case 2:
+			add_rule(".a", "m.");
+			add_rule(".b", "n.");
+			add_rule(".c", "o.");
+			add_rule(".d", "p.");
+			add_rule(".e", "q.");
+			add_rule(".f", "r.");
+			add_rule(".g", "s.");
+			add_rule(".h", "t.");
+			add_rule(".i", "u.");
+			add_rule(".j", "v.");
+			add_rule(".k", "w.");
+			add_rule(".l", "x.");
+			add_rule(".m", "y.");
+			add_rule(".n", "y.");
+			add_rule(".o", "z.");
+			add_rule(".p", "a.");
+			add_rule(".q", "b.");
+			add_rule(".r", "c.");
+			add_rule(".s", "d.");
+			add_rule(".t", "e.");
+			add_rule(".u", "f.");
+			add_rule(".v", "g.");
+			add_rule(".w", "h.");
+			add_rule(".x", "i.");
+			add_rule(".y", "j.");
+			add_rule(".y", "k.");
+			add_rule(".z", "l.");
+			add_rule(". ", " .");
+			var example = ".hello wolrd"
+			document.getElementById("coded_text").value = example;
+			break;
+		case 3:
+			add_rule("m.", ".a" );
+			add_rule("n.", ".b" );
+			add_rule("o.", ".c" );
+			add_rule("p.", ".d" );
+			add_rule("q.", ".e" );
+			add_rule("r.", ".f" );
+			add_rule("s.", ".g" );
+			add_rule("t.", ".h" );
+			add_rule("u.", ".i" );
+			add_rule("v.", ".j" );
+			add_rule("w.", ".k" );
+			add_rule("x.", ".l" );
+			add_rule("y.", ".m" );
+			add_rule("y.", ".n" );
+			add_rule("z.", ".o" );
+			add_rule("a.", ".p" );
+			add_rule("b.", ".q" );
+			add_rule("c.", ".r" );
+			add_rule("d.", ".s" );
+			add_rule("e.", ".t" );
+			add_rule("f.", ".u" );
+			add_rule("g.", ".v" );
+			add_rule("h.", ".w" );
+			add_rule("i.", ".x" );
+			add_rule("j.", ".y" );
+			add_rule("k.", ".y" );
+			add_rule("l.", ".z" );
+			add_rule(" .", ". ");
+			break; 
 	}
+}
+
+function copyToInput(){
+	var from = document.getElementById("decoded_text");
+	var to = document.getElementById("coded_text");
+	to.value = from.innerHTML;
+	from.innerHTML = "";
 }
 
 function set_limit(number){

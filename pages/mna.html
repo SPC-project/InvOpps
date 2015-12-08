@@ -80,8 +80,8 @@
 								<select id="examples" class="form-control" onchange="load_example(parseInt(this.value))">
 									<option value="0">Ничего</option>
 									<option value="1">Из бинарной в унарную</option>
-									<option value="2"></option>
-									<option value="3"></option>
+									<option value="2">Пример шифра Цезаря</option>
+									<option value="3">Пример обратного шифра Цезаря</option>
 									<option value="4"></option>
 								</select>
 							</div>	
@@ -154,6 +154,7 @@
 		 <div class="col-xs-6 col-md-6">
 			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
 					<li class="list-group-item" style="height: 35px; padding: 7px 15px;">
+						<button class="btn btn-default" onclick="copyToInput()"></button>
 						<span id="decoded_text">Место для обработанного текста</span> 
 						<span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='badge'>29</span>
 					</li>
