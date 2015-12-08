@@ -1,7 +1,9 @@
 var tree = null;
+var tree_depth = 0;
 
 function makeNode(value){
 	return {
+		pos: {horizontal: -1, vertical: -1, layer_width: -1},
 		data:  value,
 		left:  null,
 		right: null,
@@ -206,8 +208,33 @@ function zap(){
 ///////////////// Interface /////////////////////
 /////////////////////////////////////////////////
 
-function text_tree(){
-	document.getElementById("tree_view").innerHTML = "<div class='btn-group'>" + text_node(tree) + "</div>";
+function pack_tree(){
+	if( tree == null )
+		return [];
+
+	var arr = [ tree ];
+	var curr_level = [tree];
+	var lvl = 0
+
+	while( curr_level.length > 0 ) {
+		var next_level = [];
+		for( var i = 0, L = curr_level.length; i < L; i++ ){
+			var node = curr_level[i];
+			node.pos.vertical = lvl;
+			node.pos.horizontal = i;
+			node.pos.layer_width = L;
+			arr.push(node);
+
+			if( node.left != null )
+				next_level.push( node.left )
+			if( node.right != null )
+				next_level.push( node.right )
+		}
+		curr_level = next_level;
+		lvl++;
+	}
+	tree_depth = lvl;
+	return arr;
 }
 
 function text_node(node) {
@@ -230,25 +257,26 @@ function text_node(node) {
 function add_rnd_node(){
 	var value = Math.floor((Math.random() * 100) + 1);
 	insert(value)
-	text_tree()
+	draw_tree()
 }
 
 function add_this_node(value){
-	var value = document.getElementById("value").value
+	var value = document.getElementById("value").value;
+	if( Number(value) != Number.Nan )
+		value = Number(value)
 	insert(value)
-	text_tree()
 	draw_tree()
 }
 
 function del_this_node(){
 	var value = document.getElementById("value").value
 	remove(value)
-	text_tree()
+	draw_tree()
 }
 
 function clear_tree(){
 	zap()
-	text_tree()
+	draw_tree()
 }
 
 function value_keydown(e){
@@ -266,5 +294,51 @@ function value_keydown(e){
 }
 
 function draw_tree(){
+	// element 'svg' initialized in .html
+	svg.selectAll("*").remove();
+	var svg_height = svg.style("height");
+	svg_height = svg_height.substring(0, svg_height.length-2);
+	svg_height = Number(svg_height);
+	if( svg_height < 52*tree_depth + 30 )
+		svg.style("height", 30 + 52*tree_depth )
 
+	var groups = svg.selectAll("g")
+		 .data( pack_tree() )
+		 .enter()
+		 .append("g");
+
+	groups.attr("transform", function(d, i) {
+		var x = 360 + (d.pos.horizontal+1)*Math.floor(360/Math.pow(2, d.pos.vertical));
+		var y = 44 * d.pos.vertical + 30;
+		return "translate(" + [x,y] + ")";
+	})
+	  
+	var circles = groups.append("circle")
+		 .attr({
+			cx: function(d,i){
+			  return 0;
+			},
+			cy: function(d,i){
+			  return 0;
+			},
+			r: 18,
+			fill: "white",
+			stroke: "#2F3550",
+			"stroke-width": 2.4192
+		 })
+		 
+	var label = groups.append("text")
+		 .text(function(d){
+				return d.data;
+		 })
+		 .attr({
+			 "alignment-baseline": "middle",
+			 "text-anchor": "middle",
+			 "fill": function(d){
+				 if( d.isRed)
+					 return "red"
+				 else
+					 return "black"
+			 }
+		 })
 }
