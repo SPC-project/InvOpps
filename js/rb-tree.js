@@ -237,23 +237,6 @@ function pack_tree(){
 	return arr;
 }
 
-function text_node(node) {
-	if( node == null )
-		return "";
-
-	var left_tag = "<button type='button' class='btn ";
-	if( node.isRed )
-		left_tag += "btn-danger";
-	else
-		left_tag += "btn-default";
-	left_tag += "'>";
-	var value = node.data;
-	if( node == tree )
-		value = "<b>" + value + "</b>";
-	var right_tag = "</button>";
-	return text_node(node.left) + left_tag + value + right_tag + text_node(node.right)
-}
-
 function add_rnd_node(){
 	var value = Math.floor((Math.random() * 100) + 1);
 	insert(value)
