@@ -1,0 +1,24 @@
+
+    .en .ru,
+    .ru .en {
+      display: none;
+    }
+    .lang-switcher {
+      border-bottom: 1px dashed;
+      cursor: pointer;
+    }
+    .lang-switcher:hover {
+      color: #b33;
+    }
+    .en .lang-switcher--en,
+    .ru .lang-switcher--ru {
+      color: #000;
+      border-bottom: none;
+      font-weight: bold;
+      cursor: default;
+    }
+    body {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 16px;
+    }
