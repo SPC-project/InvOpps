@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html >
+	<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
   <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +19,18 @@
 	  <!-- Bootstrap -->
 	 <link href="../css/bootstrap.min.css" rel="stylesheet">
 	 <link href="../css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/lang.css">
 	 <link href="../css/main.css" rel="stylesheet">
 	 <link href="../css/folding.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("temp").className = lang;
+		});
+		
+
+	</script>
 	 
 	 <script src="../js/mna.js"></script>
 	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -19,7 +38,7 @@
 	 <!-- Include all compiled plugins (below), or include individual files as needed -->
 	 <script src="../js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <body id = "temp">
 	  <header id="header" role="banner">
 		  <div class="container">
 			  <div id="navbar" class="navbar navbar-default">
@@ -32,11 +51,17 @@
 					  </button>
 					  <a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
 				 </div>
+				<div align = "right">
+				  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+				  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+				</div>
 				 <div class="collapse navbar-collapse">
 					  <ul class="nav navbar-nav">
 							<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
-							<li><a href="#calculations">Calculations</a></li>
-							<li><a href="#about">About</a></li>
+							<li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
+							<li><a href="#about" class = "en" lang = "en">About</a></li>
+							<li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
+							<li><a href="#about" class = "ru" lang = "ru">Об алгоритме</a></li>
 					  </ul>
 				 </div>
             </div>
@@ -47,7 +72,8 @@
 <div class="container">
 <div class="box first">
 	<div class="center">
-		<h2>Markov's normal algorithms</h2>
+		<h2 class = "ru" lang = "ru">Марковские нормальные алгоритмы</h2>
+		<h2 class = "en" lang = "en">Markov's normal algorithms</h2>
 		<p class="lead"></p>
 	</div>
 
@@ -55,18 +81,20 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">What happens on the page?</a>
+					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne" class = "ru" lang = "ru">Что происходит на данной страничке?</a>
+					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne" class = "en" lang = "en">What happens on the page?</a>
 				</h4>
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body text-info">
-					This page provides you with tools for building <a href="#about">Markov normal algorithms</a> - one of the existing ways to formally define the algorithm. Below, you can see how to use functionality. 
+					<p class = "en" lang = "en">This page provides you with tools for building <a href="#about">Markov normal algorithms</a> - one of the existing ways to formally define the algorithm. Below, you can see how to use functionality.</p> 
+					<p class = "ru" lang = "ru">Эта странница предлагает в ваше распоряжение инструмент для построения <a href="#about">нормальных алгоритмов Маркова</a> - одного из существующих способов формально определить алгоритм. Иллюстрации ниже призвана прояснить для вас его интерфейс.</p> 
 					<br><br>
 					<div class = "text-center"><img src="../images/mna_guide.png" alt="Очень жаль, что не сработало"></div>
-					<br><p>The workspace is divided into three zones: table <i>rules</i>, buttons и input/output area.</p>
-					<p>Every rule consists of<i>key</i> (left button) and <i>substitution</i>. At run time, in sequence, 
-					each key corresponding to it is replaced by substitution. You can run one test case, to finally clarify 
-					the whole circuit  - if you press the green button, you will get step by step description.</p>
+					<br><p class = "ru" lang = "ru">Рабочее пространство разделено на три зоны: таблицу <i>правил</i>, блок кнопок и поля ввода/вывода.</p>
+					<br><p class = "en" lang = "en">The workspace is divided into three zones: table <i>rules</i>, buttons и input/output area.</p>
+					<p class = "ru" lang ="ru">Каждое правило состоит из <i>ключа</i> (левая колонка) и <i>подстановки</i>. Во время выполнения, в определенной последовательности, каждый ключ заменяется на соответствующую ему подстановку. Чтобы окончательно прояснить всю эту схему, можете запустить один из тестовых примеров - если нажать на зеленую кнопку, то получите пошаговое описание.</p>
+					<p class = "en" lang ="en">Every rule consists of<i>key</i> (left button) and <i>substitution</i>. At run time, in sequence, each key corresponding to it is replaced by substitution. You can run one test case, to finally clarify the whole circuit - if you press the green button, you will get step by step description.</p>
 					<br>
 					<div class="row text-center">
 						<div class="col-xs-6 col-md-6">
@@ -74,8 +102,8 @@
 								title="Демонстрационные наборы правил для ознакомления с Марковскими алгоритмами">
 								<span class="input-group-addon">Examples:</span>
 								<select id="examples" class="form-control" onchange="load_example(parseInt(this.value))">
-									<option value="0">Nothing</option>
-									<option value="1">From binary to unary</option>
+									<option value="0">Ничего</option>
+									<option value="1">Из бинарной в унарную</option>
 									<option value="2"></option>
 									<option value="3"></option>
 									<option value="4"></option>
@@ -119,7 +147,7 @@
 	 <table class="table text-center" id="MNA_control_elements">
 		<tr>
 			<td>
-				<input class="btn btn-default" type="button" value="Add rule" onclick="add_new_rule();"
+				<input class="btn btn-default" type="button" value="Add rules" onclick="add_new_rule();"
 					data-toggle="tooltip" data-placement="top" data-delay="500" 
 					title="С тем же эффектом можно нажать 'Enter' при фокусе на поле ввода таблицы" />
 			</td>
@@ -134,9 +162,9 @@
 					title="Алгоритм обработает текст и распишет каждый свой шаг" />
 			</td>
 			<td>
-				<input id="removeBut" class="btn btn-default" type="button" value="Clear out"
+				<input id="removeBut" class="btn btn-default" type="button" value="Clear"
 					data-toggle="tooltip" data-placement="top" data-delay="500" 
-					title="Clear out " />
+					title="Очистить таблицу правил" />
 			</td>
 		</tr>
 	 </table>
@@ -148,7 +176,7 @@
 					title="Текст, над которым алгоритм будет работать"/>
 		 </div>
 		 <div class="col-xs-6 col-md-6">
-			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Result of the algorithm">
+			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
 					<li class="list-group-item" style="height: 35px; padding: 7px 15px;">
 						<span id="decoded_text">Place for processed text</span> 
 						<span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='badge'>29</span>
@@ -162,7 +190,7 @@
 </div>
 
 <section id="about"><a id="about" class="anchor"></a></section>
-
+		<script src="../js/lang.js"></script>
 		<script>
 			<!-- Enable tooltips -->
 			$(document).ready(function(){
