@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,7 +82,7 @@
 									<option value="1">Из бинарной в унарную</option>
 									<option value="2">Пример шифра Цезаря</option>
 									<option value="3">Пример обратного шифра Цезаря</option>
-									<option value="4"></option>
+									<option value="4">Гибридный троичный код в двоичный</option>
 								</select>
 							</div>	
 						</div>
@@ -102,19 +102,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info text-info">
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">Collapsible Group Item #2</a>
-				</h4>
-			</div>
-			<div id="collapseTwo" class="panel-collapse collapse">
-				<div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-			</div>
-		</div>
 	</div>
 
-	<hr>
 	<br>
 	<br>
 <section id="calculations">
@@ -151,17 +140,23 @@
 					data-toggle="tooltip" data-placement="bottom" value="Текст, над которым алгоритм будет работать"
 					title="Текст, над которым алгоритм будет работать"/>
 		 </div>
-		 <div class="col-xs-6 col-md-6">
-			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
-					<li class="list-group-item" style="height: 35px; padding: 7px 15px;">
-						<button class="btn btn-default" onclick="copyToInput()"></button>
-						<span id="decoded_text">Место для обработанного текста</span> 
-						<span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='badge'>29</span>
-					</li>
-			 </ul>
-		</div>
+		 <div class="col-xs-6 col-md-6" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
+			 <div class="input-group">
+				 <span class="input-group-btn" data-toggle='tooltip' data-placement='top' 
+				 title='Скопировать в поле ввода'>
+					 <button class="btn btn-default" type="button" onclick="copyToInput()">⇦</button>
+				 </span>
+				 <span type="text" class="form-control" placeholder="Username" 
+					 aria-describedby="basic-addon1" id="decoded_text">
+					 Место для обработанного текста
+				 </span>
+				 <span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='input-group-addon'>29</span>
+			 </div>
+		 </div>
 	 </div>
-	 <div class="container"><table class="table text-center table-bordered" id="log"></table></div>
+	 <div class="container">
+		 <table class="table text-center table-bordered" id="log"></table>
+	 </div>
 </section>
 </div>
 </div>
