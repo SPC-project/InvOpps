@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html >
 	<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
 <script type="text/javascript">
@@ -9,6 +10,9 @@ if(!lang)
 	lang = 'ru';
 }
 </script>
+
+<html >
+
   <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,11 +98,18 @@ if(!lang)
 			<div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body text-info">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1bba84f2c97884c94d3a7edbabc5e26e3dc0f289
 					<p class = "en" lang = "en">This page provides you with tools for building <a href="#about">Markov normal algorithms</a> - one of the existing ways to formally define the algorithm. Below, you can see how to use functionality.</p> 
 					<p class = "ru" lang = "ru">Эта странница предлагает в ваше распоряжение инструмент для построения <a href="#about">нормальных алгоритмов Маркова</a> - одного из существующих способов формально определить алгоритм. Иллюстрации ниже призвана прояснить для вас его интерфейс.</p> 
-=======
+
 					Эта странница предлагает в ваше распоряжение инструмент для построения <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC">нормальных алгоритмов Маркова</a> - одного из существующих способов формально определить алгоритм. Иллюстрации ниже призвана прояснить для вас его интерфейс. 
+<<<<<<< HEAD
 >>>>>>> 0870be587d0711e58c8508426da81198fb7c08dd
+=======
+
+>>>>>>> 1bba84f2c97884c94d3a7edbabc5e26e3dc0f289
 					<br><br>
 					<div class = "text-center"><img src="../images/mna_guide.png" alt="Очень жаль, что не сработало"></div>
 					<br><p class = "ru" lang = "ru">Рабочее пространство разделено на три зоны: таблицу <i>правил</i>, блок кнопок и поля ввода/вывода.</p>
@@ -112,11 +123,16 @@ if(!lang)
 								title="Демонстрационные наборы правил для ознакомления с Марковскими алгоритмами">
 								<span class="input-group-addon">Examples:</span>
 								<select id="examples" class="form-control" onchange="load_example(parseInt(this.value))">
-									<option value="0">Ничего</option>
-									<option value="1">Из бинарной в унарную</option>
-									<option value="2">Пример шифра Цезаря</option>
-									<option value="3">Пример обратного шифра Цезаря</option>
-									<option value="4"></option>
+									<option value="0" class = "ru" lang = "ru">Ничего</option>
+									<option value="1" class = "ru" lang = "ru">Из бинарной в унарную</option>
+									<option value="2" class = "ru" lang = "ru">Пример шифра Цезаря</option>
+									<option value="3" class = "ru" lang = "ru">Пример обратного шифра Цезаря</option>
+									<option value="4" class = "ru" lang = "ru">Гибридный троичный код в двоичный</option>
+									<option value="0" class = "en" lang = "en">Nothing</option>
+									<option value="1" class = "en" lang = "en">From binary to unary</option>
+									<option value="2" class = "en" lang = "en">An example of the Caesar cipher</option>
+									<option value="3" class = "en" lang = "en">An example of reverse Caesar cipher</option>
+									<option value="4" class = "en" lang = "en">Hybrid ternary code in binary</option>
 								</select>
 							</div>	
 						</div>
@@ -125,10 +141,14 @@ if(!lang)
 								title="Верхнее ограничение на количество итераций алгоритма. Помогает избежать зависания">
 								<span class="input-group-addon">Limitation:</span>
 								<select class="form-control" onchange="set_limit(parseFloat(this.value))">
-									<option value="0.5" >500 steps</option>
-									<option value="1" selected>1000 steps</option>
-									<option value="2"> 2000 steps</option>
-									<option value="5"> 5000 steps</option>
+									<option value="0.5" class = "en" lang = "en">500 steps</option>
+									<option value="1" selected class = "en" lang = "en">1000 steps</option>
+									<option value="2" class = "en" lang = "en"> 2000 steps</option>
+									<option value="5" class = "en" lang = "en"> 5000 steps</option>
+									<option value="0.5" class = "ru" lang = "ru">500 шагов</option>
+									<option value="1" selected class = "ru" lang = "ru">1000 шагов</option>
+									<option value="2" class = "ru" lang = "ru"> 2000 шагов</option>
+									<option value="5" class = "ru" lang = "ru"> 5000 шагов</option>
 								</select>
 							</div>	
 						</div>
@@ -136,19 +156,8 @@ if(!lang)
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-info text-info">
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">Collapsible Group Item #2</a>
-				</h4>
-			</div>
-			<div id="collapseTwo" class="panel-collapse collapse">
-				<div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
-			</div>
-		</div>
 	</div>
 
-	<hr>
 	<br>
 	<br>
 <section id="calculations">
@@ -185,21 +194,29 @@ if(!lang)
 					data-toggle="tooltip" data-placement="bottom" value="Text for processing algorithm"
 					title="Текст, над которым алгоритм будет работать"/>
 		 </div>
+
 		 <div class="col-xs-6 col-md-6">
 			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
 					<li class="list-group-item" style="height: 35px; padding: 7px 15px;">
+<<<<<<< HEAD
 <<<<<<< HEAD
 						<span id="decoded_text">Place for processed text</span> 
 =======
 						<button class="btn btn-default" onclick="copyToInput()"></button>
 						<span id="decoded_text">Место для обработанного текста</span> 
 >>>>>>> 0870be587d0711e58c8508426da81198fb7c08dd
+=======
+						<span id="decoded_text">Place for processed text</span> 
+>>>>>>> 1bba84f2c97884c94d3a7edbabc5e26e3dc0f289
 						<span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='badge'>29</span>
 					</li>
 			 </ul>
 		</div>
+
+	 <div class="container">
+		 <table class="table text-center table-bordered" id="log"></table>
+
 	 </div>
-	 <div class="container"><table class="table text-center table-bordered" id="log"></table></div>
 </section>
 </div>
 </div>
