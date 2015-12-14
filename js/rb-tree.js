@@ -3,7 +3,7 @@ var tree_depth = 0;
 
 function makeNode(value){
 	return {
-		pos: {horizontal: -1, vertical: -1, layer_width: -1},
+		pos: {row: -1, level: -1,},
 		data:  value,
 		left:  null,
 		right: null,
@@ -207,33 +207,42 @@ function zap(){
 /////////////////////////////////////////////////
 ///////////////// Interface /////////////////////
 /////////////////////////////////////////////////
+function depth_update(node, lvl){
+	if(node == null){
+		if(tree_depth < lvl)
+			tree_depth = lvl;
+		return
+	}
+
+	depth_update(node.left, lvl+1);
+	depth_update(node.right, lvl+1);
+}
+
+function pack_node(arr, node, row_pos, lvl, offset){
+	if( node == null ){
+		if( lvl > tree_depth )
+			tree_depth = lvl;
+		return
+	}
+
+	node.pos.row = row_pos;
+	node.pos.level = lvl;
+
+	var new_offset = offset/2
+	pack_node( arr, node.left, row_pos - new_offset, lvl+1, new_offset );
+	arr.push( node );
+	pack_node( arr, node.right, row_pos + new_offset, lvl+1, new_offset );
+}
 
 function pack_tree(){
-	if( tree == null )
+	tree_depth = 0;
+	if( tree == null ){
 		return [];
-
-	var arr = [ tree ];
-	var curr_level = [tree];
-	var lvl = 0
-
-	while( curr_level.length > 0 ) {
-		var next_level = [];
-		for( var i = 0, L = curr_level.length; i < L; i++ ){
-			var node = curr_level[i];
-			node.pos.vertical = lvl;
-			node.pos.horizontal = i;
-			node.pos.layer_width = L;
-			arr.push(node);
-
-			if( node.left != null )
-				next_level.push( node.left )
-			if( node.right != null )
-				next_level.push( node.right )
-		}
-		curr_level = next_level;
-		lvl++;
 	}
-	tree_depth = lvl;
+	depth_update(tree, 0);
+	var arr = [];
+	pack_node(arr, tree, 0, 0, Math.pow(2, tree_depth) );
+	
 	return arr;
 }
 
@@ -245,7 +254,7 @@ function add_rnd_node(){
 
 function add_this_node(value){
 	var value = document.getElementById("value").value;
-	if( Number(value) != Number.Nan )
+	if( !isNaN(Number(value)) )
 		value = Number(value)
 	insert(value)
 	draw_tree()
@@ -276,24 +285,33 @@ function value_keydown(e){
 	}
 }
 
+function get_from_svg(svg, what) {
+	var param = svg.style(what);
+	param = param.substring(0, param.length-2); // e.g. 2px
+	return Number(param);
+}
+
 function draw_tree(){
 	// element 'svg' initialized in .html
 	svg.selectAll("*").remove();
-	var svg_height = svg.style("height");
-	svg_height = svg_height.substring(0, svg_height.length-2);
-	svg_height = Number(svg_height);
-	if( svg_height < 52*tree_depth + 30 )
-		svg.style("height", 30 + 52*tree_depth )
-
+	var radius = 18; 
+	var svg_height = get_from_svg(svg, "height");
+	var svg_width = get_from_svg(svg, "width") - 4*radius;
+	var x_center = svg_width/2;
+	var between_nodes = x_center / Math.pow(2, tree_depth);
+	var data = pack_tree();
 	var groups = svg.selectAll("g")
-		 .data( pack_tree() )
+		 .data( data )
 		 .enter()
 		 .append("g");
 
+	if( svg_height < 52*tree_depth + 30 )
+		svg.style("height", 30 + 52*tree_depth )
+
 	groups.attr("transform", function(d, i) {
-		var x = 360 + (d.pos.horizontal+1)*Math.floor(360/Math.pow(2, d.pos.vertical));
-		var y = 44 * d.pos.vertical + 30;
-		return "translate(" + [x,y] + ")";
+		var x = 2*radius + x_center + between_nodes*d.pos.row;
+		var y = 44 * d.pos.level + 30;
+		return "translate(" + [Math.floor(x), Math.floor(y)] + ")";
 	})
 	  
 	var circles = groups.append("circle")
@@ -304,7 +322,7 @@ function draw_tree(){
 			cy: function(d,i){
 			  return 0;
 			},
-			r: 18,
+			r: radius,
 			fill: "white",
 			stroke: "#2F3550",
 			"stroke-width": 2.4192
@@ -312,16 +330,27 @@ function draw_tree(){
 		 
 	var label = groups.append("text")
 		 .text(function(d){
-				return d.data;
+			 return d.data;
 		 })
 		 .attr({
 			 "alignment-baseline": "middle",
 			 "text-anchor": "middle",
+			 "font-style": function(d){
+				 if( isNaN(Number(d.data)) )
+					 return "italic"
+				 else
+					 return "normal"
+			 },
 			 "fill": function(d){
 				 if( d.isRed)
 					 return "red"
 				 else
 					 return "black"
 			 }
-		 })
+		 });
+	 svg.selectAll("*").on("click", function(d,i){ 
+		 document.getElementById("value").value = d.data;
+	 });
 }
+
+window.onresize = draw_tree;
