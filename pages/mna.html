@@ -34,9 +34,15 @@ if(!lang)
 	 
 	 <script src="../js/mna.js"></script>
 	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	 <script src="../js/jquery.js"></script>
 	 <!-- Include all compiled plugins (below), or include individual files as needed -->
 	 <script src="../js/bootstrap.min.js"></script>
+	 
+	 <style type="text/css">
+		.btn-default {
+			border: 1px solid #cccccc;
+		}
+  </style>
   </head>
   <body id = "temp">
 	  <header id="header" role="banner">
@@ -87,8 +93,12 @@ if(!lang)
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body text-info">
+<<<<<<< HEAD
 					<p class = "en" lang = "en">This page provides you with tools for building <a href="#about">Markov normal algorithms</a> - one of the existing ways to formally define the algorithm. Below, you can see how to use functionality.</p> 
 					<p class = "ru" lang = "ru">Эта странница предлагает в ваше распоряжение инструмент для построения <a href="#about">нормальных алгоритмов Маркова</a> - одного из существующих способов формально определить алгоритм. Иллюстрации ниже призвана прояснить для вас его интерфейс.</p> 
+=======
+					Эта странница предлагает в ваше распоряжение инструмент для построения <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC">нормальных алгоритмов Маркова</a> - одного из существующих способов формально определить алгоритм. Иллюстрации ниже призвана прояснить для вас его интерфейс. 
+>>>>>>> 0870be587d0711e58c8508426da81198fb7c08dd
 					<br><br>
 					<div class = "text-center"><img src="../images/mna_guide.png" alt="Очень жаль, что не сработало"></div>
 					<br><p class = "ru" lang = "ru">Рабочее пространство разделено на три зоны: таблицу <i>правил</i>, блок кнопок и поля ввода/вывода.</p>
@@ -104,8 +114,8 @@ if(!lang)
 								<select id="examples" class="form-control" onchange="load_example(parseInt(this.value))">
 									<option value="0">Ничего</option>
 									<option value="1">Из бинарной в унарную</option>
-									<option value="2"></option>
-									<option value="3"></option>
+									<option value="2">Пример шифра Цезаря</option>
+									<option value="3">Пример обратного шифра Цезаря</option>
 									<option value="4"></option>
 								</select>
 							</div>	
@@ -178,7 +188,12 @@ if(!lang)
 		 <div class="col-xs-6 col-md-6">
 			 <ul type="text" data-toggle="tooltip" data-placement="bottom" class="list-group" title="Результат работы алгоритма">
 					<li class="list-group-item" style="height: 35px; padding: 7px 15px;">
+<<<<<<< HEAD
 						<span id="decoded_text">Place for processed text</span> 
+=======
+						<button class="btn btn-default" onclick="copyToInput()"></button>
+						<span id="decoded_text">Место для обработанного текста</span> 
+>>>>>>> 0870be587d0711e58c8508426da81198fb7c08dd
 						<span id="size_tip" data-toggle='tooltip' data-placement='right' title='Кол-во символов' class='badge'>29</span>
 					</li>
 			 </ul>
