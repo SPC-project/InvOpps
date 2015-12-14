@@ -548,3 +548,4 @@ position: relative;
 height: 1px;
 width: 1px;
 }
+textarea#numbs, textarea#ars{resize: none;}

@@ -1,14 +1,25 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+	<meta name="title-ru" content="InvOpps" id="title-ru">
+ 	 <meta name="title-en" content="InvOpps" id="title-en">
     <title>InvOpps</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+	<link href="css/lang.css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function()
@@ -26,6 +37,8 @@
 
 				$(obj).find("span").first().addClass("on");
 			});
+			document.getElementById("temp").className = lang;
+			
 		});
 
 	function sliderJS (obj, sl) // slider function
@@ -46,9 +59,9 @@
 		return false;
 	});
 </script>
-</head><!--/head-->
+</head>
 
-<body data-spy="scroll" data-target="#navbar" data-offset="0">
+<body id="temp" data-spy="scroll" data-target="#navbar" data-offset="0" >
     <header id="header" role="banner">
         <div class="container">
             <div id="navbar" class="navbar navbar-default">
@@ -61,12 +74,21 @@
                     </button>
                     <a class="navbar-brand" href="index.html"><img src="images/spu.png"></a>
                 </div>
+			<div align = "right">
+			  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+			  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+			</div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#main-slider"><i class="icon-home"></i></a></li>
-                        <li><a href="#technologies">Technologies</a></li>
-                        <li><a href="#calculations">Calculations</a></li>
-                        <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#technologies" class = "en" lang = "en">Technologies</a></li>
+                        <li><a href="#calculations"  class = "en" lang = "en">Calculations</a></li>
+                        <li><a href="#about-us"  class = "en" lang = "en">About Us</a></li>
+			<li><a href="#technologies" class = "ru" lang = "ru">Технологии</a></li>
+                        <li><a href="#calculations"  class = "ru" lang = "ru">Вычисленния</a></li>
+                        <li><a href="#about-us"  class = "ru" lang = "ru">О нас</a></li>
+			
+
                     </ul>
                 </div>
             </div>
@@ -109,48 +131,56 @@
             <div class="box">
                 <div class="row">
 				<div class="center gap">
-                    <h2>Technologies</h2>
+                    <h2 class = "en" lang = "en">Technologies</h2>
+			<h2 class = "ru" lang = "ru">Технологии</h2>
                 </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-html5 icon-md icon-color1"></i>
                             <h4>HTML</h4>
-                            <p>HTML is the main markup language for describing the structure of Web pages.</p>
+                            <p class = "en" lang = "en">HTML is the main markup language for describing the structure of Web pages.</p>
+			<p class = "ru" lang = "ru">HTML является основным языком разметки для описания структуры веб-страниц.</p>
+                        
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-css3 icon-md icon-color2"></i>
                             <h4>CSS</h4>
-                            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document.</p>
+                            <p class = "en" lang = "en">Cascading Style Sheets (CSS) is a style sheet language used for describing the look and formatting of a document.</p>
+                                <p class = "ru" lang = "ru">Cascading Style Sheets (CSS ) это язык стилей используется для описания внешнего вида и форматирования документа.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-bold icon-md icon-color4"></i>
                             <h4>Bootstrap</h4>
-                            <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</p>
+                            <p class = "en" lang = "en">Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</p>
+                                <p class = "ru" lang = "ru">Bootstrap cамый популярный фреймворк для разработки адаптивных и мобильных web-проектов.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-js icon-md icon-color5">JS</i>
                             <h4>JS</h4>
-                            <p>JavaScript is most commonly used as a client side scripting language, is a lightweight, interpreted, object-oriented language with first-class functions.</p>
+                            <p class = "en" lang = "en">JavaScript is most commonly used as a client side scripting language, is a lightweight, interpreted, object-oriented language with first-class functions.</p>
+                                <p class = "ru" lang = "ru">JavaScript часто используеться в качестве клиентской стороны, скриптовый язык, интерпретированый, объектно-ориентированный язык.</p>
                         </div>
                     </div>
 					<div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-d3 icon-md icon-color3">D3</i>
                             <h4>D3.js</h4>
-                            <p>D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS.</p>
+                            <p class = "en" lang = "en">D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS.</p>
+                                <p class = "ru" lang = "ru">D3.js библиотека JavaScript для манипулирования. D3 помогает перенести данные для использования в HTML , SVG и CSS.</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-github icon-md icon-color6"></i>
                             <h4>GitHub</h4>
-                            <p>GitHub is a Web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git.</p>
+                            <p class = "en" lang = "en">GitHub is a Web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git.</p>
+                                <p class = "ru" lang = "ru">GitHub это веб-хостинг Git репозиторий , который предлагает все распределены контроля версий и управления источника кода ( SCM), функциональность Git.</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +191,8 @@
         <div class="container">
             <div class="box">
                 <div class="center gap">
-                    <h2>Calculations</h2>
+                    <h2 class = "en" lang = "en">Calculations</h2>
+			<h2 class = "ru" lang = "ru">Вычисленния</h2>
                     <p class="lead"></p>
                 </div>   
 				<div>
@@ -169,42 +200,48 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a href="pages/mna.html">1. Марковские нормальные алгоритмы</a>
+									<a href="pages/mna.html" class = "ru" lang = "ru">1. Марковские нормальные алгоритмы</a>
+									<a href="pages/mna.html" class = "en" lang = "en">1. Markov's normal algorithms</a>
 								</h4>
 							</div>
 						</div>
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a href="pages/matrix.html">2. Матрицы</a>
+									<a href="pages/matrix.html" class = "ru" lang = "ru">2. Матрицы</a>
+									<a href="pages/matrix.html" class = "en" lang = "en">2. Matrices</a>
 								</h4>
 							</div>
 						</div>
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a href="pages/sorts.html">3. Сортировка</a>
+									<a href="pages/sorts.html" class = "ru" lang = "ru">3. Сортировка</a>
+									<a href="pages/sorts.html" class = "en" lang = "en">3. Sorts</a>
 								</h4>
 							</div>
 						</div>
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a href="pages/rb-tree.html">4. Красно-черное дерево</a>
+									<a href="pages/rb-tree.html" class = "ru" lang = "ru">4. Красно-черное дерево</a>
+									<a href="pages/rb-tree.html" class = "en" lang = "en">4. Red-black tree</a>
 								</h4>
 							</div>
 						</div>
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a href="pages/integral.html">5. Интегралы</a>
+									<a href="pages/integral.html" class = "ru" lang = "ru">5. Интегралы</a>
+									<a href="pages/integral.html" class = "en" lang = "en">5. Integrals</a>
 								</h4>
 							</div>
 						</div>
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a href="pages/chart.html">6. Построение графиков</a>
+									<a href="pages/chart.html" class = "ru" lang = "ru">6. Построение графиков</a>
+									<a href="pages/chart.html" class = "en" lang = "en">6. Plotting functions</a>
 								</h4>
 							</div>
 						</div>
@@ -218,28 +255,32 @@
         <div class="container">
             <div class="box">
                 <div class="center">
-                    <h2>Meet the Team</h2>
-                    <p class="lead">We are students of the National Technical University, Engineering Physics Department, Speciality - Informatics.<br>
-					Our project would make your student life easier.</p>
+                    <h2 class = "en" lang = "en" >Meet the Team</h2>
+			<h2 class = "ru" lang = "ru" >Знакомство с командой</h2>
+                    <div class = "en" lang = "en"><p class="lead"  >We are students of the National Technical University, Engineering Physics Department, Speciality - Informatics.<br>
+					Our project would make your student life easier.</p></div>
+			<div class = "ru" lang = "ru"><p class="lead" >Мы студенты Национального Технического Университета, Инженерно физического факультета, Специальность - Информатика<br>
+					Наш проект облегчит вам жизнь.</p></div>
 <div class="container">
 <div class="row">
 					<div class="wrapper">
 		<div class="slider">
 			<ul>
-				<li><img src="images/1.jpg" alt=""><h3>Корытко Юлия Николаевна</h3><h4>Руководитель проекта</h4></li>
-				<li><img src="images/2.jpg" alt=""><h3>Головач Ирина</h3><h4>Дизайнер</h4></li>
-				<li><img src="images/3.jpg" alt=""><h3>Игнатьев Ярослав</h3><h4>Тестировщик</h4></li>
-				<li><img src="images/4.jpg" alt=""><h3>Николай Коновалов</h3><h4>МНА, Красно-черные деревья</h4></li>
-				<li><img src="images/5.jpg" alt=""><h3>Кириченко Ирина</h3><h4>Работа с матрицами</h4></li>
-				<li><img src="images/6.jpg" alt=""><h3>Сало Дмитрий</h3><h4>_</h4></li>
-				<li><img src="images/7.jpg" alt=""><h3>Дрозд Анна</h3><h4>Алгоритмы численных методов</h4></li>
-				<li><img src="images/8.jpg" alt=""><h3>Романов Геннадий</h3><h4>_</h4></li>
-				<li><img src="images/9.jpg" alt=""><h3>Решетняк Оксана</h3><h4>_</h4></li>
-				<li><img src="images/10.jpg" alt=""><h3>Карачевцев Святослав</h3><h4>Алгоритмы сортировок</h4></li>
-				<li><img src="images/11.jpg" alt=""><h3>Кравцова Ольга</h3><h4>Алгоритмы сортировок</h4></li>
-				<li><img src="images/12.jpg" alt=""><h3>Ермоленко Виктория</h3><h4>Алгоритмы сортировок</h4></li>
-				<li><img src="images/13.jpg" alt=""><h3>Гусарова Яна</h3><h4>Алгоритмы сортировок</h4></li>
-				<li><img src="images/14.jpg" alt=""><h3>Холостовский Сергей</h3><h4>_</h4></li>
+				<li><img src="images/1.jpg" alt=""><h3 class = "ru" lang = "ru">Корытко Юлия Николаевна</h3><h4 class = "ru" lang = "ru">Руководитель проекта</h4> <h3 class = "en" lang = "en">Korytko Julia</h3><h4 class = "en" lang = "en">Project manager</h4> </li>
+				<li><img src="images/2.jpg" alt=""><h3 class = "ru" lang = "ru">Головач Ирина</h3><h4 class = "ru" lang = "ru">Дизайнер</h4> <h3 class = "en" lang = "en">Holovach Iryna</h3><h4 class = "en" lang = "en">Designer, Eng version</h4> </li>
+				<li><img src="images/3.jpg" alt=""><h3 class = "ru" lang = "ru">Игнатьев Ярослав</h3><h4 class = "ru" lang = "ru">Тестировщик</h4> <h3 class = "en" lang = "en">Ignatiev Yaroslav</h3><h4 class = "en" lang = "en">Tester, RU version, Integrals</h4></li>
+				<li><img src="images/4.jpg" alt=""><h3 class = "ru" lang = "ru">Николай Коновалов</h3><h4 class = "ru" lang = "ru">МНА, Красно-черные деревья</h4> <h3 class = "en" lang = "en">Konovalov Nikolay</h3><h4 class = "en" lang = "en">МNА, Red-black tree</h4></li>
+				<li><img src="images/5.jpg" alt=""><h3 class = "ru" lang = "ru">Кириченко Ирина</h3><h4 class = "ru" lang = "ru">Работа с матрицами</h4> <h3 class = "en" lang = "en">Kirichenko Iryna</h3><h4 class = "en" lang = "en">Matrices</h4></li>
+				<li><img src="images/6.jpg" alt=""><h3 class = "ru" lang = "ru">Сало Дмитрий</h3><h4 class = "ru" lang = "ru">_</h4> <h3 class = "en" lang = "en">Salo Dmitriy</h3><h4 class = "en" lang = "en">Plotting functions</h4></li>
+				<li><img src="images/7.jpg" alt=""><h3 class = "ru" lang = "ru">Дрозд Анна</h3><h4 class = "ru" lang = "ru">Алгоритмы численных методов</h4> <h3 class = "en" lang = "en">Drozd Anna</h3><h4 class = "en" lang = "en">Numerical Methods</h4></li>
+				<li><img src="images/8.jpg" alt=""><h3 class = "ru" lang = "ru">Романов Геннадий</h3><h4 class = "ru" lang = "ru">_</h4> <h3 class = "en" lang = "en">Romanov Gennadiy</h3><h4 class = "en" lang = "en">Shortest-path algorithms</h4></li>
+				<li><img src="images/9.jpg" alt=""><h3 class = "ru" lang = "ru">Решетняк Оксана</h3><h4 class = "ru" lang = "ru">_</h4> <h3 class = "en" lang = "en">Reshetnyak Oksana</h3><h4 class = "en" lang = "en">_</h4></li>
+				<li><img src="images/10.jpg" alt=""><h3 class = "ru" lang = "ru">Карачевцев Святослав</h3><h4 class = "ru" lang = "ru">Алгоритмы сортировок</h4> <h3 class = "en" lang = "en">Karachevtsev Svyatoslav</h3><h4 class = "en" lang = "en">Sorting algorithms</h4></li>
+				<li><img src="images/11.jpg" alt=""><h3 class = "ru" lang = "ru">Кравцова Ольга</h3><h4 class = "ru" lang = "ru">Алгоритмы сортировок</h4> <h3 class = "en" lang = "en">Kravtsova Ol'ga</h3><h4 class = "en" lang = "en">Sorting algorithms</h4></li>
+				<li><img src="images/12.jpg" alt=""><h3 class = "ru" lang = "ru">Ермоленко Виктория</h3><h4 class = "ru" lang = "ru">Алгоритмы сортировок</h4> <h3 class = "en" lang = "en">Yermolenko Viktoriya</h3><h4 class = "en" lang = "en">Sorting algorithms</h4></li>
+				<li><img src="images/13.jpg" alt=""><h3 class = "ru" lang = "ru">Гусарова Яна</h3><h4 class = "ru" lang = "ru">Алгоритмы сортировок</h4> <h3 class = "en" lang = "en">Gusarova Yana</h3><h4 class = "en" lang = "en">Sorting algorithms</h4></li>
+				<li><img src="images/14.jpg" alt=""><h3 class = "ru" lang = "ru">Холостовский Сергей</h3><h4 class = "ru" lang = "ru">_</h4> <h3 class = "en" lang = "en">Kholostovskiy Sergey</h3><h4 class = "en" lang = "en">Sorting algorithms</h4></li>
+			
 			</ul>
 		</div>
 	</div></div></div>
@@ -260,6 +301,7 @@
     </footer>
 
     <script src="js/jquery.js"></script>
+	<script src="js/lang.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 	<script src="js/mna.js"></script>

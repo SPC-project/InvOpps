@@ -1,207 +1,231 @@
 ﻿<!DOCTYPE html>
-<html g_init="6962" lang="ru">
+<html g_init="6962">
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<script async="true" src="../js/context.js" type="text/javascript"></script>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script async="true" src="../js/context.js" type="text/javascript"></script>
 	<meta charset=windows - 1251>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/font-awesome.css">
+	<!-- Bootstrap -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../css/lang.css" rel = "stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/folding.css" rel="stylesheet">
+	 
+	<script src="../js/mna.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../js/bootstrap.min.js"></script>
 	<style type="text/css" title="currentStyle" media="screen">
 		@import "/style/style.css";
-				@import "/style/personal.css";
-			</style>
-	
-	
-
-	<script type="text/javascript" src="../js/jquery.js"></script>
-
-
-
-
-
-
-<script type="text/javascript">
-	(function() {
-var useSSL = 'https:' == document.location.protocol;
-var src = (useSSL ? 'https:' : 'http:') +
-'//www.googletagservices.com/tag/js/gpt.js';
-document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
-})();
-</script>
-
-
-
-
-
-<script type="text/javascript">if (googletag) {googletag.defineSlot('/13440450/v2.ru.C.A.top', [728, 90], 'div-gpt-ad-1447585380-1').addService(googletag.pubads());
-googletag.defineSlot('/13440450/v2.ru.C.A.bottom', [728, 90], 'div-gpt-ad-1447585380-2').addService(googletag.pubads());
-googletag.pubads().enableSyncRendering();
-googletag.pubads().enableSingleRequest();
-googletag.enableServices();
-}</script>	
-	
-<script type="text/javascript" src="../js/pl.js"></script>
-<script type="text/javascript" src="../js/require.js"></script>
-<script type="text/javascript">requirejs.config({ paths: { 'jstat': '//cdn.jsdelivr.net/jstat/1.4.7/jstat.min','d3': 'http://d3js.org/d3.v3.min'},
-shim: {jstat: {	exports: ['j$', 'jStat'],init: function () { return { j$: j$,jStat: jStat };}}}});
-</script>
-
-<link rel="stylesheet" href="../css/standard.css">
-<style type="text/css" media="all">
-	#request_status { width:900px; }
-	.modal-body {  max-height: 800px;}
-       .form_calc { display:table; min-width:657px; }
-#comments div.form-actions:after, form.form_full div.fieldset div.form-actions:after { clear:none; }
-div.hmain { width: 728px; padding:10px; margin:0; }
-div.ads-inline{ width:728px; }
-li.item { padding-left:20px; };
-@media (min-width:980px) { 
-div.hmain { width: 728px; margin-left:170px; padding:20px; margin-right:0;}
-div.ads-inline{ width:728px }
-}
-@media (min-width: 1240px) { 
-	div.hmain  { width: 860px; padding:20px; margin-left:auto; margin-right:auto;}
-	div.socialbuttonsribbon { padding-left:20px; }
-	div.ads-inline{ width:728px;margin:0 auto 0 auto; }
-}
+		@import "/style/personal.css";
+	</style>
+	<link rel="stylesheet" href="../css/standard.css">
+	<style type="text/css" media="all">
+		#request_status { width:900px; }
+		.modal-body {  max-height: 800px;}
+		.form_calc { display:table; min-width:657px; }
+		#comments div.form-actions:after, form.form_full div.fieldset div.form-actions:after { clear:none; }
+		div.hmain { width: 728px; padding:10px; margin:0; }
+		div.ads-inline{ width:728px; }
+		li.item { padding-left:20px; };
+		@media (min-width:980px) { 
+		div.hmain { width: 728px; margin-left:170px; padding:20px; margin-right:0;}
+		div.ads-inline{ width:728px }
+		}
+		@media (min-width: 1240px) { 
+		div.hmain  { width: 860px; padding:20px; margin-left:auto; margin-right:auto;}
+		div.socialbuttonsribbon { padding-left:20px; }
+		div.ads-inline{ width:728px;margin:0 auto 0 auto; }
+		}
  
-@media (min-width: 1400px) { 
-	div.hmain  { width: 960px; padding:20px; margin-left:auto; margin-right:auto;}
-	div.socialbuttonsribbon { padding-left:30px; }
-}
-div.calc-embed {
-	background-color:#777=;
-	padding: 3px 28px 3px 3px;
-	width:697px;
-	margin: 3px auto 12px auto;
-}
-div.not-suitable {
-	float:right;
-	max-width:220px;
-	margin-top:20px;
-	text-align:center;
-	padding:4px 15px 15px 15px;
-}
-table.pm img { padding:10px; }
-table.indevattrs { margin-bottom:0 }
-div.collect { padding-right:14px; }
-div.amount_form { padding-right:-14px; padding-left:-14px; margin-left:-14px; margin-right:-14px; background-color:#f5deb3; }
-div.amount_form > div, div.transfer_form >div {
-	font-size:120%; width:300px; padding:10px; margin-left:auto; margin-right:auto;
-}
-div.collect h4 { padding:10px; }
+		@media (min-width: 1400px) { 
+		div.hmain  { width: 960px; padding:20px; margin-left:auto; margin-right:auto;}
+		div.socialbuttonsribbon { padding-left:30px; }
+		}
+		div.calc-embed {
+		background-color:#777=;
+		padding: 3px 28px 3px 3px;
+		width:697px;
+		margin: 3px auto 12px auto;
+		}
+		div.not-suitable {
+		float:right;
+		max-width:220px;
+		margin-top:20px;
+		text-align:center;
+		padding:4px 15px 15px 15px;
+		}
+		table.pm img { padding:10px; }
+		table.indevattrs { margin-bottom:0 }
+		div.collect { padding-right:14px; }
+		div.amount_form { padding-right:-14px; padding-left:-14px; margin-left:-14px; margin-right:-14px; background-color:#f5deb3; }
+		div.amount_form > div, div.transfer_form >div {
+		font-size:120%; width:300px; padding:10px; margin-left:auto; margin-right:auto;
+		}
+		div.collect h4 { padding:10px; }
 
-.bs-callout {
-	padding: 20px;
-	margin: 20px 0;
-	border: 1px solid #eee;
-	border-left-width: 5px;
-	border-radius: 3px;
-	}
-.bs-callout-info h3 {
-	line-height:30px;
-	color: #1b809e;
-}
-.bs-callout-info {
-	border-left-color: #1b809e;
-}
-</style>
+		.bs-callout {
+			padding: 20px;
+			margin: 20px 0;
+			border: 1px solid #eee;
+			border-left-width: 5px;
+			border-radius: 3px;
+		}
+		.bs-callout-info h3 {
+			line-height:30px;
+			color: #1b809e;
+		}
+		.bs-callout-info {
+			border-left-color: #1b809e;
+		}
+		textarea{max-width: 70%;}
+	</style>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript">
+	(function() {
+		var useSSL = 'https:' == document.location.protocol;
+		var src = (useSSL ? 'https:' : 'http:') +
+		'//www.googletagservices.com/tag/js/gpt.js';
+		document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+	})();
+	</script>
 
+	<script type="text/javascript">if (googletag) {googletag.defineSlot('/13440450/v2.ru.C.A.top', [728, 90], 'div-gpt-ad-1447585380-1').addService(googletag.pubads());
+		googletag.defineSlot('/13440450/v2.ru.C.A.bottom', [728, 90], 'div-gpt-ad-1447585380-2').addService(googletag.pubads());
+		googletag.pubads().enableSyncRendering();
+		googletag.pubads().enableSingleRequest();
+		googletag.enableServices();}
+	</script>	
+	
+	<script type="text/javascript" src="../js/pl.js"></script>
+	<script type="text/javascript" src="../js/require.js"></script>
+	<script type="text/javascript">requirejs.config({ paths: { 'jstat': '//cdn.jsdelivr.net/jstat/1.4.7/jstat.min','d3': 'http://d3js.org/d3.v3.min'},
+		shim: {jstat: {	exports: ['j$', 'jStat'],init: function () { return { j$: j$,jStat: jStat };}}}});
+	</script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("ui_viewer").className = lang;
+		});
+		
 
-
-
-
-
-
-
-
+	</script>	
 </head>
 
 <body id="ui_viewer" class="viewer">
-<div class="outer">
-<div class="inner">
-
-<div class="inner2">
-    
-    
-
-
-
-
-
-
-
-
-
-
-<div class="hall">
-
-<div class="hmain">
-
-
- <script type="text/javascript">
-	var timeSpanFormatter = new FormatterTimeSpan();
-	$(document).ready(function() {
-		var dVal = $('span.nav-created').text();
-		 $('span.nav-created').text(timeSpanFormatter.Format( dVal));	
-	});
-</script>
-
-
-
-
-<div><script type="text/javascript">
-function Dialogv54b60eb9da33d() {this.GetElement = function () { return document.getElementById( "dialogv54b60eb9da33d" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60eb9da33d"; };this.matrixfield= new DialogInput("matrixfield", this, null,new ElementAccessorDefault());this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.det= new DialogInput("det", this, null,new ElementAccessorOutput());this.Show = function () { ShowDialog("dialogv54b60eb9da33d"); };this.Hide = function () { HideDialog("dialogv54b60eb9da33d"); };this.Busy = function () { SetDialogBusy("dialogv54b60eb9da33d"); };this.Free = function () { SetDialogFree("dialogv54b60eb9da33d"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.matrixfield.ResetValue();this.messages.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.validation.ResetValue();this.det.ResetValue();};this.SetDefaultValues = function () {this.matrixfield.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.messages.SetValue("OK");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a id=\"dialogv54b60eb9da33d_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60eb9da33d.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60eb9da33d_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60eb9da33d_button_text\">Рассчитать</span></a></div>");this.validation.SetValue("");this.det.SetValue("");};this.GetValues = function () {var retval = {};retval["matrixfield"]=this.matrixfield.GetValue();retval["messages"]=this.messages.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["validation"]=this.validation.GetValue();retval["det"]=this.det.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60eb9da33d");};this.Validate = function ( ) {if (!this.matrixfield.ValidateCurrent() ) { return false; }if (!this.messages.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }if (!this.det.ValidateCurrent() ) { return false; }return true;};};
-</script></div>
-
-
-
+	<header id="header" role="banner">
+		<div class="container">
+			<div id="navbar" class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
+				</div>
+				<div align = "right">
+				  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+				  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+						<li><a href="#calculations"class = "en" lang = "en">Calculations</a></li>
+						<li><a href="#about" class = "en" lang = "en">About</a></li>
+						<li><a href="#calculations"class = "ru" lang = "ru">Вычисления</a></li>
+						<li><a href="#about" class = "ru" lang = "ru">О методах</a></li>
+					</ul>
+				</div>
+            </div>
+        </div>
+	</header>	
+	<section id="main-slider-calc"></section>
+		<div class="container">
+			<div class="box first">
+				<div class="center">
+					<h2 class = "en" lang = "en">Matrix Operations</h2>
+					<h2 class = "ru" lang = "ru">Операции над матрицами</h2>
+					<p class="lead"></p>
+				</div>
+	<div class="outer">
+		<div class="inner">
+			<div class="inner2">
+				<div class="hall">
+					<div class="hmain">
+						<script type="text/javascript">
+							var timeSpanFormatter = new FormatterTimeSpan();
+							$(document).ready(function() {
+							var dVal = $('span.nav-created').text();
+							$('span.nav-created').text(timeSpanFormatter.Format( dVal));	
+							});
+						</script>
+					<div><script type="text/javascript">
+					function Dialogv54b60eb9da33d() {this.GetElement = function () { return document.getElementById( "dialogv54b60eb9da33d" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60eb9da33d"; };this.matrixfield= new DialogInput("matrixfield", this, null,new ElementAccessorDefault());this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.det= new DialogInput("det", this, null,new ElementAccessorOutput());this.Show = function () { ShowDialog("dialogv54b60eb9da33d"); };this.Hide = function () { HideDialog("dialogv54b60eb9da33d"); };this.Busy = function () { SetDialogBusy("dialogv54b60eb9da33d"); };this.Free = function () { SetDialogFree("dialogv54b60eb9da33d"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.matrixfield.ResetValue();this.messages.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.validation.ResetValue();this.det.ResetValue();};this.SetDefaultValues = function () {this.matrixfield.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.messages.SetValue("OK");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a id=\"dialogv54b60eb9da33d_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60eb9da33d.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60eb9da33d_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60eb9da33d_button_text\">Рассчитать</span></a></div>");this.validation.SetValue("");this.det.SetValue("");};this.GetValues = function () {var retval = {};retval["matrixfield"]=this.matrixfield.GetValue();retval["messages"]=this.messages.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["validation"]=this.validation.GetValue();retval["det"]=this.det.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60eb9da33d");};this.Validate = function ( ) {if (!this.matrixfield.ValidateCurrent() ) { return false; }if (!this.messages.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }if (!this.det.ValidateCurrent() ) { return false; }return true;};};
+					</script></div>
+<!-------Determinant of the matrix--------------------->
 <div class="form_calc" id="dialogv54b60eb9da33d">
-<div class="fieldset ">
-<div class="control-group">
-<legend id="dialogv54b60eb9da33d_legend">Определитель (детерминант) матрицы</legend>
-<label class="control-label textarea" for="dialogv54b60eb9da33d_matrixfield">Исходная матрица:
-</label>
-<div class="controls"><textarea id="dialogv54b60eb9da33d_matrixfield" name="matrixfield" onchange=" dialoghandlerv54b60eb9da33d.onchanged('matrixfield');" onkeypress="return dialoghandlerv54b60eb9da33d.onkeypressed('matrixfield', event );" onkeydown="return (typeof(dialoghandlerv54b60eb9da33d.onkeydown) != 'undefined' ? dialoghandlerv54b60eb9da33d.onkeydown('matrixfield', event ) : true);" rows="5" cols="60">
-
-</textarea>
-</div></div><div id="dialogv54b60eb9da33d_messages">
-<script type="text/javascript">
-var dialogv54b60eb9da33d_messages_data={"OK":"Матрица размером ","Error":"Ошибка в строке ","NonSquare":"Матрица не квадратная или не задана!","Zero":"Матрица не квадратная или не задана!"};
-</script>
-</div>
+	<div class="fieldset ">
+		<div class="control-group">
+		<legend id="dialogv54b60eb9da33d_legend" class = "en" lang = "en">Determinant of the matrix</legend>
+		<legend id="dialogv54b60eb9da33d_legend" class = "ru" lang = "ru">Определитель матрици</legend>
+		<label class="control-label textarea" for="dialogv54b60eb9da33d_matrixfield" class = "en" lang = "en">Initial matrix:</label>
+			<div class="controls"><textarea id="dialogv54b60eb9da33d_matrixfield" name="matrixfield" onchange=" dialoghandlerv54b60eb9da33d.onchanged('matrixfield');" onkeypress="return dialoghandlerv54b60eb9da33d.onkeypressed('matrixfield', event );" onkeydown="return (typeof(dialoghandlerv54b60eb9da33d.onkeydown) != 'undefined' ? dialoghandlerv54b60eb9da33d.onkeydown('matrixfield', event ) : true);" rows="5" cols="60"></textarea>
+			</div>
+		</div>
+	<div id="dialogv54b60eb9da33d_messages">
+		<script type="text/javascript">
+		var dialogv54b60eb9da33d_messages_data={"OK":"Size of the matrix ","Error":"Error in line ","NonSquare":"Matrix is ​​not square , or is not set!","Zero":"Matrix is ​​not square , or is not set!"};
+		</script>
+	</div>
 
 <script type="text/javascript">
 PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60eb9da33d_precisionmeter"),2,"dialoghandlerv54b60eb9da33d");
 </script>
-<div id="dialogv54b60eb9da33d__line" class="labelctrl">
-
-<a id="dialogv54b60eb9da33d_calculate" href="#" onclick="dialoghandlerv54b60eb9da33d.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-justify">
-<i style="display: none;" id="dialogv54b60eb9da33d_timerplace" class="fa fa-spinner fa-spin"></i> 
-<span id="dialogv54b60eb9da33d_button_text">Рассчитать</span>
-</a>
-
+		<div id="dialogv54b60eb9da33d__line" class="labelctrl">
+			<a id="dialogv54b60eb9da33d_calculate" href="#" onclick="dialoghandlerv54b60eb9da33d.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-justify">
+			<i style="display: none;" id="dialogv54b60eb9da33d_timerplace" class="fa fa-spinner fa-spin"></i> 
+			<span id="dialogv54b60eb9da33d_button_text">Calculate</span>
+			</a>
+		</div>
+<!--p-->
+		<div class="fieldset calc_outputs" id="dialogv54b60eb9da33d_outputs0"><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_validation"></span><span class="textoutput_label">Notes:</span>
+			</div></div>
+			<div class="control-group">
+				<div class="control">
+					<span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_det"></span>
+					<span class="textoutput_label">Determinant of the matrix:</span>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<p>
-<div class="fieldset calc_outputs" id="dialogv54b60eb9da33d_outputs0"><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_validation"></span><span class="textoutput_label">Примечания:</span>
-</div></div><div class="control-group"><div class="control">
-<span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_det"></span>
-<span class="textoutput_label">Определитель (детерминант) матрицы:</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
 
 <div><script type="text/javascript">
 var dialogv54b60eb9da33d = new Dialogv54b60eb9da33d();
 var dialoghandlerv54b60eb9da33d = new function ( ) {this.Dialog = null;this.CalculatorID = 1103;var savedData = {};var outerParent = this;
 var Planetcalc = new function() { 
-var innerParent = this;};this.initdialog = function ( dlg ) { this.Dialog = dlg;if ( !window.CurrentPageCalculators ) { window.CurrentPageCalculators = []; }window.CurrentPageCalculators[window.CurrentPageCalculators.length]=this;this.outputs = {};this.outputTables={};this.Dialog.validation.formatter =new FormatterSame( );this.outputs['validation']=this.Dialog.validation;this.Dialog.det.formatter =new FormatterNumber( 2 );this.outputs['det']=this.Dialog.det;if ( this.Dialog.matrixfield ) { PSS.LoadInput("1103","matrixfield", this.Dialog.matrixfield,savedData["matrixfield"]);}if ( this.Dialog.messages ) { PSS.LoadInput("1103","messages", this.Dialog.messages,savedData["messages"]);}this.setTimerIcon( true );this.notInitializedDataCount=0; this.refresh();};this.showControlError = function ( e ) {if ( typeof(e)=="object" && e.source && e.message && this.Dialog[e.source] && this.Dialog[e.source].ShowError ) {this.Dialog[e.source].ShowError( e.message );return true; };return false; };this.GetInputValues = function ( ) {  var vals ={};vals['matrixfield'] = this.Dialog.matrixfield.GetValue();vals['messages'] = this.Dialog.messages.GetValue(); return vals; };this.OnDataSource = function ( name, obj ) { this[ "dataSource_" + name ] = obj; this.notInitializedDataCount-=1; if ( 0==this.notInitializedDataCount) this.refresh(); };this.setTimerIcon = function ( enable ) {  var timerplace = document.getElementById("dialogv54b60eb9da33d_timerplace"); var logo = document.getElementById("dialogv54b60eb9da33d_logo"); var button = document.getElementById("dialogv54b60eb9da33d_calculate"); if ( timerplace && logo && button) { timerplace.style.display=(enable?"inline-block":"none"); } this.enableOutputs(!enable);};this.enableOutputs = function( enable ) {this.Dialog.validation.GetElement().style.visibility=(enable?"visible":"hidden");this.Dialog.det.GetElement().style.visibility=(enable?"visible":"hidden");};this.onkeypressed = function ( controlid, evt ) { return true;};this.refreshTimer= 0;this.onchanged = function ( controlid ) {var control  = this.Dialog[ controlid ];if ( control.ValidateCurrent() && this.Dialog.Validate() ) {  this.recalculate(1500);}};this.recalculate= function ( timeout ) {	this.changeDisplayOptions();if (this.progressControl.isInProgress()) { this.progressControl.stop(); return;}if (this.refreshTimer) { clearTimeout(this.refreshTimer); } dialoghandlerv54b60eb9da33d.setTimerIcon(true); this.refreshTimer=setTimeout('dialoghandlerv54b60eb9da33d.refresh()',timeout);if ( this.Dialog.matrixfield ) { PSS.SaveInput("1103","matrixfield", this.Dialog.matrixfield);}if ( this.Dialog.messages ) { PSS.SaveInput("1103","messages", this.Dialog.messages);}};
+var innerParent = this;};this.initdialog = function ( dlg ) { this.Dialog = dlg;if ( !window.CurrentPageCalculators ) { window.CurrentPageCalculators = []; }
+window.CurrentPageCalculators[window.CurrentPageCalculators.length]=this;this.outputs = {};this.outputTables={};this.Dialog.validation.formatter =new FormatterSame( );this.outputs['validation']=this.Dialog.validation;this.Dialog.det.formatter =new FormatterNumber( 2 );
+this.outputs['det']=this.Dialog.det;if ( this.Dialog.matrixfield ) { PSS.LoadInput("1103","matrixfield", this.Dialog.matrixfield,savedData["matrixfield"]);}if ( this.Dialog.messages ) { PSS.LoadInput("1103","messages", this.Dialog.messages,savedData["messages"]);}this.setTimerIcon( true );this.notInitializedDataCount=0; this.refresh();};
+this.showControlError = function ( e ) {if ( typeof(e)=="object" && e.source && e.message && this.Dialog[e.source] && this.Dialog[e.source].ShowError ) {this.Dialog[e.source].ShowError( e.message );return true; };return false; };this.GetInputValues = function ( ) {  var vals ={};vals['matrixfield'] = this.Dialog.matrixfield.GetValue();vals['messages'] = this.Dialog.messages.GetValue(); return vals; };
+this.OnDataSource = function ( name, obj ) { this[ "dataSource_" + name ] = obj; this.notInitializedDataCount-=1; if ( 0==this.notInitializedDataCount) this.refresh(); };this.setTimerIcon = function ( enable ) {  var timerplace = document.getElementById("dialogv54b60eb9da33d_timerplace"); var logo = document.getElementById("dialogv54b60eb9da33d_logo"); var button = document.getElementById("dialogv54b60eb9da33d_calculate"); if ( timerplace && logo && button) { timerplace.style.display=(enable?"inline-block":"none"); }
+ this.enableOutputs(!enable);};this.enableOutputs = function( enable ) {this.Dialog.validation.GetElement().style.visibility=(enable?"visible":"hidden");this.Dialog.det.GetElement().style.visibility=(enable?"visible":"hidden");};this.onkeypressed = function ( controlid, evt ) { return true;};this.refreshTimer= 0;this.onchanged = function ( controlid ) {var control  = this.Dialog[ controlid ];if ( control.ValidateCurrent() && this.Dialog.Validate() ) {  this.recalculate(1500);}};
+ this.recalculate= function ( timeout ) {	this.changeDisplayOptions();if (this.progressControl.isInProgress()) { this.progressControl.stop(); return;}if (this.refreshTimer) { clearTimeout(this.refreshTimer); } dialoghandlerv54b60eb9da33d.setTimerIcon(true); this.refreshTimer=setTimeout('dialoghandlerv54b60eb9da33d.refresh()',timeout);if ( this.Dialog.matrixfield ) { PSS.SaveInput("1103","matrixfield", this.Dialog.matrixfield);}if ( this.Dialog.messages ) { PSS.SaveInput("1103","messages", this.Dialog.messages);}};
 function CalcProgressControl( calcHandler ) { var me=this;	var shouldContinue=false;	var shouldStop=false;	me.context = null;	me.isInProgress=function( ){ return me.context!=null;}
 	function setButtonLabel( lbl ){ document.getElementById("dialogv54b60eb9da33d_button_text").innerHTML=lbl; }this.stop=function(){};this.clear=function(){};this.repeat=function(){};this.shouldRepeat=function(){ return false;};};
 this.progressControl = new CalcProgressControl( this );this.repeat = function() { this.refresh(true); }; this.refresh = function ( repeat ) {if ( !repeat ) { this.progressControl.context = null;}if ( this.notInitializedDataCount>0 ) return;clearTimeout(this.refreshTimer); this.refreshTimer=0;this.setTimerIcon(true);try {if ( !this.progressControl.context ) {}	this.changeDisplayOptions();this.calculate(this.Dialog.matrixfield.GetValue(), this.Dialog.messages.GetValue(), this.Dialog.validation, this.Dialog.det);} catch( e ) { 
@@ -350,65 +374,42 @@ else if (parser.validation_result == parser.c_valid)
 dialoghandlerv54b60eb9da33d.initdialog(dialogv54b60eb9da33d);
 </script>
 </div>
-
-
-
-
+<!------------------------------Inverse matrix--------------------->
 <div class="article">
-<div class="article_body">
+	<div class="article_body">
+		<div>
+		<script type="text/javascript">
+		function Dialogv54b60ebb109c4() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebb109c4" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebb109c4"; };this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.matrixA= new DialogInput("matrixA", this, null,new ElementAccessorDefault());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.matrixR= new DialogInput("matrixR", this, null,new ElementAccessorDefault());this.Show = function () { ShowDialog("dialogv54b60ebb109c4"); };this.Hide = function () { HideDialog("dialogv54b60ebb109c4"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebb109c4"); };this.Free = function () { SetDialogFree("dialogv54b60ebb109c4"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.messages.ResetValue();this.matrixA.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.matrixR.ResetValue();};this.SetDefaultValues = function () {this.messages.SetValue("");this.matrixA.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebb109c4_logo\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebb109c4_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebb109c4.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebb109c4_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebb109c4_button_text\">Рассчитать</span></a></div>");this.matrixR.SetValue("");};this.GetValues = function () {var retval = {};retval["messages"]=this.messages.GetValue();retval["matrixA"]=this.matrixA.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["matrixR"]=this.matrixR.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebb109c4");};this.Validate = function ( ) {if (!this.messages.ValidateCurrent() ) { return false; }if (!this.matrixA.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.matrixR.ValidateCurrent() ) { return false; }return true;};};
+		</script>
+		</div>
+		
+		<div class="form_calc" id="dialogv54b60ebb109c4">
+			<div id="dialogv54b60ebb109c4_messages">
+			<script type="text/javascript">
+			var dialogv54b60ebb109c4_messages_data={"Error":"Error in line","Zero":"Matrix is not set","NonSquare":"Matrix is ​​not square","Singular":"The matrix is degenerate"};
+			</script>
+			</div>
+			<legend id="dialogv54b60eb9da33d_legend">Inverse matrix</legend>
+				<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebb109c4_matrixA">Initial matrix:</label>
+				<div class="controls"><textarea id="dialogv54b60ebb109c4_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebb109c4.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebb109c4.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebb109c4.onkeydown) != 'undefined' ? dialoghandlerv54b60ebb109c4.onkeydown('matrixA', event ) : true);" rows="5" cols="60"></textarea></div></div>
+		<div class="control-group">
+		</div>
+		<script type="text/javascript">
+			PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebb109c4_precisionmeter"),2,"dialoghandlerv54b60ebb109c4");
+		</script>
 
+		<div id="dialogv54b60ebb109c4__line" class="labelctrl">
+			<a class="brand calclogo" id="dialogv54b60ebb109c4_logo" target="_top"><a id="dialogv54b60ebb109c4_calculate" href="#" onclick="dialoghandlerv54b60ebb109c4.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebb109c4_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54b60ebb109c4_button_text">Calculate</span></a>
+		</div>
 
-
-<div>
-<script type="text/javascript">
-function Dialogv54b60ebb109c4() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebb109c4" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebb109c4"; };this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.matrixA= new DialogInput("matrixA", this, null,new ElementAccessorDefault());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.matrixR= new DialogInput("matrixR", this, null,new ElementAccessorDefault());this.Show = function () { ShowDialog("dialogv54b60ebb109c4"); };this.Hide = function () { HideDialog("dialogv54b60ebb109c4"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebb109c4"); };this.Free = function () { SetDialogFree("dialogv54b60ebb109c4"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.messages.ResetValue();this.matrixA.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.matrixR.ResetValue();};this.SetDefaultValues = function () {this.messages.SetValue("");this.matrixA.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebb109c4_logo\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebb109c4_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebb109c4.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebb109c4_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebb109c4_button_text\">Рассчитать</span></a></div>");this.matrixR.SetValue("");};this.GetValues = function () {var retval = {};retval["messages"]=this.messages.GetValue();retval["matrixA"]=this.matrixA.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["matrixR"]=this.matrixR.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebb109c4");};this.Validate = function ( ) {if (!this.messages.ValidateCurrent() ) { return false; }if (!this.matrixA.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.matrixR.ValidateCurrent() ) { return false; }return true;};};
-</script>
-</div>
-<div class="form_calc" id="dialogv54b60ebb109c4">
-
-<div id="dialogv54b60ebb109c4_messages">
-<script type="text/javascript">
-var dialogv54b60ebb109c4_messages_data={"Error":"Ошибка в строке","Zero":"Матрица не задана","NonSquare":"Матрица не является квадратной","Singular":"Матрица является вырожденной"};
-</script>
-</div>
-
-<legend id="dialogv54b60eb9da33d_legend">Обратная матрица</legend>
-<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebb109c4_matrixA">Исходная матрица:</label><div class="controls"><textarea id="dialogv54b60ebb109c4_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebb109c4.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebb109c4.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebb109c4.onkeydown) != 'undefined' ? dialoghandlerv54b60ebb109c4.onkeydown('matrixA', event ) : true);" rows="5" cols="60">
-</textarea>
-</div></div>
-<div class="control-group">
-
-
-</div>
-<script type="text/javascript">
-PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebb109c4_precisionmeter"),2,"dialoghandlerv54b60ebb109c4");
-</script>
-
-<div id="dialogv54b60ebb109c4__line" class="labelctrl">
-<a class="brand calclogo" id="dialogv54b60ebb109c4_logo" target="_top"><a id="dialogv54b60ebb109c4_calculate" href="#" onclick="dialoghandlerv54b60ebb109c4.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebb109c4_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54b60ebb109c4_button_text">Рассчитать</span></a>
-
-</div>
-
-<p>
-<div class="fieldset calc_outputs" id="dialogv54b60ebb109c4_outputs0">
-<label for="dialogv54b60ebb109c4_matrixR">Обратная матрица:</label>
-<div style="visibility: visible;" class="matrix" id="dialogv54b60ebb109c4_matrixR"><table class="table table-bordered"><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
-</div>
-</div>
-
-
-
-
-
-</div>
-
-</div>
-
-
-
-
-
-<div>
+<!--p-->
+	<div class="fieldset calc_outputs" id="dialogv54b60ebb109c4_outputs0">
+			<label for="dialogv54b60ebb109c4_matrixR">Inverse matrix:</label>
+			<div style="visibility: visible;" class="matrix" id="dialogv54b60ebb109c4_matrixR"><table class="table table-bordered"><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div>
+	</div>
+		</div>
+	</div>
+</div><div>
 <script type="text/javascript">
 var dialogv54b60ebb109c4 = new Dialogv54b60ebb109c4();
 var dialoghandlerv54b60ebb109c4 = new function ( ) {this.Dialog = null;this.CalculatorID = 1218;var savedData = {};var outerParent = this;
@@ -673,32 +674,30 @@ dialoghandlerv54b60ebb109c4.initdialog(dialogv54b60ebb109c4);
 </script>
 </div>
 
-
+<!---------------------------Transpose matrix------------------------------>
 <div><script type="text/javascript">
 function Dialogv54b60ebadf4ef() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebadf4ef" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebadf4ef"; };this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.matrixfield= new DialogInput("matrixfield", this, null,new ElementAccessorDefault());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.matrixT= new DialogInput("matrixT", this, null,new ElementAccessorDefault());this.Show = function () { ShowDialog("dialogv54b60ebadf4ef"); };this.Hide = function () { HideDialog("dialogv54b60ebadf4ef"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebadf4ef"); };this.Free = function () { SetDialogFree("dialogv54b60ebadf4ef"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.messages.ResetValue();this.matrixfield.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.validation.ResetValue();this.matrixT.ResetValue();};this.SetDefaultValues = function () {this.messages.SetValue("OK");this.matrixfield.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebadf4ef_logo\" href=\"http://planetcalc.ru/1204/?license=1\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebadf4ef_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebadf4ef.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebadf4ef_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebadf4ef_button_text\">Рассчитать</span></a></div>");this.validation.SetValue("");this.matrixT.SetValue("");};this.GetValues = function () {var retval = {};retval["messages"]=this.messages.GetValue();retval["matrixfield"]=this.matrixfield.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["validation"]=this.validation.GetValue();retval["matrixT"]=this.matrixT.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebadf4ef");};this.Validate = function ( ) {if (!this.messages.ValidateCurrent() ) { return false; }if (!this.matrixfield.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }if (!this.matrixT.ValidateCurrent() ) { return false; }return true;};};
 </script></div>
 
-
 <div class="form_calc" id="dialogv54b60ebadf4ef">
-<div class="fieldset "><legend id="dialogv54b60ebadf4ef_legend">Транспонирование матрицы</legend><div id="dialogv54b60ebadf4ef_messages">
+<div class="fieldset "><legend id="dialogv54b60ebadf4ef_legend">Transpose matrix</legend><div id="dialogv54b60ebadf4ef_messages">
 <script type="text/javascript">
-var dialogv54b60ebadf4ef_messages_data={"OK":"Матрица размером ","Error":"Ошибка в строке ","Zero":"Матрица не задана","NonSquare":"Матрица не квадратная"};
+var dialogv54b60ebadf4ef_messages_data={"OK":"Size of matrix ","Error":"Error in line ","Zero":"Matrix is not set","NonSquare":"Matrix is not square"};
 </script>
 </div>
-<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebadf4ef_matrixfield">Матрица:</label><div class="controls"><textarea id="dialogv54b60ebadf4ef_matrixfield" name="matrixfield" onchange=" dialoghandlerv54b60ebadf4ef.onchanged('matrixfield');" onkeypress="return dialoghandlerv54b60ebadf4ef.onkeypressed('matrixfield', event );" onkeydown="return (typeof(dialoghandlerv54b60ebadf4ef.onkeydown) != 'undefined' ? dialoghandlerv54b60ebadf4ef.onkeydown('matrixfield', event ) : true);" rows="5" cols="60">
+<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebadf4ef_matrixfield">Matrix:</label><div class="controls"><textarea id="dialogv54b60ebadf4ef_matrixfield" name="matrixfield" onchange=" dialoghandlerv54b60ebadf4ef.onchanged('matrixfield');" onkeypress="return dialoghandlerv54b60ebadf4ef.onkeypressed('matrixfield', event );" onkeydown="return (typeof(dialoghandlerv54b60ebadf4ef.onkeydown) != 'undefined' ? dialoghandlerv54b60ebadf4ef.onkeydown('matrixfield', event ) : true);" rows="5" cols="60">
 </textarea>
 </div></div>
 <script type="text/javascript">
 PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebadf4ef_precisionmeter"),2,"dialoghandlerv54b60ebadf4ef");
 </script>
 
-
 <a id="dialogv54b60ebadf4ef_calculate" href="#" onclick="dialoghandlerv54b60ebadf4ef.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebadf4ef_timerplace" class="fa fa-spinner fa-spin"></i> 
-<span id="dialogv54b60ebadf4ef_button_text">Рассчитать</span></a>
+<span id="dialogv54b60ebadf4ef_button_text">Calculate</span></a>
 
 <div class="fieldset calc_outputs" id="dialogv54b60ebadf4ef_outputs0">
 <p>
-<div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebadf4ef_validation">Матрица размером 3x3</span><span class="textoutput_label">Разбор входных данных:</span></div></div><label for="dialogv54b60ebadf4ef_matrixT">Транспонированная матрица:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebadf4ef_matrixT"><table class="table table-bordered"><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div></div></div></div><div><script type="text/javascript">
+<div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebadf4ef_validation">Size of matrix 3x3</span><span class="textoutput_label">Parse of the input data: </span></div></div><label for="dialogv54b60ebadf4ef_matrixT">Transposed matrix:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebadf4ef_matrixT"><table class="table table-bordered"><tbody><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table></div></div></div></div><div><script type="text/javascript">
 var dialogv54b60ebadf4ef = new Dialogv54b60ebadf4ef();
 var dialoghandlerv54b60ebadf4ef = new function ( ) {this.Dialog = null;this.CalculatorID = 1204;var savedData = {};var outerParent = this;
 var Planetcalc = new function() { 
@@ -868,51 +867,38 @@ else if (parser.validation_result == parser.c_valid)
 dialoghandlerv54b60ebadf4ef.initdialog(dialogv54b60ebadf4ef);
 </script>
 </div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="input_error" id="error_box_v54b60ebaec3bd" onclick="this.style.display='none';">
-</div>
-<div><script type="text/javascript">
-function Dialogv54b60ebaec3bd() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebaec3bd" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebaec3bd"; };this.matrixA= new DialogInput("matrixA", this, null,new ElementAccessorDefault());this.matrixB= new DialogInput("matrixB", this, null,new ElementAccessorDefault());this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.matrixR= new DialogInput("matrixR", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.Show = function () { ShowDialog("dialogv54b60ebaec3bd"); };this.Hide = function () { HideDialog("dialogv54b60ebaec3bd"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebaec3bd"); };this.Free = function () { SetDialogFree("dialogv54b60ebaec3bd"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.matrixA.ResetValue();this.matrixB.ResetValue();this.messages.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.matrixR.ResetValue();this.validation.ResetValue();};this.SetDefaultValues = function () {this.matrixA.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.matrixB.SetValue("-2 2\n5 7\n-1 4");this.messages.SetValue("OK");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebaec3bd_logo\" href=\"http://planetcalc.ru/1207/?license=1\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebaec3bd_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebaec3bd_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebaec3bd_button_text\">Рассчитать</span></a></div>");this.matrixR.SetValue("");this.validation.SetValue("");};this.GetValues = function () {var retval = {};retval["matrixA"]=this.matrixA.GetValue();retval["matrixB"]=this.matrixB.GetValue();retval["messages"]=this.messages.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["matrixR"]=this.matrixR.GetValue();retval["validation"]=this.validation.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebaec3bd");};this.Validate = function ( ) {if (!this.matrixA.ValidateCurrent() ) { return false; }if (!this.matrixB.ValidateCurrent() ) { return false; }if (!this.messages.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.matrixR.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }return true;};};
-</script>
-</div>
-<div class="form_calc" id="dialogv54b60ebaec3bd"><div class="fieldset "><legend id="dialogv54b60ebaec3bd_legend">Умножение матриц</legend><div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixA">Матрица А:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixA', event ) : true);" rows="5" cols="60">
-</textarea>
-</div></div><div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixB">Матрица B:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixB" name="matrixB" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixB');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixB', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixB', event ) : true);" rows="5" cols="60">
-</textarea>
-</div></div><div id="dialogv54b60ebaec3bd_messages">
-<script type="text/javascript">
-var dialogv54b60ebaec3bd_messages_data={"OK":"Ок","Error":"Ошибка в строке","Zero":"Матрица не задана","NonFit":"Количество столбцов матрицы А не совпадает с количеством строк матрицы B,или матрица не задана"};
-</script>
-</div>
-
-
-
+<!-----------------------------Matrix multiplication--------------------------------->
+	<div class="input_error" id="error_box_v54b60ebaec3bd" onclick="this.style.display='none';"></div>
+	<div><script type="text/javascript">
+		function Dialogv54b60ebaec3bd() {this.GetElement = function () { return document.getElementById( "dialogv54b60ebaec3bd" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54b60ebaec3bd"; };this.matrixA= new DialogInput("matrixA", this, null,new ElementAccessorDefault());this.matrixB= new DialogInput("matrixB", this, null,new ElementAccessorDefault());this.messages= new DialogInput("messages", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.matrixR= new DialogInput("matrixR", this, null,new ElementAccessorDefault());this.validation= new DialogInput("validation", this, null,new ElementAccessorOutput());this.Show = function () { ShowDialog("dialogv54b60ebaec3bd"); };this.Hide = function () { HideDialog("dialogv54b60ebaec3bd"); };this.Busy = function () { SetDialogBusy("dialogv54b60ebaec3bd"); };this.Free = function () { SetDialogFree("dialogv54b60ebaec3bd"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.matrixA.ResetValue();this.matrixB.ResetValue();this.messages.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.matrixR.ResetValue();this.validation.ResetValue();};this.SetDefaultValues = function () {this.matrixA.SetValue("-1 2  5\n3 4  6\n-8 2 12");this.matrixB.SetValue("-2 2\n5 7\n-1 4");this.messages.SetValue("OK");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand calclogo\" id=\"dialogv54b60ebaec3bd_logo\" href=\"http://planetcalc.ru/1207/?license=1\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54b60ebaec3bd_calculate\" href=\"#\" onclick=\"dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54b60ebaec3bd_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54b60ebaec3bd_button_text\">Calculate</span></a></div>");this.matrixR.SetValue("");this.validation.SetValue("");};this.GetValues = function () {var retval = {};retval["matrixA"]=this.matrixA.GetValue();retval["matrixB"]=this.matrixB.GetValue();retval["messages"]=this.messages.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["matrixR"]=this.matrixR.GetValue();retval["validation"]=this.validation.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54b60ebaec3bd");};this.Validate = function ( ) {if (!this.matrixA.ValidateCurrent() ) { return false; }if (!this.matrixB.ValidateCurrent() ) { return false; }if (!this.messages.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.matrixR.ValidateCurrent() ) { return false; }if (!this.validation.ValidateCurrent() ) { return false; }return true;};};
+		</script>
+	</div>
+	
+<div class="form_calc" id="dialogv54b60ebaec3bd">
+	<div class="fieldset "><legend id="dialogv54b60ebaec3bd_legend">Matrix multiplication</legend>
+	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixA">Matrix А:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixA', event ) : true);" rows="5" cols="60">
+	</textarea>
+	</div></div>
+	
+	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixB">Matrix B:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixB" name="matrixB" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixB');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixB', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixB', event ) : true);" rows="5" cols="60">
+	</textarea>
+	</div></div>
+	<div id="dialogv54b60ebaec3bd_messages">
+	<script type="text/javascript">
+		var dialogv54b60ebaec3bd_messages_data={"OK":"Ок","Error":"Error in line","Zero":"Matrix is not set","NonFit":"The number of columns of the matrix A does not coincide with the number of rows of the matrix B, the matrix is not set"};
+	</script>
+	</div>
 
 <script type="text/javascript">
 PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebaec3bd_precisionmeter"),2,"dialoghandlerv54b60ebaec3bd");
 </script>
 <div id="dialogv54b60ebaec3bd__line" class="labelctrl">
-<a id="dialogv54b60ebaec3bd_calculate" href="#" onclick="dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebaec3bd_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54b60ebaec3bd_button_text">Рассчитать</span></a>
+<a id="dialogv54b60ebaec3bd_calculate" href="#" onclick="dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebaec3bd_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54b60ebaec3bd_button_text">Calculate</span></a>
 
 </div>
 
 <p>
-<div class="fieldset calc_outputs" id="dialogv54b60ebaec3bd_outputs0"><label for="dialogv54b60ebaec3bd_matrixR">Результат:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebaec3bd_matrixR"><table class="table table-bordered"><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></div><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebaec3bd_validation">Ок</span><span class="textoutput_label">Разбор входных данных:</span></div></div></div></div></div><div>
-
+<div class="fieldset calc_outputs" id="dialogv54b60ebaec3bd_outputs0"><label for="dialogv54b60ebaec3bd_matrixR">Result:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebaec3bd_matrixR"><table class="table table-bordered"><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></div><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebaec3bd_validation">Ок</span><span class="textoutput_label">Parse of the input data:</span></div></div></div></div></div><div>
 
 <script type="text/javascript">
 var dialogv54b60ebaec3bd = new Dialogv54b60ebaec3bd();
@@ -1123,79 +1109,12 @@ dialoghandlerv54b60ebaec3bd.initdialog(dialogv54b60ebaec3bd);
 </script>
 </div>
 
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
 </div>
 <div class="horizontal_divider"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-</div>
-
-</div>
-
-
-
-
-
-
+	</div></div>
+	<script src="../js/lang.js"></script>
 </body>
 </html>
