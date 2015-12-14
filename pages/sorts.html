@@ -77,7 +77,34 @@
 					</div>
 					<div class="col-sm-2 col-xs-2 col-md-2 col-lg-2"></div>
 				</div>
+<<<<<<< HEAD
 			</div>
+=======
+			<hr>
+			<a id="calculations" class="anchor"></a>
+			<section>
+			<input type="radio" name="r" value="Сортировка пузырьком"><b>Сортировка пузырьком
+			<input type="radio" name="r" value="Сортировка вставками">Сортировка вставками
+			<input type="radio" name="r" value="Сортировка выбором">Сортировка выбором
+			<input type="radio" name="r" value="Сортировка перемешиванием">Сортировка перемешиванием</b>
+			<table class="table table-hover table-condensed text-center" border="1px">
+				<tr>
+					<td><input id="TN" type="number" value="10"/></td>
+					<td><input id="NN" class="btn btn-default" type="button" value="Добавить число" onclick="add_new_number();"/></td>
+				</tr>
+				<tr>
+					<td><textarea id="numbs" onkeyup="checkInput(this)" type="number" name="arr" rows=5 cols=100 wrap="on"></textarea></td>
+					<td><input id="Barr" class="btn btn-default" type="button" value="Показать массив" onclick="cta2();"/><br/>
+					<input id="Bars" class="btn btn-default" type="button" value="Считать массив из области" onclick="rfarr();"/></td>
+				</tr>
+				<tr>
+					<td><textarea readonly="readonly" name="ars" type="number" rows=5 cols=100 wrap="on"></textarea></td>
+					<td><input id="Bars" class="btn btn-default" type="button" value="Отсортировать" onclick="cta();"/>
+					<br/><input id="TNNN" value="10"/></td>
+				</tr>
+			</table>
+			</section>
+>>>>>>> c76fe43b8b60b6f0cc5fe608a80abae495bfc753
 		</div>
 	</section>
     <script src="../js/jquery.js"></script>

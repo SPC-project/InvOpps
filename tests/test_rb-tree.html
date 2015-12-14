@@ -27,7 +27,6 @@
 			insert(5);
 			assert(tree != null);
 				assert(tree.data = 5);
-					assert(!tree.isRed);		// root always black
 			insert(4);
 			assert(tree.left != null);
 					assert(tree.left.data == 4);
@@ -50,6 +49,45 @@
 				assert(!tree.right.isRed);
 				assert(tree.right.left.isRed);
 				assert(tree.right.right.isRed);
+
+
+			// remove non-existing node
+			remove(41); // nothing should change
+			remove(21);
+			remove(4);
+
+			// clean tree
+			zap();
+			insert(51);
+			insert(52);
+			insert(53);
+			assert(tree.data = 52);
+				assert(tree.left != null);
+					assert(tree.left.data = 52);
+				assert(tree.right != null);
+					assert(tree.right.data = 53);
+
+			// similar data
+			zap();
+			insert(77);
+			insert(77);
+			assert( tree.data.right == null );
+
+			// red violation
+			zap();
+			insert(45);
+			insert(77);
+			insert(84);
+			insert(88);
+			insert(89);
+			insert(90);
+			insert(91);
+
+			// different input
+			zap();
+			insert('e');
+			insert(7);
+			insert('Jon')
 		</script>
 	</body>
 </html>

@@ -5,20 +5,137 @@ var input_field_end = "' onkeydown='mna_typing(event)'>";
 var selected_row = null;
 var max_allowed_steps_count = 1000;
 
+function isRu(){
+	return document.getElementsByTagName("html")[0].getAttribute("lang") == "ru"
+}
+
+function defaultInput(){
+	var value = document.getElementById("coded_text").value;
+	var def = isRu() ? "Текст, над которым алгоритм будет работать" : "Text for processing algorithm"
+	if( value == def || value == "")
+		return true
+	else
+		return false
+}
+
 function load_example(index){
+	clean_rules("MNA_scheme");
+	clean_rules("log");
 	switch( index ){
-		case 0:
-			clean_rules("MNA_scheme");
-			clean_rules("log");
-			break;
 		case 1:
 			add_rule("1", "0|");
 			add_rule("|0", "0||");
 			add_rule("0", empty_symbol);
-			var example = Math.floor((Math.random() * 16) + 1);
-			document.getElementById("coded_text").value = example.toString(2);
+			if( defaultInput() ) {
+				var example = Math.floor((Math.random() * 16) + 1);
+				document.getElementById("coded_text").value = example.toString(2);
+			}
+			break;
+		case 2:
+			add_rule(".a", "m.");
+			add_rule(".b", "n.");
+			add_rule(".c", "o.");
+			add_rule(".d", "p.");
+			add_rule(".e", "q.");
+			add_rule(".f", "r.");
+			add_rule(".g", "s.");
+			add_rule(".h", "t.");
+			add_rule(".i", "u.");
+			add_rule(".j", "v.");
+			add_rule(".k", "w.");
+			add_rule(".l", "x.");
+			add_rule(".m", "y.");
+			add_rule(".n", "z.");
+			add_rule(".o", "a.");
+			add_rule(".p", "b.");
+			add_rule(".q", "c.");
+			add_rule(".r", "d.");
+			add_rule(".s", "e.");
+			add_rule(".t", "f.");
+			add_rule(".u", "g.");
+			add_rule(".v", "h.");
+			add_rule(".w", "i.");
+			add_rule(".x", "j.");
+			add_rule(".y", "k.");
+			add_rule(".z", "l.");
+			add_rule(". ", " .");
+			if( defaultInput() ) {
+				var example = ".hello wolrd"
+				document.getElementById("coded_text").value = example;
+			}
+			break;
+		case 3:
+			add_rule("m.", ".a" );
+			add_rule("n.", ".b" );
+			add_rule("o.", ".c" );
+			add_rule("p.", ".d" );
+			add_rule("q.", ".e" );
+			add_rule("r.", ".f" );
+			add_rule("s.", ".g" );
+			add_rule("t.", ".h" );
+			add_rule("u.", ".i" );
+			add_rule("v.", ".j" );
+			add_rule("w.", ".k" );
+			add_rule("x.", ".l" );
+			add_rule("y.", ".m" );
+			add_rule("z.", ".n" );
+			add_rule("a.", ".o" );
+			add_rule("b.", ".p" );
+			add_rule("c.", ".q" );
+			add_rule("d.", ".r" );
+			add_rule("e.", ".s" );
+			add_rule("f.", ".t" );
+			add_rule("g.", ".u" );
+			add_rule("h.", ".v" );
+			add_rule("i.", ".w" );
+			add_rule("j.", ".x" );
+			add_rule("k.", ".y" );
+			add_rule("l.", ".z" );
+			add_rule(" .", ". ");
+			if( defaultInput() ) {
+				var example = "azq fa dgxq ftqy mxx."
+				document.getElementById("coded_text").value = example;
+			}
+			break; 
+		case 4:
+			add_rule("u⠂", "0m");
+			add_rule("m⠄", "0l");
+			add_rule("l⠁", "0u"); 
+			add_rule("u⠄", "1l");
+			add_rule("m⠁", "1u"); 
+			add_rule("l⠂", "1m");
+			add_rule("u",  "");
+			add_rule("m",  "");
+			add_rule("l",  "");
+			add_rule("⠂⠁", "1u");
+			add_rule("⠂⠄", "0l");
+			var number = Math.floor((Math.random() * 32) + 32).toString(2);
+			var symbols = ['⠄', '⠂', '⠁']
+			var pos = 1
+			var example = symbols[pos]
+			for (var i = 0, l = number.length; i < l; i++) {
+				var v = number[i];
+				if( Number(v) ) {
+					pos += 1;
+					if( pos == 3 )
+						pos = 0
+				} else {
+					pos -= 1;
+					if( pos == -1 )
+						pos = 2
+				}
+				example += symbols[pos]
+			}
+			document.getElementById("coded_text").value = example;
 			break;
 	}
+}
+
+function copyToInput(){
+	var from = document.getElementById("decoded_text");
+	var to = document.getElementById("coded_text");
+	to.value = from.innerHTML;
+	from.innerHTML = "";
 }
 
 function set_limit(number){
@@ -48,8 +165,8 @@ function switch_button(to_def_state){
 	var button = document.getElementById("removeBut");
 	if( to_def_state ){
 		button.className = "btn btn-default";
-		button.value = "Очистить";
-		button.title = "Очистить таблицу правил"
+		button.value = isRu() ? "Очистить" : "Clean" ;
+		button.title = isRu() ? "Очистить таблицу правил" : "Clean rules' table"
 		button.onclick = function(){ 
 			clean_rules("MNA_scheme");
 			clean_rules("log");
@@ -60,8 +177,8 @@ function switch_button(to_def_state){
 		}
 	} else {
 		button.className = "btn btn-warning";
-		button.value = "Удалить";
-		button.title = "Удалить выбранное правило"
+		button.value = isRu() ? "Удалить" : "Delete";
+		button.title = isRu() ? "Удалить выбранное правило" : "Delete selected rule"
 		button.onclick = delete_row;
 	}
 }
@@ -135,8 +252,10 @@ function mna(need_log){
 	clean_rules("log");
 	if( need_log ){
 		log_row = log.insertRow();
-		searhed_keys = log_row.insertCell(0); searhed_keys.innerHTML = "Подстановки";
-		substitution = log_row.insertCell(1); substitution.innerHTML = "Выполненные замены"
+		searhed_keys = log_row.insertCell(0); 
+		searhed_keys.innerHTML = isRu() ? "Подстановки" : "Substitution";
+		substitution = log_row.insertCell(1);
+		substitution.innerHTML = isRu() ? "Выполненные замены" : "Proceed";
 	}
 
 	while( keep_subst ){
@@ -189,6 +308,7 @@ function mna(need_log){
 		var searhed_keys = log_row.insertCell(0);
 		var substitution = log_row.insertCell(1);
 		searhed_keys.innerHTML = desc.substr(0, desc.length-2); 
-		substitution.innerHTML = "Завершение программы (шагов: " + log.rows.length + ")";
+		substitution.innerHTML = isRu() ? "Завершение программы (шагов: " : "Done (take steps: ";
+		substitution.innerHTML += log.rows.length + ")";
 	}
 }
