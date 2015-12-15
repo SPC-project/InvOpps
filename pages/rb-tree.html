@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +19,7 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/lang.css" rel="stylesheet">
 	<link href="../css/folding.css" rel="stylesheet">
 	
 
@@ -20,6 +29,7 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/d3.min.js"></script>
 	<script src="../js/rb-tree.js"></script>
+	
 
 	<style type="text/css">
 		.central-element { 
@@ -47,9 +57,18 @@
 			shape-rendering: auto;
 		}
   </style>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("temp").className = lang;
+		});
+		
+
+	</script>
 </head>
 
-<body>
+<body id = "temp">
 	<header id="header" role="banner">
 		<div class="container">
 	 		<div id="navbar" class="navbar navbar-default">
@@ -62,14 +81,18 @@
 	 				</button>
 					<a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
 				</div>
-				<div class="collapse navbar-collapse">
-	 				<ul class="nav navbar-nav">
-	 					<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
-	 					<li><a href="#calculations">Calculations</a></li>
-	 					<li><a href="#about">About</a></li>
-					</ul>
+				<div align = "right">
+				  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+				  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
 				</div>
-			</div>
+				<div class="collapse navbar-collapse">
+				    <ul class="nav navbar-nav">
+					<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+					<li><a href="#about-method" class = "en" lang = "en">About method</a></li>
+					<li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
+					<li><a href="#about-method" class = "ru" lang = "ru">О методе</a></li>
+					<li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
+					</div>
 		</div>
 	</header>
 
@@ -78,26 +101,12 @@
 	<div class="container">
 		<div class="box first">
 			<div class="center">
-				<h2>Красно-чёрное дерево</h2>
+				<h2 class = "ru" lang = "ru">Красно-чёрное дерево</h2>
+				<h2 class = "en" lang = "en"> Red-black tree</h2>
 				<p class="lead"></p>
 			</div>
 			
-			<div class="panel-group" id="#accordion">
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">
-								Что происходит на данной страничке?
-							</a>
-						</h4>
-					</div>
-					<div id="collapseOne" class="panel-collapse collapse in">
-						<div class="panel-body text-info">
-							Placeholder 
-						</div>
-					</div>
-				</div>
-			</div>
+		
 
 			<br>
 			<br>
@@ -105,50 +114,81 @@
 			<div class="row">
 				<div class="col-xs-6 col-md-6">
 					<ul class="list-group">
-						<li class="list-group-item active">Ограничения красно-чёрного дерева</li>
-						<li  class="list-group-item">
+						<li class="list-group-item active ru" lang = "ru">Ограничения красно-чёрного дерева</li>
+						<li class="list-group-item active en" lang = "en">Limitations of the red- black tree</li>
+						<li  class="list-group-item en" lang = "en">
+							Every <a>simple way</a>	- from this node to any<a> leaf </a>-child must contain the same number <a>black</a> nodes
+						</li>
+						<li  class="list-group-item ru" lang = "ru">
 							Всякий <a>простой путь</a>	- от данного узла до любого <a>листа</a>-потомка должен содержать одинаковое число <a>чёрных</a> узлов
 						</li>
-						<li  class="list-group-item">Оба потомка красного узла должны быть <a>чёрными</a></li>
+						<li  class="list-group-item ru" lang = "ru">Оба потомка красного узла должны быть <a>чёрными</a></li>
+						<li  class="list-group-item en" lang = "en">Both children of a red node must be <a> black</a></li>
 					</ul>
 				</div>
-				<div class="col-xs-6 col-md-6">
-					<h3 class="center">Placeholder</h3>
-				</div>
+				
 			</div>
 			<section id="calculations"></section>
 
 			<div class="row text-center">
 				<div class="col-xs-3 col-md-3 col-lg-3">
-					<button class="btn btn-success" type="button" data-toggle="tooltip" 
+					<button class="btn btn-success ru" lang = "ru" type="button" data-toggle="tooltip" 
 							data-placement="bottom"	title="В дерево будет добавлен случайный узел"
 							onclick="add_rnd_node()">
 					  Случайный узел
 					</button>
+					<button class="btn btn-success en" lang = "en" type="button" data-toggle="tooltip" 
+							data-placement="bottom"	title="The tree will be added random node"
+							onclick="add_rnd_node()">
+					  Random node
+					</button>
 				</div>
 				<div class="col-xs-6 col-md-6 col-lg-6">
 					<div class="input-group">
-						<span class="input-group-btn" data-toggle="tooltip" data-placement="bottom"
+						<span class="input-group-btn ru" lang = "ru" data-toggle="tooltip" data-placement="bottom"
 							title="Нажатие Enter при фокусе на поле ввода также добавляет элемент">
-							<button class="btn btn-default" type="button"
+							<button class="btn btn-default type="button"
 								onmousedown="add_this_node()">
 								Добавить
 							</button>
+							
 						</span>
+						<span class="input-group-btn en" lang = "en" data-toggle="tooltip" data-placement="bottom"
+							title="Pressing Enter when the focus on the input field adds an element">
+							<button class="btn btn-default" type="button"
+								onmousedown="add_this_node()">
+								Add
+							</button>
+							
+						</span>
+							
 						<input type="text" class="form-control central-element text-center" id="value"
 								onkeydown="value_keydown(event)" onclick="this.select()">
-						<span class="input-group-btn" data-toggle="tooltip" data-placement="bottom"
+						<span class="input-group-btn ru" lang = "ru" data-toggle="tooltip" data-placement="bottom"
 							title="Нажатие Delete при фокусе на поле ввода также удаляет элемент">
 							<button class="btn btn-default" type="button" onclick="del_this_node()">
 								Удалить
 							</button>
+							
 						</span>
+						<span class="input-group-btn en" lang = "en"data-toggle="tooltip" data-placement="bottom"
+							title="Pressing Delete when the focus on the input field also removes the element">
+							<button class="btn btn-default" type="button" onclick="del_this_node()">
+								Delete
+							</button>
+							
+						</span>
+						
 					</div><!-- /input-group -->
 				</div>
 				<div class="col-xs-3 col-md-3 col-lg-3">
-					<button class="btn btn-warning" type="button" data-toggle="tooltip" 
+					<button class="btn btn-warning ru" lang = "ru" type="button" data-toggle="tooltip" 
 								data-placement="bottom"	title="Дерево - это то, что вы формируете, нажимая добавить/удалить" onclick="clear_tree()">
 						  Очистить дерево
+					</button>
+					<button class="btn btn-warning en" lang = "en" type="button" data-toggle="tooltip" 
+								data-placement="bottom"	title="Wood - is that you form by clicking Add / Remove" onclick="clear_tree()">
+						  Сlean tree
 					</button>
 				</div>
 			</div><!-- /.row -->
@@ -171,5 +211,6 @@
 
 		var svg = d3.select('#canvas').append('svg')
 	</script>
+	<script src="../js/lang.js"></script>
 </body>
 </html>
