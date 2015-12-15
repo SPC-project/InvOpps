@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
 <head>
     <title>InvOpps: Сортировки</title>
 	<meta name="keywords" content="" />
@@ -15,9 +23,19 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/lang.css" rel="stylesheet">
 	<link href="../css/folding.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("temp").className = lang;
+		});
+		
+
+	</script>
 </head>
-<body>
+<body id = "temp">
     <header id="header" role="banner">
         <div class="container">
             <div id="navbar" class="navbar navbar-default">
@@ -30,12 +48,18 @@
                     </button>
                     <a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
-						<li><a href="#about-method">About method</a></li>
-                        <li><a href="#calculations">Calculations</a></li>     
-                    </ul>
+                <div align = "right">
+		  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+		  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+		</div>
+				<div class="collapse navbar-collapse">
+				    <ul class="nav navbar-nav">
+				        <li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+					<li><a href="#about-method" class = "en" lang = "en">About method</a></li>
+				        <li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
+					<li><a href="#about-method" class = "ru" lang = "ru">О методе</a></li>
+				        <li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
+				    </ul>
                 </div>
             </div>
         </div>
@@ -50,7 +74,8 @@
 					<div class="col-sm-8 col-xs-8 col-md-8 col-lg-8">
 						<!--table class="table"-->			
 						<div class="center">
-							<h2>Sorts</h2>
+							<h2 class = "en" lang = "en">Sorts</h2>
+							<h2 class = "ru" lang = "ru">Сортировки</h2>
 							<p class="lead"></p>
 						</div>
 						<hr>
@@ -58,23 +83,38 @@
 						<section>
 							<form role = "form" class="text-center"> 
 								<div class="form-group text-center">
-									<input type="radio" name="r" value="Сортировка пузырьком"><b>Сортировка пузырьком
-									<input type="radio" name="r" value="Сортировка вставками">Сортировка вставками
-									<input type="radio" name="r" value="Сортировка выбором">Сортировка выбором
-									<input type="radio" name="r" value="Сортировка перемешиванием">Сортировка перемешиванием</b>
-									<input id="TN" type="number" value="10"/>
-									<input id="NN" class="btn btn-default" type="button" value="Добавить число" onclick="add_new_number();"/><br>
-									<label for = "arr">Введите свой массив(используйте пробел между числами)</label>
-										<textarea id="numbs" name="arr" class = "form-control col-md-6 col-lg-12" rows = "6"></textarea><br>
-									<label for = "">Нажмите "обновить массив" для заполнения массива из области</label><br>
-									<input id="Barr" class="btn btn-info" type="button" value="Показать массив" onclick="cta2();"/>
-									<input id="Bars" class="btn btn-info" type="button" value="Обновить массив" onclick="rfarr();"/>
+				<b class = "ru" lang = "ru"><h5><input type="radio" name="r" value="Сортировка пузырьком"> Сортировка пузырьком
+				<input type="radio" name="r" value="Сортировка вставками"> Сортировка вставками
+				<input type="radio" name="r" value="Сортировка выбором"> Сортировка выбором
+				<input type="radio" name="r" value="Сортировка перемешиванием"> Сортировка перемешиванием</h5></b>
+
+
+			<b class = "en" lang = "en"><h5><input type="radio" name="r" value="Сортировка пузырьком"> Bubble sort
+				<input type="radio" name="r" value="Сортировка вставками"> Insert sort
+				<input type="radio" name="r" value="Сортировка выбором"> Selection sort
+				<input type="radio" name="r" value="Сортировка перемешиванием"> Sort by stirring</h5></b><br>
+									
+				<input id="TN" type="number" value="10"/>
+				<input id="NN" class="btn btn-default ru" lang = "ru" type="button" value="Добавить число" onclick="add_new_number();"/>
+				<input id="NN" class="btn btn-default en" lang = "en" type="button" value="Add number" onclick="add_new_number();"/><br>
+				<label for = "arr" class = "ru" lang = "ru">Введите свой массив(используйте пробел между числами)</label>
+				<label for = "arr" class = "en" lang = "en">Enter your weight ( use a space between the numbers )</label>
+					<textarea id="numbs" name="arr" class = "form-control col-md-6 col-lg-12" rows = "6"></textarea><br>
+				
+				<label for = "" class = "ru" lang = "ru">Нажмите "обновить массив" для заполнения массива из области</label>
+				<label for = "" class = "en" lang = "en">Click "update array" to fill an array of field</label><br>
+				<input id="Barr" class="btn btn-info ru" lang = "ru" type="button" value="Показать массив" onclick="cta2();"/>
+				<input id="Barr" class="btn btn-info en" lang = "en" type="button" value="Show array" onclick="cta2();"/>
+				<input id="Bars" class="btn btn-info ru" lang = "ru" type="button" value="Обновить массив" onclick="rfarr();"/>
+				<input id="Bars" class="btn btn-info en" lang = "en" type="button" value="Update array" onclick="rfarr();"/>
 								</div>
-								<div class = "form-group text-center">
-									<label for = "ars">Отсортированный массив</label>
-										<textarea id="ars" name="ars" class = "form-control col-md-6 col-lg-10" rows = "6"></textarea><br>
-										<input type="text" id="TNNN" value=""/><br/>
-									<input id="Bars" class="btn btn-info" type="button" value="Отсортировать" onclick="cta();"/>
+			<div class = "form-group text-center">
+				<label for = "ars" class = "ru" lang = "ru">Отсортированный массив</label>
+				<label for = "ars" class = "en" lang = "en">Sorted array</label>
+					<textarea id="ars" name="ars" class = "form-control col-md-6 col-lg-10" rows = "6"></textarea><br>
+					<input type="text" id="TNNN" value=""/><br/>
+				<input id="Bars" class="btn btn-info ru" lang = "ru" type="button" value="Отсортировать" onclick="cta();"/>
+				<input id="Bars" class="btn btn-info en" lang = "en" type="button" value="Sort" onclick="cta();"/>
 								</div>
 							</form>
 						</section>
@@ -90,5 +130,6 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/sorts.js"></script>
+	<script src="../js/lang.js"></script>
 </body>
 </html>
