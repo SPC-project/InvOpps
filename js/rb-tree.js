@@ -291,6 +291,31 @@ function get_from_svg(svg, what) {
 	return Number(param);
 }
 
+function draw_connections_between_nodes(data, radius, x_center, between_nodes, groups){
+	for (var i = 0, l = data.length; i < l; i++) {
+		var node = data[i];
+		if( node.left != null ){
+			console.log(Math.floor( radius + x_center + between_nodes*node.pos.row ), Math.floor( 44 * node.pos.level + 30), Math.floor( radius + x_center + between_nodes*node.left.pos.row ), Math.floor( 44 * node.left.pos.level + 30 ))
+			groups.append("line")
+				.attr("x1", Math.floor( radius + x_center + between_nodes*node.pos.row ))
+				.attr("y1", Math.floor( 44 * node.pos.level + 30 ))
+				.attr("x2", Math.floor( 2*radius + x_center + between_nodes*node.left.pos.row ))
+				.attr("y2", Math.floor( 44 * node.left.pos.level + 30 - radius))
+				.attr("stroke-width", 2)
+				.attr("stroke", "black");
+		}
+		if( node.right != null ){
+			groups.append("line")
+				.attr("x1", Math.floor( 3*radius + x_center + between_nodes*node.pos.row ))
+				.attr("y1", Math.floor( 44 * node.pos.level + 30 ))
+				.attr("x2", Math.floor( 2*radius + x_center + between_nodes*node.right.pos.row ))
+				.attr("y2", Math.floor( 44 * node.right.pos.level + 30 -radius))
+				.attr("stroke-width", 2)
+				.attr("stroke", "black");
+		}
+	}
+}
+
 function draw_tree(){
 	// element 'svg' initialized in .html
 	svg.selectAll("*").remove();
@@ -298,8 +323,8 @@ function draw_tree(){
 	var svg_height = get_from_svg(svg, "height");
 	var svg_width = get_from_svg(svg, "width") - 4*radius;
 	var x_center = svg_width/2;
-	var between_nodes = x_center / Math.pow(2, tree_depth);
 	var data = pack_tree();
+	var between_nodes = x_center / Math.pow(2, tree_depth);
 	var groups = svg.selectAll("g")
 		 .data( data )
 		 .enter()
@@ -309,11 +334,12 @@ function draw_tree(){
 		svg.style("height", 30 + 52*tree_depth )
 
 	groups.attr("transform", function(d, i) {
-		var x = 2*radius + x_center + between_nodes*d.pos.row;
-		var y = 44 * d.pos.level + 30;
-		return "translate(" + [Math.floor(x), Math.floor(y)] + ")";
+		var x = Math.floor( 2*radius + x_center + between_nodes*d.pos.row );
+		var y = Math.floor( 44 * d.pos.level + 30 );
+		return "translate(" + [x, y] + ")";
 	})
 	  
+
 	var circles = groups.append("circle")
 		 .attr({
 			cx: function(d,i){
@@ -328,11 +354,12 @@ function draw_tree(){
 			"stroke-width": 2.4192
 		 })
 		 
+	draw_connections_between_nodes(data, radius, x_center, between_nodes, svg);
 	var label = groups.append("text")
-		 .text(function(d){
-			 return d.data;
-		 })
-		 .attr({
+		.text(function(d){
+			return d.data;
+		})
+		.attr({
 			 "alignment-baseline": "middle",
 			 "text-anchor": "middle",
 			 "font-style": function(d){
@@ -347,10 +374,11 @@ function draw_tree(){
 				 else
 					 return "black"
 			 }
-		 });
-	 svg.selectAll("*").on("click", function(d,i){ 
-		 document.getElementById("value").value = d.data;
-	 });
+		});
+
+	svg.selectAll("*").on("click", function(d,i){ 
+		document.getElementById("value").value = d.data;
+	});
 }
 
 window.onresize = draw_tree;
