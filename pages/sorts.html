@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <title>InvOpps: Sorts</title>
+    <title>InvOpps: Сортировки</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="utf-8">
@@ -58,18 +58,22 @@
 						<section>
 							<form role = "form" class="text-center"> 
 								<div class="form-group text-center">
+									<input type="radio" name="r" value="Сортировка пузырьком"><b>Сортировка пузырьком
+									<input type="radio" name="r" value="Сортировка вставками">Сортировка вставками
+									<input type="radio" name="r" value="Сортировка выбором">Сортировка выбором
+									<input type="radio" name="r" value="Сортировка перемешиванием">Сортировка перемешиванием</b>
 									<input id="TN" type="number" value="10"/>
-									<input id="NN" class="btn btn-default" type="button" value="Add number" onclick="add_new_number();"/><br>
-									<label for = "arr">Enter your array(use space to devide elements)</label>
+									<input id="NN" class="btn btn-default" type="button" value="Добавить число" onclick="add_new_number();"/><br>
+									<label for = "arr">Введите свой массив(используйте пробел между числами)</label>
 										<textarea id="numbs" name="arr" class = "form-control col-md-6 col-lg-12" rows = "6"></textarea><br>
-									<label for = "">(press "Refresh" after entering array)</label><br>
-									<input id="Barr" class="btn btn-info" type="button" value="Show array" onclick="showarray();"/>
-									<input id="Bars" class="btn btn-info" type="button" value="Refresh" onclick="rfarr();"/>
+									<label for = "">Нажмите "обновить массив" для заполнения массива из области</label><br>
+									<input id="Barr" class="btn btn-info" type="button" value="Показать массив" onclick="showarray();"/>
+									<input id="Bars" class="btn btn-info" type="button" value="Обновить массив" onclick="rfarr();"/>
 								</div>
 								<div class = "form-group text-center">
-									<label for = "ars">Sorted array</label>
+									<label for = "ars">Отсортированный массив</label>
 										<textarea id="ars" name="ars" class = "form-control col-md-6 col-lg-10" rows = "6"></textarea><br>
-									<input id="Bars" class="btn btn-info" type="button" value="Sort" onclick="buble();showsortarray();"/>
+									<input id="Bars" class="btn btn-info" type="button" value="Отсортировать" onclick="showsortarray();"/>
 								</div>
 							</form>
 						</section>
@@ -79,31 +83,6 @@
 				</div>
 				<hr>
 			</div>
-
-			<hr>
-			
-			<a id="calculations" class="anchor"></a>
-			<section id="shit-code">
-			<input type="radio" name="r" value="Сортировка пузырьком"><b>Сортировка пузырьком
-			<input type="radio" name="r" value="Сортировка вставками">Сортировка вставками
-			<input type="radio" name="r" value="Сортировка выбором">Сортировка выбором
-			<input type="radio" name="r" value="Сортировка перемешиванием">Сортировка перемешиванием</b>
-			<table class="table table-hover table-condensed text-center" border="1px">
-				<tr>
-					<td><input id="TN" type="number" value="10"/></td>
-					<td><input id="NN" class="btn btn-default" type="button" value="Добавить число" onclick="add_new_number();"/></td>
-				</tr>
-				<tr>
-					<td><textarea id="numbs" onkeyup="checkInput(this)" type="number" name="arr" rows=5 cols=100 wrap="on"></textarea></td>
-					<td><input id="Barr" class="btn btn-default" type="button" value="Показать массив" onclick="cta2();"/><br/>
-					<input id="Bars" class="btn btn-default" type="button" value="Считать массив из области" onclick="rfarr();"/></td>
-				</tr>
-				<tr>
-					<td><textarea readonly="readonly" name="ars" type="number" rows=5 cols=100 wrap="on"></textarea></td>
-					<td><input id="Bars" class="btn btn-default" type="button" value="Отсортировать" onclick="cta();"/>
-					<br/><input id="TNNN" value="10"/></td>
-				</tr>
-			</table>
 			</section>
 		</div>
 	</section>
