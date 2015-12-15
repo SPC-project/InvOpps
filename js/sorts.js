@@ -9,7 +9,8 @@ var Arr= new Array();
 
 
    Number.onkeyup = function(e)
-    {    	e = e || event;
+    {
+    	e = e || event;
         if(e.keyCode===13)
         {
         	add_new_number();
@@ -72,7 +73,8 @@ st=parseFloat(Date.now());
             	for(var l=0;l<i;l++)
             	{
             		if(Arr3[l]>Arr_min)
-            		{            			var tmp=Arr3[k];
+            		{
+            			var tmp=Arr3[k];
             			Arr_min=Arr3[l];
             			Arr3[k]=Arr_min;
             			Arr3[l]=tmp;
@@ -216,5 +218,5 @@ function cta()
 			else
 			{
 				alert("No one type selected!!! Choose one & try again.");
-			}
-		}
+}
+}
