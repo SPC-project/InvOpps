@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
-<html g_init="6962">
-<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<html g_init="6962" >
+	<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
 <script type="text/javascript">
 var lang = $$c.get('lang');
 if(!lang)
@@ -18,11 +18,11 @@ if(!lang)
 	<!-- Bootstrap -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
-	<link href="../css/lang.css" rel = "stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/lang.css" rel="stylesheet">
 	<link href="../css/folding.css" rel="stylesheet">
 	 
-	<script src="../js/mna.js"></script>
+	<!--script src="../js/mna.js"></script-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -145,10 +145,10 @@ if(!lang)
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
-						<li><a href="#calculations"class = "en" lang = "en">Calculations</a></li>
+						<li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
 						<li><a href="#about" class = "en" lang = "en">About</a></li>
-						<li><a href="#calculations"class = "ru" lang = "ru">Вычисления</a></li>
-						<li><a href="#about" class = "ru" lang = "ru">О методах</a></li>
+						<li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
+						<li><a href="#about" class = "ru" lang = "ru">О методе</a></li>
 					</ul>
 				</div>
             </div>
@@ -161,13 +161,16 @@ if(!lang)
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">
+							<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne" class = "en" lang = "en">
 								What happens on the page?
+							</a>
+							<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne" class = "ru" lang = "ru">
+								Что происходит на страничке?
 							</a>
 						</h4>
 					</div>
 					<div id="collapseOne" class="panel-collapse collapse">
-						<div class="panel-body text-info">
+						<div class="panel-body text-info en" lang = "en">
 							1.	The matrix product. In words, if A is an n × m matrix and B is an m × p matrix, their matrix product AB is an n × p matrix, in which the m entries across the rows of A are multiplied with the m entries down the columns of B.
 <br>2.	In linear algebra, the determinant is a value that can be computed from the elements of a square matrix. Our way to express the determinant is by considering the elements in the top row and the respective minors; starting at the left, multiply the element by the minor, then subtract the product of the next element and its minor, and alternate adding and subtracting such products until all elements in the top row have been exhausted.
 <br>3.	In linear algebra, the transpose of a matrix A is another matrix AT .
@@ -180,12 +183,21 @@ If A is an m × n matrix then AT is an n × m matrix.
 <br>3) Press the «Calculate».
  
 						</div>
+<div class="panel-body text-info ru" lang = "ru">
+							1. Продукт матрицы. В словами, если А представляет собой n × m матрицы и В является m × p матрицы, их матричное произведение AB является п × п матрицы, в которой м записи через строках умножают М записей вниз по колонкам Б.
+<br>2. В линейной алгебре, определитель является значением, которое может быть вычислено из элементов квадратной матрицы. Наш путь, чтобы выразить определитель с учетом элементов в верхней строке и соответствующих несовершеннолетних; начиная слева, умножьте элемент несовершеннолетним, затем вычесть продукт следующего элемента и его несовершеннолетнего, и чередуются сложения и вычитания таких продуктов пока все элементы в верхней строке не были исчерпаны.
+<br>3. В линейной алгебре, транспонированная матрицы А это матрицa AT. Если А является m × n матрица, то АТ n × m матрицы.
+<br>4. В линейной алгебре, Гаусса (также известный как сокращение ряд) представляет собой алгоритм для решения систем линейных уравнений. Для выполнения ряда сокращение на матрице, один использует последовательность элементарных операций подряд, чтобы изменить матрицу, пока в левом нижнем углу матрицы не заполняется нулями, а насколько это возможно. С помощью этих операций, матрица всегда может быть преобразована в верхней треугольной матрицей, а на самом деле тот, который находится в виде строки эшелона.
+<br>5. Обратная матрица - матрица А ^ (- 1), который при умножении на оригинальные результаты матрица А в единичной Е. квадратная матрица обратима, если и только если оно является невырожденной, то есть ее определитель не равен нулю , Для не-квадратной матрицы и вырожденные матрицы обратной матрицы не существует.
+<br>6. Для того, чтобы расчеты необходимо:
+<br>1) Введите через пробел позиций и нажмите «Enter», чтобы перейти к следующей строке.
+<br>2) Выберите точность расчета.
+<br>3) Нажмите «Рассчитать».
+ 
+						</div>
 					</div>
 				</div>
 			</div>
-			
-			
-			
 				<div class="center">
 					<h2 class = "en" lang = "en">Matrix Operations</h2>
 					<h2 class = "ru" lang = "ru">Операции над матрицами</h2>
@@ -210,8 +222,9 @@ If A is an m × n matrix then AT is an n × m matrix.
 <div class="form_calc" id="dialogv54b60eb9da33d">
 	<div class="fieldset ">
 		<div class="control-group">
-		<legend id="dialogv54b60eb9da33d_legend">Determinant of the matrix</legend>
-		<label class="control-label textarea" for="dialogv54b60eb9da33d_matrixfield">Initial matrix:</label>
+		<legend id="dialogv54b60eb9da33d_legend" class = "en" lang = "en">Determinant of the matrix</legend>
+		<legend id="dialogv54b60eb9da33d_legend" class = "ru" lang = "ru">Определитель матрицы</legend>
+		<label class="control-label textarea" for="dialogv54b60eb9da33d_matrixfield" ><p class = "en" lang = "en">Initial matrix:</p><p class = "ru" lang = "ru">Инициализация матрицы:</p></label>
 			<div class="controls"><textarea id="dialogv54b60eb9da33d_matrixfield" name="matrixfield" onchange=" dialoghandlerv54b60eb9da33d.onchanged('matrixfield');" onkeypress="return dialoghandlerv54b60eb9da33d.onkeypressed('matrixfield', event );" onkeydown="return (typeof(dialoghandlerv54b60eb9da33d.onkeydown) != 'undefined' ? dialoghandlerv54b60eb9da33d.onkeydown('matrixfield', event ) : true);" rows="5" cols="60"></textarea>
 			</div>
 		</div>
@@ -230,16 +243,19 @@ PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60eb9da33d_precisi
 		<div id="dialogv54b60eb9da33d__line" class="labelctrl">
 			<a id="dialogv54b60eb9da33d_calculate" href="#" onclick="dialoghandlerv54b60eb9da33d.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-justify">
 			<i style="display: none;" id="dialogv54b60eb9da33d_timerplace" class="fa fa-spinner fa-spin"></i> 
-			<span id="dialogv54b60eb9da33d_button_text">Calculate</span>
+			<span id="dialogv54b60eb9da33d_button_text" class = "en" lang = "en">Calculate</span>
+			<span id="dialogv54b60eb9da33d_button_text" class = "ru" lang = "ru">Вычислить</span>
 			</a>
 		</div>
 <!--p-->
-		<div class="fieldset calc_outputs" id="dialogv54b60eb9da33d_outputs0"><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_validation"></span><span class="textoutput_label">Notes:</span>
+		<div class="fieldset calc_outputs" id="dialogv54b60eb9da33d_outputs0"><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_validation"></span><span class="textoutput_label en" lang = "en">Notes:</span>
+											<span class="textoutput_label ru" lang = "ru">Заметки:</span>
 			</div></div>
 			<div class="control-group">
 				<div class="control">
 					<span style="visibility: visible;" class="textoutput" id="dialogv54b60eb9da33d_det"></span>
-					<span class="textoutput_label">Determinant of the matrix:</span>
+					<span class="textoutput_label en" lang = "en">Determinant of the matrix:</span>
+					<span class="textoutput_label ru" lang = "ru">Определитель матрицы:</span>
 				</div>
 			</div>
 		</div>
@@ -425,13 +441,16 @@ function Dialogv54b60ebb109c4() {this.GetElement = function () { return document
 
 <div class="form_calc" id="dialogv54b60ebb109c4">
 <div class="fieldset">
-<legend id="dialogv54b60ebb109c4_legend">Inverse matrix
+<legend id="dialogv54b60ebb109c4_legend" class = "en" lang = "en">Inverse matrix
+
+</legend>
+<legend id="dialogv54b60ebb109c4_legend" class = "ru" lang = "ru">Обратная матрица
 
 </legend>
 <div id="dialogv54b60ebb109c4_messages"><script type="text/javascript">
 var dialogv54b60ebb109c4_messages_data={"Error":"Error in line ","Zero":"Matrix is ​​not square , or is not set!","NonSquare":"Matrix is ​​not square , or is not set!","Singular":"Matrix is confluent!"};
 </script></div>
-<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebb109c4_matrixA">Initial matrix:</label><div class="controls"><textarea style="border-color: rgb(255, 0, 0); color: rgb(255, 0, 0);" id="dialogv54b60ebb109c4_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebb109c4.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebb109c4.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebb109c4.onkeydown) != 'undefined' ? dialoghandlerv54b60ebb109c4.onkeydown('matrixA', event ) : true);" rows="5" cols="60"></textarea>
+<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebb109c4_matrixA"><p class = "en" lang = "en">Initial matrix:</p><p class = "ru" lang = "ru">Инициализация матрицы:</p></label><div class="controls"><textarea style="border-color: rgb(255, 0, 0); color: rgb(255, 0, 0);" id="dialogv54b60ebb109c4_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebb109c4.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebb109c4.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebb109c4.onkeydown) != 'undefined' ? dialoghandlerv54b60ebb109c4.onkeydown('matrixA', event ) : true);" rows="5" cols="60"></textarea>
 <div style="display: block; z-index: 1000000;" class="input_error" id="error_box_v54b60ebb109c4" onclick="this.style.display='none';">Matrix is not set</div></div></div><div class="control-group"><label class="control-label" for="dialogv54b60ebb109c4_precisionmeter"></label>
 </div><script type="text/javascript">
 PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebb109c4_precisionmeter"),2,"dialoghandlerv54b60ebb109c4");
@@ -440,13 +459,14 @@ PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebb109c4_precisi
 
 
 <a id="dialogv54b60ebb109c4_calculate" href="#" onclick="dialoghandlerv54b60ebb109c4.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebb109c4_timerplace" class="fa fa-spinner fa-spin"></i> 
-<span id="dialogv54b60ebb109c4_button_text">Calculate</span>
+<span id="dialogv54b60ebb109c4_button_text" class = "en" lang = "en">Calculate</span>
+<span id="dialogv54b60ebb109c4_button_text" class = "ru" lang = "ru">Вычислить</span>
 </a>
 </div>
 
 <!--p-->
 <p>
-<div class="fieldset calc_outputs" id="dialogv54b60ebb109c4_outputs0"><label for="dialogv54b60ebb109c4_matrixR">Inverse matrix:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebb109c4_matrixR"><table class="table table-bordered"></table></div></div></div></div><div><script type="text/javascript">
+<div class="fieldset calc_outputs" id="dialogv54b60ebb109c4_outputs0"><label for="dialogv54b60ebb109c4_matrixR"><p class = "en" lang = "en">Inverse matrix:</p><p class = "ru" lang = "ru">Обратная матрица:</p></label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebb109c4_matrixR"><table class="table table-bordered"></table></div></div></div></div><div><script type="text/javascript">
 var dialogv54b60ebb109c4 = new Dialogv54b60ebb109c4();
 var dialoghandlerv54b60ebb109c4 = new function ( ) {this.Dialog = null;this.CalculatorID = 1218;var savedData = {};var outerParent = this;
 var Planetcalc = new function() { 
@@ -721,9 +741,8 @@ function Dialogv54b60ebadf4ef() {this.GetElement = function () { return document
 </script></div>
 
 <div class="form_calc" id="dialogv54b60ebadf4ef">
-<div class="fieldset "><legend id="dialogv54b60ebadf4ef_legend">Transpose matrix</legend>
-
-
+<div class="fieldset "><legend id="dialogv54b60ebadf4ef_legend" class = "en" lang = "en">Transpose matrix</legend>
+			<legend id="dialogv54b60ebadf4ef_legend" class = "ru" lang = "ru">Транспонирование матрицы</legend>
 
 <div id="dialogv54b60ebadf4ef_messages">
 <script type="text/javascript">
@@ -734,7 +753,7 @@ var dialogv54b60ebadf4ef_messages_data={"OK":"Size of matrix  ","Error":"Error i
 
 
 <div class="control-group">
-<label class="control-label textarea" for="dialogv54b60ebadf4ef_matrixfield">Matrix:</label>
+<label class="control-label textarea" for="dialogv54b60ebadf4ef_matrixfield"><p class = "en" lang = "en">Matrix:</p><p class = "ru" lang = "ru">Матрица:</p></label>
 <div class="controls">
 <textarea id="dialogv54b60ebadf4ef_matrixfield" name="matrixfield" onchange=" dialoghandlerv54b60ebadf4ef.onchanged('matrixfield');" onkeypress="return dialoghandlerv54b60ebadf4ef.onkeypressed('matrixfield', event );" onkeydown="return (typeof(dialoghandlerv54b60ebadf4ef.onkeydown) != 'undefined' ? dialoghandlerv54b60ebadf4ef.onkeydown('matrixfield', event ) : true);" rows="5" cols="60">
 </textarea>
@@ -749,11 +768,12 @@ PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebadf4ef_precisi
 </script>
 
 <a id="dialogv54b60ebadf4ef_calculate" href="#" onclick="dialoghandlerv54b60ebadf4ef.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebadf4ef_timerplace" class="fa fa-spinner fa-spin"></i> 
-<span id="dialogv54b60ebadf4ef_button_text">Calculate</span></a>
+<span id="dialogv54b60ebadf4ef_button_text" class = "en" lang = "en">Calculate</span>
+<span id="dialogv54b60ebadf4ef_button_text" class = "ru" lang = "ru">Вычислить</span></a>
 
 <div class="fieldset calc_outputs" id="dialogv54b60ebadf4ef_outputs0">
 <p>
-<div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebadf4ef_validation">Size of matrix 3x3</span><span class="textoutput_label">Parse of the input data: </span></div></div><label for="dialogv54b60ebadf4ef_matrixT">Transposed matrix:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebadf4ef_matrixT">
+<div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebadf4ef_validation">Size of matrix 3x3</span><span class="textoutput_label en" lang = "en">Parse of the input data: </span><span class="textoutput_label ru" lang = "ru">Разбор входных данных: </span></div></div><label for="dialogv54b60ebadf4ef_matrixT"><p class = "en" lang = "en">Transposed matrix:</p><p class = "ru" lang = "ru">Транспонированная матрица:</p></label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebadf4ef_matrixT">
 <table class="table table-bordered">
 </table>
 </div>
@@ -939,12 +959,13 @@ dialoghandlerv54b60ebadf4ef.initdialog(dialogv54b60ebadf4ef);
 	</div>
 	
 <div class="form_calc" id="dialogv54b60ebaec3bd">
-	<div class="fieldset "><legend id="dialogv54b60ebaec3bd_legend">Matrix multiplication</legend>
-	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixA">Matrix А:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixA', event ) : true);" rows="5" cols="60">
+	<div class="fieldset "><legend id="dialogv54b60ebaec3bd_legend" class = "en" lang = "en">Matrix multiplication</legend>
+		<legend id="dialogv54b60ebaec3bd_legend" class = "ru" lang = "ru">Произвидение матриц</legend>
+	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixA"><p class = "en" lang = "en">Matrix А:</p><p class = "ru" lang = "ru">Матрица А:</p></label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixA" name="matrixA" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixA');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixA', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixA', event ) : true);" rows="5" cols="60">
 	</textarea>
 	</div></div>
 	
-	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixB">Matrix B:</label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixB" name="matrixB" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixB');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixB', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixB', event ) : true);" rows="5" cols="60">
+	<div class="control-group"><label class="control-label textarea" for="dialogv54b60ebaec3bd_matrixB"><p class = "en" lang = "en">Matrix B:</p><p class = "ru" lang = "ru">Матрица B:</p></label><div class="controls"><textarea id="dialogv54b60ebaec3bd_matrixB" name="matrixB" onchange=" dialoghandlerv54b60ebaec3bd.onchanged('matrixB');" onkeypress="return dialoghandlerv54b60ebaec3bd.onkeypressed('matrixB', event );" onkeydown="return (typeof(dialoghandlerv54b60ebaec3bd.onkeydown) != 'undefined' ? dialoghandlerv54b60ebaec3bd.onkeydown('matrixB', event ) : true);" rows="5" cols="60">
 	</textarea>
 	</div></div>
 	<div id="dialogv54b60ebaec3bd_messages">
@@ -957,14 +978,15 @@ dialoghandlerv54b60ebadf4ef.initdialog(dialogv54b60ebadf4ef);
 PCF.advisePrecisionmeter( document.getElementById( "dialogv54b60ebaec3bd_precisionmeter"),2,"dialoghandlerv54b60ebaec3bd");
 </script>
 <div id="dialogv54b60ebaec3bd__line" class="labelctrl">
-<a id="dialogv54b60ebaec3bd_calculate" href="#" onclick="dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebaec3bd_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54b60ebaec3bd_button_text">Calculate</span></a>
+<a id="dialogv54b60ebaec3bd_calculate" href="#" onclick="dialoghandlerv54b60ebaec3bd.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-center"><i style="display: none;" id="dialogv54b60ebaec3bd_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54b60ebaec3bd_button_text" class = "en" lang = "en">Calculate</span>
+<span id="dialogv54b60ebaec3bd_button_text" class = "ru" lang = "ru">Вычислить</span></a>
 
 </div>
 
 <p>
-<div class="fieldset calc_outputs" id="dialogv54b60ebaec3bd_outputs0"><label for="dialogv54b60ebaec3bd_matrixR">Result:</label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebaec3bd_matrixR">
+<div class="fieldset calc_outputs" id="dialogv54b60ebaec3bd_outputs0"><label for="dialogv54b60ebaec3bd_matrixR"><p class = "en" lang = "en" >Result:</p><p class = "ru" lang = "ru" >Результат:</p></label><div style="visibility: visible;" class="matrix" id="dialogv54b60ebaec3bd_matrixR">
 </div><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54b60ebaec3bd_validation">Ок</span>
-<span class="textoutput_label">Parse of the input data:</span></div></div></div></div></div><div>
+<span class="textoutput_label en" lang = "en">Parse of the input data: </span><span class="textoutput_label ru" lang = "ru">Разбор входных данных: </span></div></div></div></div></div><div>
 
 <script type="text/javascript">
 var dialogv54b60ebaec3bd = new Dialogv54b60ebaec3bd();
@@ -1182,7 +1204,7 @@ dialoghandlerv54b60ebaec3bd.initdialog(dialogv54b60ebaec3bd);
 <div><div><div><div><div><div><div><a href="#" title="Get reference code"><i class="fa fa-code" onclick="dialoghandlerv566f034824df8.Dialog.Show();return BSPreventDefaultAction( event );"></i></a><div></div></div></div></div></div></div></div></div></div><div class="input_error" id="error_box_v54ab88ab1f6ff" onclick="this.style.display='none';"></div><div><script type="text/javascript">
 function Dialogv54ab88ab1f6ff() {this.GetElement = function () { return document.getElementById( "dialogv54ab88ab1f6ff" ); };this.GetEventHandlerName = function () { return "dialoghandlerv54ab88ab1f6ff"; };this.data= new DialogInput("data", this, null,new ElementAccessorDefault());this.res= new DialogInput("res", this, null,new ElementAccessorResource());this.precisionmeter= new DialogInput("precisionmeter", this, null,new ElementAccessorPrecision());this._line= new DialogInput("_line", this, null,new ElementAccessorDefault());this.outputs0= new DialogInput("outputs0", this, null,new ElementAccessorDefault());this.success= new DialogInput("success", this, null,new ElementAccessorOutput());this.result= new DialogInput("result", this, null,new ElementAccessorDefault());this.details_parent= new DialogInput("details_parent", this, null,new ElementAccessorDefault());this.details_name= new DialogInput("details_name", this, null,new ElementAccessorDefault());this.details= new DialogInput("details", this, null,new ElementAccessorDefault());this.details_diagram= new DialogInput("details_diagram", this, null,new ElementAccessorDefault());this.Show = function () { ShowDialog("dialogv54ab88ab1f6ff"); };this.Hide = function () { HideDialog("dialogv54ab88ab1f6ff"); };this.Busy = function () { SetDialogBusy("dialogv54ab88ab1f6ff"); };this.Free = function () { SetDialogFree("dialogv54ab88ab1f6ff"); };this.SetValues = function ( values ) {for( var inputId in values ) {if ( this[inputId] ) { this[inputId].SetValue( values[inputId] ); }}};this.Clear = function ( ) {this.data.ResetValue();this.res.ResetValue();this.precisionmeter.ResetValue();this._line.ResetValue();this.success.ResetValue();this.result.ResetValue();this.details_name.ResetValue();this.details.ResetValue();this.details_diagram.ResetValue();};this.SetDefaultValues = function () {this.data.SetValue("8 3 4 5 31\n14 4 33 23 17\n15 4 23 7 22\n4 11 17 1 51");this.res.SetValue("elementCountMismatch");this.precisionmeter.SetValue("2");this._line.SetValue("<div class=\"form-actions\"><a  class=\"brand\" id=\"dialogv54ab88ab1f6ff_logo\" class=\"calclogo\" href=\"http://planetcalc.com/3566/?license=1\" target=\"_top\"><img src=\"/img/logo_calc.png\" alt=\"PLANETCALC\"/> PLANETCALC </a><a id=\"dialogv54ab88ab1f6ff_calculate\" href=\"#\" onclick=\"dialoghandlerv54ab88ab1f6ff.recalculate(500); return BSPreventDefaultAction(event);\" class=\"btn btn-calc pull-right\"><i id=\"dialogv54ab88ab1f6ff_timerplace\" class=\"fa fa-spinner fa-spin\"></i> <span id=\"dialogv54ab88ab1f6ff_button_text\">Calculate</span></a></div>");this.success.SetValue("");this.result.SetValue("");this.details_name.SetValue("Details:");this.details.SetValue("Array");this.details_diagram.SetValue("Array");};this.GetValues = function () {var retval = {};retval["data"]=this.data.GetValue();retval["res"]=this.res.GetValue();retval["precisionmeter"]=this.precisionmeter.GetValue();retval["_line"]=this._line.GetValue();retval["success"]=this.success.GetValue();retval["result"]=this.result.GetValue();retval["details_name"]=this.details_name.GetValue();retval["details"]=this.details.GetValue();retval["details_diagram"]=this.details_diagram.GetValue();return retval;};this.ShowError = function ( obj, text ) {showError( obj, text, "error_box_v54ab88ab1f6ff");};this.Validate = function ( ) {if (!this.data.ValidateCurrent() ) { return false; }if (!this.res.ValidateCurrent() ) { return false; }if (!this.precisionmeter.ValidateCurrent() ) { return false; }if (!this._line.ValidateCurrent() ) { return false; }if (!this.success.ValidateCurrent() ) { return false; }if (!this.result.ValidateCurrent() ) { return false; }if (!this.details_name.ValidateCurrent() ) { return false; }if (!this.details.ValidateCurrent() ) { return false; }if (!this.details_diagram.ValidateCurrent() ) { return false; }return true;};};
 </script></div>
-<div class="form_calc" id="dialogv54ab88ab1f6ff"><div class="fieldset"><legend id="dialogv54ab88ab1f6ff_legend">Gaussian elimination<span class="licmark"></span></legend><div class="control-group"><label class="control-label textarea" for="dialogv54ab88ab1f6ff_data">Linear equations system matrix:</label><div class="controls"><textarea id="dialogv54ab88ab1f6ff_data" name="data" onchange=" dialoghandlerv54ab88ab1f6ff.onchanged('data');" onkeypress="return dialoghandlerv54ab88ab1f6ff.onkeypressed('data', event );" onkeydown="return (typeof(dialoghandlerv54ab88ab1f6ff.onkeydown) != 'undefined' ? dialoghandlerv54ab88ab1f6ff.onkeydown('data', event ) : true);" rows="5" cols="60">
+<div class="form_calc" id="dialogv54ab88ab1f6ff"><div class="fieldset"><legend id="dialogv54ab88ab1f6ff_legend"><p class = "en" lang = "en" >Gaussian elimination</p> <p class = "ru" lang = "ru" >Метод Гаусса</p><span class="licmark"></span></legend><div class="control-group"><label class="control-label textarea" for="dialogv54ab88ab1f6ff_data"><p class = "en" lang = "en">Linear equations system matrix:</p><p class = "ru" lang = "ru">Линейные уравнения матриц системы:</p></label><div class="controls"><textarea id="dialogv54ab88ab1f6ff_data" name="data" onchange=" dialoghandlerv54ab88ab1f6ff.onchanged('data');" onkeypress="return dialoghandlerv54ab88ab1f6ff.onkeypressed('data', event );" onkeydown="return (typeof(dialoghandlerv54ab88ab1f6ff.onkeydown) != 'undefined' ? dialoghandlerv54ab88ab1f6ff.onkeydown('data', event ) : true);" rows="5" cols="60">
 </textarea>
 </div></div><div id="dialogv54ab88ab1f6ff_res"><script type="text/javascript">
 var dialogv54ab88ab1f6ff_res_data={"elementCountMismatch":"%1 elements expected instead of %2","zeroColumn":"Column %1 contains zeroes only.","swapRows":"Swap rows","substractRow":"Multiply by %3, substract %2 * row N %1","divideRow":"Divide by %1","result":"Value X%1=%2","noSolutions":"Linear equation system is not solvable","addRow":"Myltiply by %3, add %2 * row N %1","matrixEmpty":"Matrix must have at least two rows.","addRow1":"Add %2 * row N %1","substractRow1":"Substract %2 * row N %1","manySolutions":"Infinite number of solutions exist"};
@@ -1192,11 +1214,12 @@ PCF.advisePrecisionmeter( document.getElementById( "dialogv54ab88ab1f6ff_precisi
 </script>
 <div id="dialogv54ab88ab1f6ff__line" class="labelctrl">
 
-<a id="dialogv54ab88ab1f6ff_calculate" href="#" onclick="dialoghandlerv54ab88ab1f6ff.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-left"><i style="display: none;" id="dialogv54ab88ab1f6ff_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54ab88ab1f6ff_button_text">Calculate</span></a>
+<a id="dialogv54ab88ab1f6ff_calculate" href="#" onclick="dialoghandlerv54ab88ab1f6ff.recalculate(500); return BSPreventDefaultAction(event);" class="btn btn-calc pull-left"><i style="display: none;" id="dialogv54ab88ab1f6ff_timerplace" class="fa fa-spinner fa-spin"></i> <span id="dialogv54ab88ab1f6ff_button_text" class = "en" lang = "en">Calculate</span>
+<span id="dialogv54ab88ab1f6ff_button_text" class = "ru" lang = "ru">Вычислить</span></a>
 
 </div>
 <p>
-<div class="fieldset" id="dialogv54ab88ab1f6ff_outputs0"><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54ab88ab1f6ff_success"></span><span class="textoutput_label">Number of solutions:</span></div></div><label for="dialogv54ab88ab1f6ff_result">Solution vector:</label><div style="visibility: visible;" class="matrix" id="dialogv54ab88ab1f6ff_result"><table class="table table-bordered"><tbody><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div><div id="dialogv54ab88ab1f6ff_details_parent" class="placeholder"><div id="dialogv54ab88ab1f6ff_details_name" class="labelctrl">Details:</div><div id="dialogv54ab88ab1f6ff_details" class="placeholder"><div class="table"><table class="table table-striped"><thead><tr id="header_dialogv54ab88ab1f6ff_details"><th>Matrix</th><th>Row operations</th></tr></thead>
+<div class="fieldset" id="dialogv54ab88ab1f6ff_outputs0"><div class="control-group"><div class="control"><span style="visibility: visible;" class="textoutput" id="dialogv54ab88ab1f6ff_success"></span><span class="textoutput_label en " lang = "en">Number of solutions:</span><span class="textoutput_label ru " lang = "ru">Количество решений:</span></div></div><label for="dialogv54ab88ab1f6ff_result"><p class = "en" lang = "en">Solution vector:</p><p class = "ru" lang = "ru">Вектор решений:</p></label><div style="visibility: visible;" class="matrix" id="dialogv54ab88ab1f6ff_result"><table class="table table-bordered"><tbody><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div><div id="dialogv54ab88ab1f6ff_details_parent" class="placeholder"><div id="dialogv54ab88ab1f6ff_details_name" class="labelctrl"><p class = "en" lang = "en">Details:</p><p class = "ru" lang = "ru">Детальное решение:</p></div><div id="dialogv54ab88ab1f6ff_details" class="placeholder"><div class="table"><table class="table table-striped"><thead><tr id="header_dialogv54ab88ab1f6ff_details"><th>Matrix</th><th>Row operations</th></tr></thead>
 <td class="td_ops"><table class="table table-bordered"><tbody><tr><td>Value X1=</td></tr><tr><td>Value X2=</td></tr><tr><td>Value X3=-</td></tr><tr><td>Value X4=</td></tr></tbody></table></td></tr></tbody></table></div></div><div id="dialogv54ab88ab1f6ff_details_diagram" class="placeholder"></div></div></div></div></div><div><script type="text/javascript">
 var dialogv54ab88ab1f6ff = new Dialogv54ab88ab1f6ff();
 var dialoghandlerv54ab88ab1f6ff = new function ( ) {this.Dialog = null;this.CalculatorID = 3566;var savedData = {};var outerParent = this;
@@ -1382,41 +1405,15 @@ newDetails(a, desc );
 result.SetValue( [x] );};};
 dialoghandlerv54ab88ab1f6ff.initdialog(dialogv54ab88ab1f6ff);
 </script></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 </div>
-
-
-
-
 </div>
 <div class="horizontal_divider"></div>
 </div>
-
-
 	</div>
-</div>
-</div>
-<div class="horizontal_divider"></div>
-</div>
-	</div></div>
-	<script src="../js/lang.js"></script>
+	
+	</div>
+	</div>
+<script src="../js/lang.js"></script>
 </body>
 </html>

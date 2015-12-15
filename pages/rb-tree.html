@@ -43,6 +43,9 @@
 			height: 100%;
 			border: 1px solid black;
 		}
+		.line {
+			shape-rendering: auto;
+		}
   </style>
 </head>
 
@@ -75,7 +78,7 @@
 	<div class="container">
 		<div class="box first">
 			<div class="center">
-				<h2>Red-black tree</h2>
+				<h2>Красно-чёрное дерево</h2>
 				<p class="lead"></p>
 			</div>
 			
@@ -84,7 +87,7 @@
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">
-								What happens on the page?
+								Что происходит на данной страничке?
 							</a>
 						</h4>
 					</div>
@@ -102,12 +105,11 @@
 			<div class="row">
 				<div class="col-xs-6 col-md-6">
 					<ul class="list-group">
-						<li class="list-group-item active">Restrictions on red - black tree</li>
-						<li  class="list-group-item">Root of the tree should be <a>black</a></li>
+						<li class="list-group-item active">Ограничения красно-чёрного дерева</li>
 						<li  class="list-group-item">
-							Any <a>simple way</a>	- from the node to any <a>sheet</a>-descendant must contain the same number of <a>black</a> nodes
+							Всякий <a>простой путь</a>	- от данного узла до любого <a>листа</a>-потомка должен содержать одинаковое число <a>чёрных</a> узлов
 						</li>
-						<li  class="list-group-item">Both children of a red node must be <a>black</a></li>
+						<li  class="list-group-item">Оба потомка красного узла должны быть <a>чёрными</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-6 col-md-6">
@@ -117,42 +119,41 @@
 			<section id="calculations"></section>
 
 			<div class="row text-center">
-				<div class="col-xs-4 col-md-3">
+				<div class="col-xs-3 col-md-3 col-lg-3">
 					<button class="btn btn-success" type="button" data-toggle="tooltip" 
 							data-placement="bottom"	title="В дерево будет добавлен случайный узел"
 							onclick="add_rnd_node()">
-					  Random node
+					  Случайный узел
 					</button>
 				</div>
-				<div class="col-xs-4 col-md-6">
-					<div class="input-group" data-toggle="tooltip" data-placement="bottom"
-							title="прощенья просим, рано">
-						<span class="input-group-btn">
+				<div class="col-xs-6 col-md-6 col-lg-6">
+					<div class="input-group">
+						<span class="input-group-btn" data-toggle="tooltip" data-placement="bottom"
+							title="Нажатие Enter при фокусе на поле ввода также добавляет элемент">
 							<button class="btn btn-default" type="button"
 								onmousedown="add_this_node()">
-								Add
+								Добавить
 							</button>
 						</span>
 						<input type="text" class="form-control central-element text-center" id="value"
 								onkeydown="value_keydown(event)" onclick="this.select()">
-						<span class="input-group-btn">
-							<button class="btn btn-default" type="button"
-								onclick="del_this_node()">
-								Delete
+						<span class="input-group-btn" data-toggle="tooltip" data-placement="bottom"
+							title="Нажатие Delete при фокусе на поле ввода также удаляет элемент">
+							<button class="btn btn-default" type="button" onclick="del_this_node()">
+								Удалить
 							</button>
 						</span>
 					</div><!-- /input-group -->
 				</div>
-				<div class="col-xs-4 col-md-3">
+				<div class="col-xs-3 col-md-3 col-lg-3">
 					<button class="btn btn-warning" type="button" data-toggle="tooltip" 
-								data-placement="bottom"	title="прощенья просим, рано" 
-								onclick="clear_tree()">
-						  Clear tree
+								data-placement="bottom"	title="Дерево - это то, что вы формируете, нажимая добавить/удалить" onclick="clear_tree()">
+						  Очистить дерево
 					</button>
 				</div>
 			</div><!-- /.row -->
 			<br>
-			<div  class="span12" id="canvas"></div>
+			<div class="span12" id="canvas"></div>
 		</div>
 	</div>
 
