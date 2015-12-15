@@ -1,16 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>InvOpps: Chart</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	<link href="../css/font-awesome.min.css" rel="stylesheet">
-	<link href="../css/main.css" rel="stylesheet">
-	<link href="../css/folding.css" rel="stylesheet">
-</head>
-<body onload="chartInit()" >
+<html >
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
+  <head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	  <title>InvOpps: Charts</title>
+	 
+	  <!-- Bootstrap -->
+	 <link href="../css/bootstrap.min.css" rel="stylesheet">
+	 <link href="../css/font-awesome.min.css" rel="stylesheet">
+	 <link href="../css/main.css" rel="stylesheet">
+	 <link href="../css/folding.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/lang.css">
+	 
+	 <script src="../js/chart.js"></script>
+	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	 <!-- Include all compiled plugins (below), or include individual files as needed -->
+	 <script src="../js/bootstrap.min.js"></script>
+	 <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/2.5.0/math.min.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+     <script src="https://wzrd.in/standalone/function-plot@1.14.0"></script>
+
+  <style>
+    input[type=text] {
+      width: 300px;
+    }
+    input {
+      padding: 6px;
+    }
+    body, html, input {
+      font-family: sans-serif;
+      font-size: 11pt;
+
+    }
+    form {
+      margin: 20px 0;
+    }
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+.tg .tg-zg9m{font-weight:bold;font-size:18px;background-color:#bbdaff;color:#000000;text-align:center;vertical-align:top}
+.tg .tg-by3v{font-weight:bold;font-size:14px;text-align:center}
+.tg .tg-yau4{background-color:#D2E4FC;font-weight:bold;font-size:14px;text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-6k2t{background-color:#D2E4FC;vertical-align:top}
+.tg .tg-62xo{font-weight:bold;font-size:14px;text-align:center;vertical-align:top}
+
+   .colortext {
+    background-color: Azure; /* Цвет фона */
+    color: #930; /* Цвет текста */
+   }
+  </style>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("temp").className = lang;
+		});
+		
+
+	</script>
+  </head>
+  <body onload="chartInit()"  id = "temp">
 	  <header id="header" role="banner">
 		  <div class="container">
 			  <div id="navbar" class="navbar navbar-default">
@@ -23,21 +85,29 @@
 					  </button>
 					  <a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
 				 </div>
-				 <div class="collapse navbar-collapse">
-					  <ul class="nav navbar-nav">
-							<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
-							<li><a href="#calculations">Calculations</a></li>
-							<li><a href="#about">About</a></li>
+				 <div align = "right">
+  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+</div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+			<li><a href="#about-method" class = "en" lang = "en">About method</a></li>
+                        <li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
+			<li><a href="#about-method" class = "ru" lang = "ru">О методе</a></li>
+                        <li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
 					  </ul>
 				 </div>
             </div>
         </div>
 	  </header>
-	  <section id="main-slider-calc"></section>	
+	  <section id="main-slider-calc"></section>
+	
 <div class="container">
 <div class="box first">
 	<div class="center">
-		<h2>Plotting functions</h2>
+		<h2  class = "ru" lang = "ru" >Построение графиков</h2>
+		<h2  class = "en" lang = "en" >Plotting charts</h2>
 		<p class="lead"></p>
 	</div>
 
@@ -45,13 +115,37 @@
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">What happens on the page?</a>
+					<a class="ru" lang = "ru" data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">Что происходит на данной страничке?</a>
+					<a class="en" lang = "en" data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">What happens on this page?</a>
 				</h4>
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body text-info">
-					This page allows you to execute plotting functions. 
+            <div class="panel-body text-info ru"  lang = "ru" >
+					Эта странница предлагает в ваше распоряжение инструмент для построения графиков. 
+					Вы сможете построить интерактивный график функции онлайн. Благодаря этому, график можно масштабировать, а так же перемещаться по координатной плоскости, что позволит Вам не только получить общее представление о построении данного графика, но и более детально изучить поведение графика функции на участках. 
+					<h4 class = "ru" lang = "ru" >Преимущества построения графиков онлайн</h4>
+					<ul>
+							<li class = "ru" lang = "ru" >Визуальное отображение вводимых функций</li>
+							<li class = "ru" lang = "ru" >Построение  сложных графиков</li>
+							<li class = "ru" lang = "ru" >Управление масштабом</li>
+							<li class = "ru" lang = "ru" >Отслеживание координат</li>
+					</ul>
 			
+					<br>
+					
+
+
+				</div>
+				       <div class="panel-body text-info en"  lang = "en" >
+					This page provides you with a tool for charting. You can build an interactive graph of the function online. Because of this, the graph can be scaled, as well as navigate the coordinate plane, which will allow you not only to get a general idea of constructing this graph, but more detailed study of the behavior of the graph of the areas.
+
+					<h4 class = "en" lang = "en" >Advantages of plotting online:</h4>
+					<ul>
+							<li class = "en" lang = "en" >Visual display of the input functions</li>
+							<li class = "en" lang = "en" >Building complex graphs</li>
+							<li class = "en" lang = "en" >Zoom сontrol</li>
+							<li class = "en" lang = "en" >Tracking the origin</li>
+					</ul>
 					<br>
 					
 
@@ -62,11 +156,145 @@
 		<div class="panel panel-info text-info">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">Collapsible Group Item #2</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed ru" lang = "ru">Справка</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed en" lang = "en" >Manual</a>
 				</h4>
 			</div>
 			<div id="collapseTwo" class="panel-collapse collapse">
-				<div class="panel-body"> ##############</div>
+				<div class="panel-body" > <center>
+								<table class="tg"></section>
+								  <tr>
+								    <th class="tg-zg9m ru" lang = "ru" colspan="2">Список функций<br></th>
+								    <th class="tg-zg9m en" lang = "en" colspan="2">Function list<br></th>
+								  </tr>
+								  <tr>
+								    <td class="tg-by3v ru" lang = "ru">Функция <br></td>
+								    <td class="tg-by3v en" lang = "en">Function<br></td>
+								    <td class="tg-yau4 ru" lang = "ru">Описание</td>
+								    <td class="tg-yau4 en" lang = "en">Description</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">х^а</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возведение аргумента х в степень а.</td>
+								    <td class="tg-6k2t en" lang = "en">Construction of the argument x to the power of a.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">abs(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает абсолютную величину аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Returns the absolute value of the argument.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">acos(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает арккосинус аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the arccosine</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">asin(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает арксинус аргумента</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the arcsine.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">atan(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает арктангенс аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the arctangent.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">ceil(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наименьшее целое число, большее или равное аргументу.</td>
+								    <td class="tg-6k2t en" lang = "en" >Returns the smallest integer greater than or equal to the argument.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">cos(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает косинус аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the cosine.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">exp(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает экспоненту аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the e.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">floor(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наибольшее целое число, меньшее или равное аргументу.</td>
+								     <td class="tg-6k2t  en" lang = "en" >Returns the largest integer less than or equal to the argument.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">log(x,n)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Логарифм от х по основанию n.</td>
+								    <td class="tg-6k2t  en" lang = "en" >The logarithm of x to base n.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">max(x,n)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наибольший из аргументов.</td>
+								    <td class="tg-6k2t en" lang = "en" >Returns the greatest of the arguments.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">min(x,n)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наименьший из аргументов.</td>
+								    <td class="tg-6k2t en" lang = "en" >Returns the smallest of the arguments.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">round(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Округляет аргумент до ближайшего целого числа.</td>
+								     <td class="tg-6k2t en" lang = "en" >Rounds the argument up to the nearest whole number.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">sin(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает синус аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the sine.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">sqrt(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает квадратный корень из аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the square root.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">tan(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает тангенс аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the tangent.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-62xo ru" lang = "ru"  colspan="2">Константы</td>
+								    <td class="tg-62xo  en" lang = "en"  colspan="2">Constants</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">pi</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число Пи=3.1415926</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number Pi=3.1415926</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">SQRT2</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Квадратный корень из 2.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >The square root of 2.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">SQRT1_2</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Квадратный корень из 1/2.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >The square root of 1/2.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LOG2E</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число log2e.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number log2e.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LOG10E</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число lg e.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number lg e.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LN2</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число ln 2.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number ln 2.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LN10</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число ln 10.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number ln 10.</td>
+								  </tr>
+								</table><center/>
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -74,23 +302,25 @@
 	<hr>
 	<br>
 	<br>
+	<div class="panel-body text-info">
+				<h3 class = "ru" lang = "ru" align="center" style="color:#6495ED"><i>Используйте мышь для перемещения графика
+			и колесико для изменения масштаба</i></h3>
+				<h3 class = "en" lang = "en" align="center" style="color:#6495ED"><i>Use the mouse to move the chart
+			and the scroll wheel to zoom</i></h3>
+    </div>
 <section id="calculations">
 	<a id="calculations" class="anchor"></a>
- <form onsubmit="return draw(this)">
-			f(x) = <input type="text" name="func" size="24">
-			<select name="color" style="font-weight: bold" onchange="this.style.color = this.value">
-				<option value="maroon" style="color: maroon">Red</option>
-				<option value="green" style="color: green">Green</option>
-				<option value="olive" style="color: olive">Yellow</option>
-				<option value="navy" style="color: navy">Navy</option>
-				<option value="purple" style="color: purple">Purple</option>
-				<option value="teal" style="color: teal">Голубой</option>
-			</select>
-			<input type="submit" value="Построить">
-			<input type="button" value="Очистить" onclick="if ( confirm('Очистить?') ) chartInit()">
-		</form>
-		<br>
-		<canvas id="chart" width="800" height="520">HTML5 is not supported</canvas>
+
+	<center>
+<form id="form">
+  <label class = "ru" lang = "ru" for="eq">Введите функцию:</label>
+  <label class = "en" lang = "en" for="eq">Enter an equation:</label>
+  <input class = "colortext" type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
+  <input class="btn btn-primary  en" lang = "en" type="submit" value="Draw" />
+  <input class="btn btn-primary ru" lang = "ru" type="submit" value="Построить" />
+</form>
+
+<div id="plot"></div>
 	 <hr>
 
 	 <div class="container"><table class="table text-center table-bordered" id="log"></table></div>
@@ -100,44 +330,40 @@
 
 <section id="about"><a id="about" class="anchor"></a></section>
 
-		<script type="text/javascript" src="chart.js"></script>
-		<script type="text/javascript">
-			colors = ['maroon','green','olive','navy','purple','teal'];
-			
-			// Инициализация параметров
-			function chartInit() {
-				var func   = document.getElementsByName('func')[0];
-				var color  = document.getElementsByName('color')[0];
-				var canvas = document.getElementById('chart');
-				func.value = '';
-				func.focus();
-				color.value = colors[0];
-				color.style.color = colors[0];
-				Chart.drawAxis(canvas);
-				funcCount = 0;
-			}
-			
-			// Отображение графика
-			function draw(form) {
-				var func  = form.func.value;
-				var color = form.color.value;
-				if ( func != '' ) {
-					var context = Chart.context;
-					context.font = 'normal 10pt Courier';
-					context.strokeStyle = color;
-					funcCount++;
-					context.strokeText(funcCount + '. f(x)=' + func, 0, funcCount * 12);
-					Chart.drawChart(func, color);
-					form.color.value = colors[funcCount % colors.length];
-					form.color.style.color = colors[funcCount % colors.length];
-				} else alert('Не введена функция');
-				form.func.value = '';
-				form.func.focus();
-				return false;
-			}
-		</script>
-	<script src="../js/chart.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+
+
+<script>
+
+  function draw() {
+    try {
+      functionPlot({
+        target: '#plot',
+        xLabel: 'X',
+        yLabel: 'Y',
+        yDomain: [-10, 10],
+        xDomain: [-10, 10],
+        grid:true,
+        data: [{
+          fn: document.getElementById('eq').value,
+          sampler: 'builtIn',  
+          graphType: 'polyline'
+      
+        }]
+      });
+    }
+    catch (err) {
+      console.log(err);
+      alert(err);
+    }
+  }
+
+  document.getElementById('form').onsubmit = function (event) {
+    event.preventDefault();
+    draw();
+  };
+  draw();
+</script>
+</center>
+<script src="../js/lang.js"></script>
   </body>
 </html>
