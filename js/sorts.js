@@ -187,22 +187,22 @@ function cta()
 				Arr3[x]=Arr[x];
 			}
 			var inp = document.getElementsByName('r');
-			if(inp[0].checked || inp[1].checked || inp[2].checked || inp[3].checked)
+			if(inp[0].checked || inp[1].checked || inp[2].checked || inp[3].checked || inp[4].checked || inp[5].checked || inp[6].checked || inp[7].checked)
 			{
 			textarea2.value="";
-			if (inp[0].checked)
+			if (inp[0].checked || inp[4].checked)
 			{
 				buble();
 			}
-			if (inp[1].checked)
+			if (inp[1].checked || inp[5].checked)
 			{
 				inps();
 			}
-			if (inp[2].checked)
+			if (inp[2].checked || inp[6].checked)
 			{
 				sel();
 			}
-			if (inp[3].checked)
+			if (inp[3].checked || inp[7].checked)
 			{
 				shake();
 			}			
