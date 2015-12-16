@@ -118,21 +118,19 @@ if(!lang)
 								<div class="form-group text-center">
 								<label for = "" class = "ru" lang = "ru"><h3>Вычисления</h3>
 				<b><h5><input type="radio" name="r" value="Сортировка пузырьком"> Сортировка пузырьком
-				<input type="radio" name="r" value="Сортировка вставками"> Сортировка вставками
+				<input type="radio" name="r" value="Сортировка вставками"> Сортировка вставками<br>
 				<input type="radio" name="r" value="Сортировка выбором"> Сортировка выбором
 				<input type="radio" name="r" value="Сортировка перемешиванием"> Сортировка перемешиванием</h5></b>
 								</label>
-								</div>
-								<div class="form-group text-center">
-								<label for = "" class = "en" lang = "en"><h3>Calculation</h3>
-				<b><h5><input type="radio" name="r" value="Сортировка пузырьком"> Bubble sort
-				<input type="radio" name="r" value="Сортировка вставками"> Insert sort
+								<label for = "" class = "en" lang = "en"><h3 align="center">Calculation</h3>
+				<b><h5 align="center"><input type="radio" name="r" value="Сортировка пузырьком"> Bubble sort
+				<input type="radio" name="r" value="Сортировка вставками"> Insert sort<br>
 				<input type="radio" name="r" value="Сортировка выбором"> Selection sort
 				<input type="radio" name="r" value="Сортировка перемешиванием"> Sort by stirring</h5></b><br>
-								</label>	
+								</label><center>	
 				<input id="TN" type="number" value="10"/>
 				<input id="NN" class="btn btn-default ru" lang = "ru" type="button" value="Добавить число" onclick="add_new_number();"/>
-				<input id="NN" class="btn btn-default en" lang = "en" type="button" value="Add number" onclick="add_new_number();"/><br>
+				<input id="NN" class="btn btn-default en" lang = "en" type="button" value="Add number" onclick="add_new_number();"/><br></center>
 				<label for = "arr" class = "ru" lang = "ru">Введите свой массив(используйте пробел между числами)</label>
 				<label for = "arr" class = "en" lang = "en">Enter your weight ( use a space between the numbers )</label>
 					<textarea id="numbs" name="arr" class = "form-control col-md-6 col-lg-12" rows = "6"></textarea><br>
