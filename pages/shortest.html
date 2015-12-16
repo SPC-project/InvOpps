@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>InvOpps: Shortest-path</title>
+	
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1">
+
+	<link href='../css/google-fonts.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/templatemo_misc.css">
+	<link rel="stylesheet" href="../css/templatemo_style.css">
+	<link rel="stylesheet" href="../css/lang.css">
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/folding.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("temp").className = lang;
+		});
+		
+	</script>
+	<style>.tg {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+	.tg .tg-zg9m{font-weight:bold;font-size:18px;background-color:#bbdaff;color:#000000;text-align:center;vertical-align:top}
+	.tg .tg-by3v{font-weight:bold;font-size:14px;text-align:center}
+	.tg .tg-yau4{background-color:#D2E4FC;font-weight:bold;font-size:14px;text-align:center;vertical-align:top}
+	.tg .tg-yw4l{vertical-align:top}
+	.tg .tg-6k2t{background-color:#D2E4FC;vertical-align:top}
+	.tg .tg-62xo{font-weight:bold;font-size:14px;text-align:center;vertical-align:top}
+		
+	</style>
+		
+
+	</head>
+	<body id="temp" >
+		<header id="header" role="banner">
+			<div class="container">
+				<div id="navbar" class="navbar navbar-default">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
+					</div>
+					<div align = "right">
+						<span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+						<span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+							<li><a href="#about-method" class = "en" lang = "en">About method</a></li>
+							<li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
+							<li><a href="#about-method" class = "ru" lang = "ru">О методе</a></li>
+							<li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
+					
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section id="main-slider-calc"></section>
+		<a id="about-method" class="anchor"></a>
+		<section>
+	<div class="container">
+		<div class="box">
+			<div class="row">			
+					<div class="center">
+					<td><h2 class = "ru" lang = "ru">Поиск кратчайшего пути в графе</h2>
+					<h2 class = "en" lang = "en">Search shortest path in the graph</h2>
+					<p class="lead"></p>
+					</div>
+					<hr>
+								
+				
+				<h4 align = "center" class = "ru" lang = "ru" >Алгоритм Дейкстры</h4>
+				<h4 align = "center" class = "en" lang = "en" >Dijkstra's algorithm</h4>
+				<img src="../images/Dijkstra_Animation.gif" alt="Прямоугольники" width="283" height="222" align="right" >
+<p class = "ru" lang = "ru"><strong>Алгори́тм Де́йкстры</strong> — алгоритм на графах, находит кратчайшие пути от одной из вершин графа до всех остальных. 
+Алгоритм работает только для графов без рёбер отрицательного веса.<br><br><strong>Неформальное объяснение.</strong>
+Каждой вершине из V сопоставим метку — минимальное известное расстояние от этой вершины до a. Алгоритм работает пошагово — на каждом шаге он «посещает»
+одну вершину и пытается уменьшать метки. Работа алгоритма завершается, когда все вершины посещены.<br><br>
+<strong>Инициализация.</strong> Метка самой вершины a полагается равной 0, метки остальных вершин — бесконечности. Это отражает то, что расстояния от a до других вершин пока неизвестны.
+Все вершины графа помечаются как непосещённые.<br><br>
+<strong>Шаг алгоритма.</strong>Если все вершины посещены, алгоритм завершается. В противном случае, из ещё не посещённых вершин выбирается вершина u, имеющая минимальную метку. Мы рассматриваем всевозможные маршруты, в которых u является предпоследним пунктом. Вершины, в которые ведут рёбра из u, назовём соседями этой вершины. Для каждого соседа вершины u, кроме отмеченных как посещённые, рассмотрим новую длину пути, равную сумме значений текущей метки u и длины ребра, соединяющего u с этим соседом. Если полученное значение длины меньше значения метки соседа, заменим значение метки полученным значением длины. Рассмотрев всех соседей, пометим вершину u как посещённую и повторим шаг алгоритма.
+</p>
+				<p class = "en" lang = "en"><b>Dijkstra's algorithm</b> is an algorithm for finding the shortest paths between nodes in a graph.<br>
+				Let the node at which we are starting be called the initial node. Let the distance of node Y be the distance from the initial node to Y. 
+				Dijkstra's algorithm will assign some initial distance values and will try to improve them step by step.<br>
+
+				1. Assign to every node a tentative distance value: set it to zero for our initial node and to infinity for all other nodes.<br>
+				2. Set the initial node as current. Mark all other nodes unvisited. Create a set of all the unvisited nodes called the unvisited set.<br>
+				3. For the current node, consider all of its unvisited neighbors and calculate their tentative distances. Compare the newly calculated tentative 
+					distance to the current assigned value and assign the smaller one. For example, if the current node A is marked with a distance of 6, and the edge
+					connecting it with a neighbor B has length 2, then the distance to B (through A) will be 6 + 2 = 8. If B was previously marked with a distance greater
+					than 8 then change it to 8. Otherwise, keep the current value.<br>
+				4. When we are done considering all of the neighbors of the current node, mark the current node as visited and remove it from the unvisited set.
+					A visited node will never be checked again.<br>
+				5. If the destination node has been marked visited (when planning a route between two specific nodes) or if the smallest tentative
+				 distance among the nodes in the unvisited set is infinity (when planning a complete traversal; occurs when there is no connection between the initial node
+				 and remaining unvisited nodes), then stop. The algorithm has finished.<br>
+				6. Otherwise, select the unvisited node that is marked with the smallest tentative distance, set it as the new "current node", and go back to step 3.</p><br>
+			<a id="calculations" class="anchor"></a>
+	<section>
+						
+			
+		<form id = "mainForm">
+		<p class = "ru" lang = "ru">Заполните матрицу весов:</p>
+		<p class = "en" lang = "en">Fill out the matrix of weights:</p>
+		 <br>  <br>
+		 <center>
+		1-1 <input type="text" name="graf1_1" value ="0" id="graf1_1"  size="4" />
+		1-2 <input type="text" name="graf1_2" value ="0" id="graf1_2"  size="4" />
+		1-3 <input type="text" name="graf1_3" value ="0" id="graf1_3"  size="4" />
+		1-4 <input type="text" name="graf1_4" value ="0" id="graf1_4"  size="4" />
+		1-5 <input type="text" name="graf1_5" value ="0" id="graf1_5"  size="4" />
+		1-6 <input type="text" name="graf1_6" value ="0" id="graf1_6"  size="4" />
+		1-7 <input type="text" name="graf1_7" value ="0" id="graf1_7"  size="4" />
+		1-8 <input type="text" name="graf1_8" value ="0" id="graf1_8"  size="4" />   <br>
+		
+		2-1 <input type="text" name="graf2_1" value ="0" id="graf2_1"  size="4" />
+		2-2 <input type="text" name="graf2_2" value ="0" id="graf2_2"  size="4" />
+		2-3 <input type="text" name="graf2_3" value ="0" id="graf2_3"  size="4" />
+		2-4 <input type="text" name="graf2_4" value ="0" id="graf2_4"  size="4" />
+		2-5 <input type="text" name="graf2_5" value ="0" id="graf2_5"  size="4" />
+		2-6 <input type="text" name="graf2_6" value ="0" id="graf2_6"  size="4" />
+		2-7 <input type="text" name="graf2_7" value ="0" id="graf2_7"  size="4" />
+		2-8 <input type="text" name="graf2_8" value ="0" id="graf2_8"  size="4" />   <br>
+		
+		3-1 <input type="text" name="graf3_1" value ="0" id="graf3_1"  size="4" />
+		3-2 <input type="text" name="graf3_2" value ="0" id="graf3_2"  size="4" />
+		3-3 <input type="text" name="graf3_3" value ="0" id="graf3_3"  size="4" />
+		3-4 <input type="text" name="graf3_4" value ="0" id="graf3_4"  size="4" />
+		3-5 <input type="text" name="graf3_5" value ="0" id="graf3_5"  size="4" />
+		3-6 <input type="text" name="graf3_6" value ="0" id="graf3_6"  size="4" />
+		3-7 <input type="text" name="graf3_7" value ="0" id="graf3_7"  size="4" />
+		3-8 <input type="text" name="graf3_8" value ="0" id="graf3_8"  size="4" />   <br>
+		
+		4-1 <input type="text" name="graf4_1" value ="0" id="graf4_1"  size="4" />
+		4-2 <input type="text" name="graf4_2" value ="0" id="graf4_2"  size="4" />
+		4-3 <input type="text" name="graf4_3" value ="0" id="graf4_3"  size="4" />
+		4-4 <input type="text" name="graf4_4" value ="0" id="graf4_4"  size="4" />
+		4-5 <input type="text" name="graf4_5" value ="0" id="graf4_5"  size="4" />
+		4-6 <input type="text" name="graf4_6" value ="0" id="graf4_6"  size="4" />
+		4-7 <input type="text" name="graf4_7" value ="0" id="graf4_7"  size="4" />
+		4-8 <input type="text" name="graf4_8" value ="0" id="graf4_8"  size="4" />   <br>
+				
+		5-1 <input type="text" name="graf5_1" value ="0" id="graf5_1"  size="4" />
+		5-2 <input type="text" name="graf5_2" value ="0" id="graf5_2"  size="4" />
+		5-3 <input type="text" name="graf5_3" value ="0" id="graf5_3"  size="4" />
+		5-4 <input type="text" name="graf5_4" value ="0" id="graf5_4"  size="4" />
+		5-5 <input type="text" name="graf5_5" value ="0" id="graf5_5"  size="4" />
+		5-6 <input type="text" name="graf5_6" value ="0" id="graf5_6"  size="4" />
+		5-7 <input type="text" name="graf5_7" value ="0" id="graf5_7"  size="4" />
+		5-8 <input type="text" name="graf5_8" value ="0" id="graf5_8"  size="4" />   <br>
+						
+		6-1 <input type="text" name="graf6_1" value ="0" id="graf6_1"  size="4" />
+		6-2 <input type="text" name="graf6_2" value ="0" id="graf6_2"  size="4" />
+		6-3 <input type="text" name="graf6_3" value ="0" id="graf6_3"  size="4" />
+		6-4 <input type="text" name="graf6_4" value ="0" id="graf6_4"  size="4" />
+		6-5 <input type="text" name="graf6_5" value ="0" id="graf6_5"  size="4" />
+		6-6 <input type="text" name="graf6_6" value ="0" id="graf6_6"  size="4" />
+		6-7 <input type="text" name="graf6_7" value ="0" id="graf6_7"  size="4" />
+		6-8 <input type="text" name="graf6_8" value ="0" id="graf6_8"  size="4" />   <br>
+						
+		7-1 <input type="text" name="graf7_1" value ="0" id="graf7_1"  size="4" />
+		7-2 <input type="text" name="graf7_2" value ="0" id="graf7_2"  size="4" />
+		7-3 <input type="text" name="graf7_3" value ="0" id="graf7_3"  size="4" />
+		7-4 <input type="text" name="graf7_4" value ="0" id="graf7_4"  size="4" />
+		7-5 <input type="text" name="graf7_5" value ="0" id="graf7_5"  size="4" />
+		7-6 <input type="text" name="graf7_6" value ="0" id="graf7_6"  size="4" />
+		7-7 <input type="text" name="graf7_7" value ="0" id="graf7_7"  size="4" />
+		7-8 <input type="text" name="graf7_8" value ="0" id="graf7_8"  size="4" />   <br>
+		
+		8-1 <input type="text" name="graf8_1" value ="0" id="graf8_1"  size="4" />
+		8-2 <input type="text" name="graf8_2" value ="0" id="graf8_2"  size="4" />
+		8-3 <input type="text" name="graf8_3" value ="0" id="graf8_3"  size="4" />
+		8-4 <input type="text" name="graf8_4" value ="0" id="graf8_4"  size="4" />
+		8-5 <input type="text" name="graf8_5" value ="0" id="graf8_5"  size="4" />
+		8-6 <input type="text" name="graf8_6" value ="0" id="graf8_6"  size="4" />
+		8-7 <input type="text" name="graf8_7" value ="0" id="graf8_7"  size="4" />
+		8-8 <input type="text" name="graf8_8" value ="0" id="graf8_8"  size="4" />   <br>
+		<br>
+		</center>
+		<p class = "ru" lang = "ru">Введите стартовую вершину: <input type="text" name="start" value ="1" id="start"  size="4" /> <input type="button" value="OK" onClick="createInputs('dynamicInput');"></p> <p class = "en" lang = "en">Enter the starting vertex: <input type="text" name="start" value ="1" id="start"  size="4" /> <input type="button" value="OK" onClick="createInputs('dynamicInput');"></p> 
+		<br><br><br>
+		<form method="POST">
+			 <div id="dynamicInput">	 </div>
+		</form>
+		<br><br><br>
+
+
+		<script type = "text/javascript">
+		function createInputs (divName) {
+		
+				
+			var v;
+		    var infinity=1000;                     // Бесконечность
+														  // Количество вершин в графе
+						 
+			var x= [];                            //Массив, содержащий единицы и нули для каждой вершины,
+														  // x[i]=0 - еще не найден кратчайший путь в i-ю вершину,
+														  // x[i]=1 - кратчайший путь в i-ю вершину уже найден
+				   
+			var DlinaPuti= [];                    //t[i] - длина кратчайшего пути от вершины s в i
+				 
+			var PredVertex= [];                   //h[i] - вершина, предшествующая i-й вершине
+														  //на кратчайшем пути
+				    
+			var ves = [];
+				
+				for (var i = 0; i < 8; i++){
+					ves[i] = [];
+					for (var j = 0; j <8; j++){
+						ves[i][j] = 0;
+				}}
+	
+			ves[0][0]= parseInt(document.getElementById("graf1_1").value);
+			ves[0][1]= parseInt(document.getElementById("graf1_2").value);
+			ves[0][2]= parseInt(document.getElementById("graf1_3").value);
+			ves[0][3]= parseInt(document.getElementById("graf1_4").value);
+			ves[0][4]= parseInt(document.getElementById("graf1_5").value);
+			ves[0][5]= parseInt(document.getElementById("graf1_6").value);
+			ves[0][6]= parseInt(document.getElementById("graf1_7").value);
+			ves[0][7]= parseInt(document.getElementById("graf1_8").value);
+				
+			ves[1][0]= parseInt(document.getElementById("graf2_1").value);
+			ves[1][1]= parseInt(document.getElementById("graf2_2").value);
+			ves[1][2]= parseInt(document.getElementById("graf2_3").value);
+			ves[1][3]= parseInt(document.getElementById("graf2_4").value);
+			ves[1][4]= parseInt(document.getElementById("graf2_5").value);
+			ves[1][5]= parseInt(document.getElementById("graf2_6").value);
+			ves[1][6]= parseInt(document.getElementById("graf2_7").value);
+			ves[1][7]= parseInt(document.getElementById("graf2_8").value);
+			
+			ves[2][0]= parseInt(document.getElementById("graf3_1").value);
+			ves[2][1]= parseInt(document.getElementById("graf3_2").value);
+			ves[2][2]= parseInt(document.getElementById("graf3_3").value);
+			ves[2][3]= parseInt(document.getElementById("graf3_4").value);
+			ves[2][4]= parseInt(document.getElementById("graf3_5").value);
+			ves[2][5]= parseInt(document.getElementById("graf3_6").value);
+			ves[2][6]= parseInt(document.getElementById("graf3_7").value);
+			ves[2][7]= parseInt(document.getElementById("graf3_8").value);
+			
+			ves[3][0]= parseInt(document.getElementById("graf4_1").value);
+			ves[3][1]= parseInt(document.getElementById("graf4_2").value);
+			ves[3][2]= parseInt(document.getElementById("graf4_3").value);
+			ves[3][3]= parseInt(document.getElementById("graf4_4").value);
+			ves[3][4]= parseInt(document.getElementById("graf4_5").value);
+			ves[3][5]= parseInt(document.getElementById("graf4_6").value);
+			ves[3][6]= parseInt(document.getElementById("graf4_7").value);
+			ves[3][7]= parseInt(document.getElementById("graf4_8").value);
+			
+			ves[4][0]= parseInt(document.getElementById("graf5_1").value);
+			ves[4][1]= parseInt(document.getElementById("graf5_2").value);
+			ves[4][2]= parseInt(document.getElementById("graf5_3").value);
+			ves[4][3]= parseInt(document.getElementById("graf5_4").value);
+			ves[4][4]= parseInt(document.getElementById("graf5_5").value);
+			ves[4][5]= parseInt(document.getElementById("graf5_6").value);
+			ves[4][6]= parseInt(document.getElementById("graf5_7").value);
+			ves[4][7]= parseInt(document.getElementById("graf5_8").value);
+			
+			ves[5][0]= parseInt(document.getElementById("graf6_1").value);
+			ves[5][1]= parseInt(document.getElementById("graf6_2").value);
+			ves[5][2]= parseInt(document.getElementById("graf6_3").value);
+			ves[5][3]= parseInt(document.getElementById("graf6_4").value);
+			ves[5][4]= parseInt(document.getElementById("graf6_5").value);
+			ves[5][5]= parseInt(document.getElementById("graf6_6").value);
+			ves[5][6]= parseInt(document.getElementById("graf6_7").value);
+			ves[5][7]= parseInt(document.getElementById("graf6_8").value);
+			
+			ves[6][0]= parseInt(document.getElementById("graf7_1").value);
+			ves[6][1]= parseInt(document.getElementById("graf7_2").value);
+			ves[6][2]= parseInt(document.getElementById("graf7_3").value);
+			ves[6][3]= parseInt(document.getElementById("graf7_4").value);
+			ves[6][4]= parseInt(document.getElementById("graf7_5").value);
+			ves[6][5]= parseInt(document.getElementById("graf7_6").value);
+			ves[6][6]= parseInt(document.getElementById("graf7_7").value);
+			ves[6][7]= parseInt(document.getElementById("graf7_8").value);
+			
+			ves[7][0]= parseInt(document.getElementById("graf8_1").value);
+			ves[7][1]= parseInt(document.getElementById("graf8_2").value);
+			ves[7][2]= parseInt(document.getElementById("graf8_3").value);
+			ves[7][3]= parseInt(document.getElementById("graf8_4").value);
+			ves[7][4]= parseInt(document.getElementById("graf8_5").value);
+			ves[7][5]= parseInt(document.getElementById("graf8_6").value);
+			ves[7][6]= parseInt(document.getElementById("graf8_7").value);
+			ves[7][7]= parseInt(document.getElementById("graf8_8").value);
+			
+		
+			
+			var start;                           // Номер исходной вершины
+			var end;                             // Номер конечной вершины
+
+			start= parseInt(document.getElementById("start").value)
+			start=start-1;   //так как массив начинается с 0 отнимаем от вводимой цифры 1
+			
+			for (var prosto=0;prosto<8;prosto++){
+			end=prosto;                        
+			if (end==start) 
+				continue;            //исключаем просчет растояния между одной и той же точкой
+			else
+				{									 
+				   var u;                               // Инициализируем начальные значения массивов 
+				   for (u=0;u<8;u++)					// Счетчик вершин
+				   {
+					   DlinaPuti[u]=infinity;                    //Сначала все кратчайшие пути из s в i 
+														 //равны бесконечности
+					  x[u]=0;                            // и нет кратчайшего пути ни для одной вершины
+				   }
+				   
+				   PredVertex[start]=0;                     // s - начало пути, поэтому этой вершине ничего не предшествует
+				   DlinaPuti[start]=0;                      // Кратчайший путь из s в s равен 0
+				   x[start]=1;                              // Для вершины s найден кратчайший путь
+				   v=start;                                 // Делаем s текущей вершиной
+				   //alert (v);
+				   while(true)
+				   {
+														// Перебираем все вершины, смежные v, и ищем для них кратчайший путь
+					  for(u=0;u<8;u++)
+					  {
+						 if(ves[v][u]==0)continue;   // Вершины u и v несмежные
+						 if(x[u]==0 && DlinaPuti[u]>DlinaPuti[v]+ves[v][u]) //Если для вершины 'u' еще не 
+														//найден кратчайший путь
+														// и новый путь в 'u' короче чем 
+														//старый, то
+						 {
+							DlinaPuti[u]=DlinaPuti[v]+ves[v][u];            //запоминаем более короткую длину пути в
+														//массив t[и]
+						   PredVertex[u]=v;             //запоминаем, что v->u часть кратчайшего 
+														//пути из s->u
+						 }
+					  }
+				 									 // Ищем из всех длин некратчайших путей самый короткий
+					  var w=infinity;                   // Для поиска самого короткого пути
+					  v=-1;                             // В конце поиска v - вершина, в которую будет 
+														// найден новый кратчайший путь. Она станет 
+														// текущей вершиной
+					  for(u=0;u<8;u++)                  // Перебираем все вершины.
+					  {
+						 if(x[u]==0 && DlinaPuti[u]<w)           // Если для вершины не найден кратчайший 
+														 // путь и если длина пути в вершину 'u' меньше
+														 // уже найденной, то
+						 {
+							v=u;                         // текущей вершиной становится 'u'-я вершина
+							w= DlinaPuti[u];
+						 }
+					  }
+					  		
+					  if(v==-1)
+					  {
+
+					
+						var newdiv = document.createElement('div');
+						newdiv.innerHTML = ("Нет пути из вершины "+(start+1)+" в вершину "+(end+1)+"."+'<br>');
+						document.getElementById(divName).appendChild(newdiv);
+         
+						 break;	
+					  }
+					 
+					  if(v==end)                            // Найден кратчайший путь,
+					  {                                 // выводим его
+					  
+					  var newdiv = document.createElement('div');
+						newdiv.innerHTML = ("Кратчайший путь из вершины "+(start+1)+ " в вершину " +(end+1)+ " (в обратном порядке):  ");
+						document.getElementById(divName).appendChild(newdiv);
+         
+						//document.getElementById("textMy").innerHTML = ("Кратчайший путь из вершины "+(start+1)); 
+						//document.getElementById("textMy").innerHTML = (" в вершину "+(end+1)+": 	");
+						u=end;
+					
+						while(u!=start)
+						 {
+						 
+							var newdiv = document.createElement('div');
+							newdiv.innerHTML = (" 	"+(u+1)+"-");
+							document.getElementById(divName).appendChild(newdiv);
+							//document.getElementById("textMy").innerHTML = (" 	"+(u+1)+"-");
+							u=PredVertex[u];
+						 }
+						  var newdiv = document.createElement('div');
+							newdiv.innerHTML = ((start+1)+'<br>'+"Длина пути - "+ DlinaPuti[end] +'<br>');
+							document.getElementById(divName).appendChild(newdiv);
+						//document.getElementById("textMy").innerHTML = ((start+1)+'<br>'+"Длина пути - "+ DlinaPuti[end] +'<br>');
+					   break;
+					   
+					  }
+					  x[v]=1;
+					 
+					
+				   }
+				  
+				}
+				
+			}
+					//alert(ves);
+				
+		}
+		
+			
+		</script>
+			</table>
+				
+			</section><br><br>
+		</div>
+	</div>
+
+	
+	<script src="../js/lang.js"></script> 
+	
+</body>
+</html>
