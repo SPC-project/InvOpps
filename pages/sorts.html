@@ -80,22 +80,43 @@ if(!lang)
 						<hr>
 							<a id="about-method" class="anchor"></a>
 						<a id="calculations" class="anchor"></a>
+												<section>
+			<div class="form-group text-left">
+				<label for = "" class = "en" lang = "en">
+					<h3 class="form-group text-center">About method</h3>
+					<h5>
+						Sorting algorithm repeatedly steps through the list to be sorted,
+						compares each pair of adjacent items and swaps them if they are in the wrong order.
+						<br>
+						<b>How to use:</b>
+						<br>1. Enter array: You can input array from textfield one by one, actually you can press enter in those field and your number automaticaly will be added to array.
+						Or you can enter array to textarea with splitting numbers by space (like "2 3 -5 0 0.258").
+						<br>2. Press "Update array" to update array from textarea.
+						<br>2.1. You can check inputed array by pressing "Show array". Array will showed in textarea below.
+						<br>3. Choose 1 of methods sorting and press "Sort". Sorted array and elapsed time for sorting will be showed in textarea and textfield under button "Sort".
+						<br>4. Enjoy!
+						<br>
+					</h5>
+				</label>
+			</div>
+			</section>
 						<section>
 							<form role = "form" class="text-center"> 
 								<div class="form-group text-center">
 								<label for = "" class = "en" lang = "en"><h3>Calculation</h3>
 								<label for = "" class = "ru" lang = "ru"><h3>Вычисления</h3>
-				<b class = "ru" lang = "ru"><h5><input type="radio" name="r" value="Сортировка пузырьком"> Сортировка пузырьком
+								<label for = "" class = "ru" lang = "ru">
+				<b><h5><input type="radio" name="r" value="Сортировка пузырьком"> Сортировка пузырьком
 				<input type="radio" name="r" value="Сортировка вставками"> Сортировка вставками
 				<input type="radio" name="r" value="Сортировка выбором"> Сортировка выбором
 				<input type="radio" name="r" value="Сортировка перемешиванием"> Сортировка перемешиванием</h5></b>
-
-
-			<b class = "en" lang = "en"><h5><input type="radio" name="r" value="Сортировка пузырьком"> Bubble sort
+								</label>
+								<label for = "" class = "en" lang = "en">
+				<b><h5><input type="radio" name="r" value="Сортировка пузырьком"> Bubble sort
 				<input type="radio" name="r" value="Сортировка вставками"> Insert sort
 				<input type="radio" name="r" value="Сортировка выбором"> Selection sort
 				<input type="radio" name="r" value="Сортировка перемешиванием"> Sort by stirring</h5></b><br>
-									
+								</label>	
 				<input id="TN" type="number" value="10"/>
 				<input id="NN" class="btn btn-default ru" lang = "ru" type="button" value="Добавить число" onclick="add_new_number();"/>
 				<input id="NN" class="btn btn-default en" lang = "en" type="button" value="Add number" onclick="add_new_number();"/><br>
