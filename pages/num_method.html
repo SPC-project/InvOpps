@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html >
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+<script type="text/javascript">
+var lang = $$c.get('lang');
+if(!lang)
+{
+	lang = 'ru';
+}
+</script>
+  <head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	  <title>InvOpps: Num. Methods</title>
+	 
+	  <!-- Bootstrap -->
+	 <link href="../css/bootstrap.min.css" rel="stylesheet">
+	 <link href="../css/font-awesome.min.css" rel="stylesheet">
+	 <link href="../css/main.css" rel="stylesheet">
+	 <link href="../css/folding.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/lang.css">
+	 
+	 <script src="../js/chart.js"></script>
+	 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	 <!-- Include all compiled plugins (below), or include individual files as needed -->
+	 <script src="../js/bootstrap.min.js"></script>
+	 <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/2.5.0/math.min.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+     <script src="https://wzrd.in/standalone/function-plot@1.14.0"></script>
+
+  <style>
+    input[type=number] {
+      width: 100px;
+    }
+    input {
+      padding: 6px;
+    }
+    body, html, input {
+      font-family: sans-serif;
+      font-size: 11pt;
+
+    }
+    form {
+      margin: 20px 0;
+    }
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+.tg .tg-zg9m{font-weight:bold;font-size:18px;background-color:#bbdaff;color:#000000;text-align:center;vertical-align:top}
+.tg .tg-by3v{font-weight:bold;font-size:14px;text-align:center}
+.tg .tg-yau4{background-color:#D2E4FC;font-weight:bold;font-size:14px;text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-6k2t{background-color:#D2E4FC;vertical-align:top}
+.tg .tg-62xo{font-weight:bold;font-size:14px;text-align:center;vertical-align:top}
+
+   .colortext {
+    background-color: Azure; /* Цвет фона */
+    color: #930; /* Цвет текста */
+   }
+  </style>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			document.getElementById("temp").className = lang;
+		});
+		
+
+	</script>
+  </head>
+  <body onload="chartInit()"  id = "temp">
+	  <header id="header" role="banner">
+		  <div class="container">
+			  <div id="navbar" class="navbar navbar-default">
+				  <div class="navbar-header">
+					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="../index.html"><img src="../images/spu.png"></a>
+				 </div>
+				 <div align = "right">
+  <span class="lang-switcher lang-switcher--ru" id="switcher-ru">RU</span>
+  <span class="lang-switcher lang-switcher--en" id="switcher-en">EN</span>
+</div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="../index.html"><i class="icon-home"></i></a></li>
+			<li><a href="#about-method" class = "en" lang = "en">About method</a></li>
+                        <li><a href="#calculations" class = "en" lang = "en">Calculations</a></li>
+			<li><a href="#about-method" class = "ru" lang = "ru">О методе</a></li>
+                        <li><a href="#calculations" class = "ru" lang = "ru">Вычисления</a></li>
+					  </ul>
+				 </div>
+            </div>
+        </div>
+	  </header>
+	  <section id="main-slider-calc"></section>
+	
+<div class="container">
+<div class="box first">
+	<div class="center">
+		<h2  class = "ru" lang = "ru" >Численное решение ДУ</h2>
+		<h2  class = "en" lang = "en" >Numerical solution of DE</h2>
+		<p class="lead"></p>
+	</div>
+
+	<div class="panel-group" id="#accordion">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a class="ru" lang = "ru" data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">Что происходит на данной страничке?</a>
+					<a class="en" lang = "en" data-toggle="collapse"  data-parent="#accordion" href="#collapseOne">What happens on this page?</a>
+				</h4>
+			</div>
+			<div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body text-info ru"  lang = "ru" >
+					Эта странница предлагает в ваше распоряжение инструмент для численного решения дифференциальных уравнений. 
+					Вы сможете получить численное решение онлайн. 
+					<h4 class = "ru" lang = "ru" >Преимущества :</h4>
+					<ul>
+							<li class = "ru" lang = "ru" >Визуальное отображение вводимых функций</li>
+							<li class = "ru" lang = "ru" >Решение сложных функций</li>
+							<li class = "ru" lang = "ru" >Удобность использования</li>
+							<li class = "ru" lang = "ru" >Получение результата онлайн</li>
+					</ul>
+			
+					<br>
+					
+
+
+				</div>
+				       <div class="panel-body text-info en"  lang = "en" >
+					This page provides you with a tool for the numerical solution of differential equations. You will be able to obtain a numerical solution online.
+
+					<h4 class = "en" lang = "en" >Advantages :</h4>
+					<ul>
+							<li class = "en" lang = "en" >Visual display of the input functions</li>
+							<li class = "en" lang = "en" >
+                            The solution of complex functions</li>
+							<li class = "en" lang = "en" >
+							Convenient use</li>
+							<li class = "en" lang = "en" >The results obtained online</li>
+					</ul>
+					<br>
+					
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-info text-info">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed ru" lang = "ru">Справка</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed en" lang = "en" >Manual</a>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse">
+				<div class="panel-body" > <center>
+								<table class="tg"></section>
+								  <tr>
+								    <th class="tg-zg9m ru" lang = "ru" colspan="2">Список функций<br></th>
+								    <th class="tg-zg9m en" lang = "en" colspan="2">Function list<br></th>
+								  </tr>
+								  <tr>
+								    <td class="tg-by3v ru" lang = "ru">Функция <br></td>
+								    <td class="tg-by3v en" lang = "en">Function<br></td>
+								    <td class="tg-yau4 ru" lang = "ru">Описание</td>
+								    <td class="tg-yau4 en" lang = "en">Description</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">х^а</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возведение аргумента х в степень а.</td>
+								    <td class="tg-6k2t en" lang = "en">Construction of the argument x to the power of a.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">abs(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает абсолютную величину аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Returns the absolute value of the argument.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">acos(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает арккосинус аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the arccosine</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">asin(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает арксинус аргумента</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the arcsine.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">atan(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает арктангенс аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the arctangent.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">ceil(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наименьшее целое число, большее или равное аргументу.</td>
+								    <td class="tg-6k2t en" lang = "en" >Returns the smallest integer greater than or equal to the argument.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">cos(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает косинус аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the cosine.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">exp(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает экспоненту аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the e.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">floor(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наибольшее целое число, меньшее или равное аргументу.</td>
+								     <td class="tg-6k2t  en" lang = "en" >Returns the largest integer less than or equal to the argument.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">log(x,n)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Логарифм от х по основанию n.</td>
+								    <td class="tg-6k2t  en" lang = "en" >The logarithm of x to base n.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">max(x,n)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наибольший из аргументов.</td>
+								    <td class="tg-6k2t en" lang = "en" >Returns the greatest of the arguments.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">min(x,n)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает наименьший из аргументов.</td>
+								    <td class="tg-6k2t en" lang = "en" >Returns the smallest of the arguments.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">round(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Округляет аргумент до ближайшего целого числа.</td>
+								     <td class="tg-6k2t en" lang = "en" >Rounds the argument up to the nearest whole number.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">sin(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает синус аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the sine.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">sqrt(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает квадратный корень из аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the square root.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">tan(x)</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Возвращает тангенс аргумента.</td>
+								    <td class="tg-6k2t en" lang = "en">Function of the tangent.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-62xo ru" lang = "ru"  colspan="2">Константы</td>
+								    <td class="tg-62xo  en" lang = "en"  colspan="2">Constants</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">pi</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число Пи=3.1415926</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number Pi=3.1415926</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">SQRT2</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Квадратный корень из 2.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >The square root of 2.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">SQRT1_2</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Квадратный корень из 1/2.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >The square root of 1/2.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LOG2E</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число log2e.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number log2e.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LOG10E</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число lg e.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number lg e.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LN2</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число ln 2.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number ln 2.</td>
+								  </tr>
+								  <tr>
+								    <td class="tg-yw4l">LN10</td>
+								    <td class="tg-6k2t ru" lang = "ru" >Число ln 10.</td>
+								    <td class="tg-6k2t  en" lang = "en"  >Number ln 10.</td>
+								  </tr>
+								</table><center/>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="panel panel-info text-info">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree " class="collapsed ru" lang = "ru">Метод Ейлера</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed en" lang = "en" >Eulers method</a>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse">
+			<img src="../images/euler.gif" alt="Runge_4" width="200" height="174" align="right" >
+				<div class="panel-body text-info ru" lang = "ru"> 
+
+								Исторически первым и наиболее простым способом численного решения задачи Коши для ОДУ первого порядка является метод Эйлера. В его основе лежит аппроксимация производной отношением конечных приращений зависимой (y) и независимой (x) переменных между узлами равномерной сетки:
+							
+
+					<br>
+					
+				</div>
+				       <div class="panel-body text-info en"  lang = "en" >
+					Historically, the first and easiest way to the numerical solution of the Cauchy problem for first-order ODE is Euler's method. It is based on an approximation of the derivative mean value ratio of the dependent (y) and the independent (x) variables between the nodes of a uniform grid:
+								
+					<br>
+	
+						
+				</div>
+						<section>
+			<table class="table table-hover table-condensed text-center" border="1px" align = "center">
+				 <form name="Chet"><br>
+				 	<center>	
+					   <label class = "ru" lang = "ru" for="eq">Введите функцию:</label><br>
+	 				   <label class = "en" lang = "en" for="eq">Enter an equation:</label><br>
+					      <input type="text" name="inputf" id="inputf" value="" size="25" /> <br><br>
+					
+					   <label class = "ru" lang = "ru" for="eq">Введите Х начальное:</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the initial X:</label>
+					      <input  type="text" name="inputa" id="x_O" value="" size="5" />
+					   <label class = "ru" lang = "ru" for="eq">Введите X конечное:</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the finite Х :</label>    
+					      <input type="text" name="inputb" id="x_N" value="" size="5" />
+					   <label class = "ru" lang = "ru" for="eq">Введите Y:</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the Y:</label> 
+
+					      <input type="text" name="inputn" id="y_Euler" value="" size="5" />
+					   <label class = "ru" lang = "ru" for="eq">Введите шаг (h):</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the step (h):</label>     
+					      <input type="text" name="inputn" id="h_Euler" value="" size="5" /><br>
+					     
+
+					      <br>
+					   <input class="btn btn-primary  en" lang = "en"   type="button"  value="Get the solution"  onclick = "euler()" />
+  					   <input class="btn btn-primary ru" lang = "ru"  type="button" value="Получить решение" onclick = "euler()" />
+  					   <input type="reset" class="btn btn-primary  en" lang = "en" id = "say"  type="button" value="Clear input field" >
+  					   <input type="reset" class="btn btn-primary ru" lang = "ru" id = "say"  type="button"  value="Очистить поля ввода" >
+  					   <input  class="btn btn-primary  en" lang = "en" id = "say"  type="button" value="Clear results" onclick = "clr()">
+  					   <input  class="btn btn-primary ru" lang = "ru" id = "say"  type="button"  value="Очистить результат" onclick = "clr()">
+  					   </center>
+  					   <br>
+  					   <br>
+  					   <h3 align="center" id="elem"></h3>
+					   </form>
+			</table>                                  
+			</section><br><br>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-info text-info">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour " class="collapsed ru" lang = "ru">Метод Рунге Кутты</a>
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class="collapsed en" lang = "en" >Runge Kutta method</a>
+				</h4>
+			</div>
+			<div id="collapseFour" class="panel-collapse collapse">
+			<img src="../images/runge-kutta.jpg" alt="Runge_4" width="400" height="240" align="right" >
+				<div class="panel-body text-info ru" lang = "ru"> 
+
+								Формально, методом Рунге — Кутты является модифицированный и исправленный метод Эйлера, они представляют собой схемы второго порядка точности. Существуют стандартные схемы третьего порядка, не получившие широкого распространения. Наиболее часто используется и реализована в различных математических пакетах (Maple, MathCAD, Maxima) стандартная схема четвёртого порядка. Иногда при выполнении расчётов с повышенной точностью применяются схемы пятого и шестого порядков. Построение схем более высокого порядка сопряжено с большими вычислительными трудностям
+					<br>
+					
+				</div>
+				       <div class="panel-body text-info en"  lang = "en" >
+					Formally, Runge - Kutta method is a modified and amended Euler's method, they are diagrams of second order accuracy. There are standard scheme of the third order, is not widespread. The most commonly used and implemented in a variety of mathematical packages (Maple, MathCAD, Maxima) standard scheme of fourth order. Sometimes when the calculations are used with increased accuracy schemes of the fifth and sixth order . Construction of schemes of higher order entails great computational difficulties
+
+					<br>
+	
+
+
+				</div>
+						<section>
+			<table class="table table-hover table-condensed text-center" border="1px" align = "center">
+				 <form name="Chet"><br>
+				 	<center>	
+
+					   <label class = "ru" lang = "ru" for="eq">Введите функцию:</label><br>
+	 				   <label class = "en" lang = "en" for="eq">Enter an equation:</label><br>
+					      <input type="text" id="inputR" value="" size="25" /> <br><br>
+					
+					   <label class = "ru" lang = "ru" for="eq">Введите Х начальное:</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the initial X:</label>
+					      <input  type="text"  id="x" value="" size="5" />
+					  
+					   <label class = "ru" lang = "ru" for="eq">Введите X конечное:</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the finite Х :</label>    
+					      <input type="text"  id="sampleEveryN" value="" size="5" />
+					   
+					   <label class = "ru" lang = "ru" for="eq">Введите Y:</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the Y:</label> 
+					      <input type="text"  id="y" value="" size="5" />
+
+					   <label class = "ru" lang = "ru" for="eq">Введите шаг (h):</label>
+	 				   <label class = "en" lang = "en" for="eq">Enter the step (h):</label>     
+					      <input type="text"  id="step" value="" size="5" /><br>
+
+
+					     
+
+					      <br>
+					   <input class="btn btn-primary  en" lang = "en"   type="button"  value="Get the solution"  onclick = "rk4() " />
+  					   <input class="btn btn-primary ru" lang = "ru"  type="button" value="Получить решение" onclick = "rk4() " />
+  					   <input type="reset" class="btn btn-primary  en" lang = "en"   type="button" value="Clear input field" >
+  					   <input type="reset" class="btn btn-primary ru" lang = "ru"   type="button"  value="Очистить поля ввода" >
+  					   <input  class="btn btn-primary  en" lang = "en" id = "say"  type="button" value="Clear results" onclick = "clrR()">
+  					   <input  class="btn btn-primary ru" lang = "ru" id = "say"  type="button"  value="Очистить результат" onclick = "clrR()">
+
+
+  					   </center>
+  					   <div id="output1"> </div>
+  					   <br>
+  					   <br>
+  					   <h3 align="center" id="elemR"></h3>
+					   </form>
+			</table>                                  
+			</section><br><br>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+	<hr>
+	<br>
+	<br>
+<section id="calculations">
+	<a id="calculations" class="anchor"></a>
+
+
+<script src="../js/lang.js"></script>
+<script src="../js/num_method.js"></script>
+<script src="../js/runge4.js"></script>
+  </body>
+</html>
